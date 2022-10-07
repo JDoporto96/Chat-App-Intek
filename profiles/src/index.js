@@ -1,6 +1,6 @@
 require("dotenv").config();
 const express = require('express');
-const profileRoutes = require('./routes/profiles');
+const profileRoutes = require('./routes/profileRoutes');
 const morgan = require('morgan');
 const cors = require("cors");
 
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 //Routes
-app.use(profileRoutes)
+app.use("/api", profileRoutes)
 
 
 app.listen(process.env.PORT, () => {

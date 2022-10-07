@@ -14,13 +14,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 export const mainListItems = (
   <React.Fragment>
     <ListItemButton>
-      <ListItemIcon>
-        <DashboardIcon />
-      </ListItemIcon>
-      <ListItemText primary="Dashboard" />
-    </ListItemButton>
-
-    <ListItemButton>
         <ListItemIcon>
             <Badge badgeContent={4} color="secondary">
                 <NotificationsIcon />
@@ -29,19 +22,13 @@ export const mainListItems = (
       <ListItemText primary="Notifications" />
     </ListItemButton>
 
-
-    <ListItemButton>
-      <ListItemIcon>
-        <ForumTwoToneIcon />
-      </ListItemIcon>
-      <ListItemText primary="Conversations" />
-    </ListItemButton>
     <ListItemButton>
       <ListItemIcon>
         <PersonTwoToneIcon />
       </ListItemIcon>
       <ListItemText primary="Contacts and Groups" />
     </ListItemButton>
+    
     <ListItemButton>
       <ListItemIcon>
         <PersonAddAltTwoToneIcon />

@@ -2,18 +2,19 @@ import React, {useState }from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login';
-import Dashboard from './components/Dashboard.jsx';
+import Dashboard from './pages/Dashboard.jsx';
 import { Landing } from './components/Landing';
 import logo from './assets/ISS_lgo.png';
 import Profile from './components/Profile.js';
-import { AuthProvider } from './components/auth.js';
-import { RequireAuth } from './components/RequireAuth.js';
+import { AuthProvider } from './components/Auth/auth.js';
+import { RequireAuth } from './components/Auth/RequireAuth.js';
 
 
 
 export default function App() {
   
   const [user, setUser] = useState(false);
+  
 
   const handleLogin = e => {
     e.preventDefault();

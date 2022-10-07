@@ -1,6 +1,8 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from './auth'
+import { profilesAPIRoute } from '../utils/APIRoutes';
+import { useAuth } from './Auth/auth'
 
 function Profile() {
     const auth = useAuth();
@@ -9,6 +11,8 @@ function Profile() {
         auth.logout();
         navigate('/');
     }
+    const [contacList,setContactList] =useState('');
+    
   return (
     <div>
         <h1>Welcome {auth.user}</h1>

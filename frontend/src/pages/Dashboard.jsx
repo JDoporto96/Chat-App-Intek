@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useState, useEffect } from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -14,12 +15,11 @@ import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
-import { mainListItems } from './Dashboard/listItems';
-import Chat from './Dashboard/chat/Chat';
-import Sidebar from './Dashboard/sidebar/Sidebar';
+import { mainListItems } from '../components/listItems';
+import { useAuth } from '../components/Auth/auth';
+import Chat from '../components/Chat/Chat';
 import axios from 'axios';
-import { dashboardRoute } from '../utils/APIRoutes';
-import { useAuth } from './auth';
+import { profilesAPIRoute } from '../utils/APIRoutes';
 
 const drawerWidth = 240;
 
@@ -71,6 +71,18 @@ const mdTheme = createTheme();
 
 function DashboardContent() {
   const auth = useAuth();
+
+  // const [currentUser, setCurrentUser] = useState(undefined);
+
+  // useEffect(()=>{
+  //   async function fetchData(){
+  //       const response = await axios.get(`${profilesAPIRoute}/${auth.user}`);
+  //       setCurrentUser(response.data);
+  //   }
+  //   fetchData();
+    
+  // },[])
+
   const [open, setOpen] = React.useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
@@ -145,10 +157,7 @@ function DashboardContent() {
           <Toolbar />
           <Container maxWidth="100vh" sx={{ mt: 2, mb:8}}>
           <Grid container>
-              <Grid item xs={3}>
-                <Sidebar/>
-              </Grid>
-              <Grid item xs={9} >
+              <Grid item xs={12} >
                 <Chat/>
               </Grid>
               </Grid>

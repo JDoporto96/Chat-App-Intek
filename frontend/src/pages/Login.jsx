@@ -11,13 +11,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {Link, useNavigate} from "react-router-dom";
+import { useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { loginRoute, profilesAPIRoute } from "../utils/APIRoutes";
-import Bar from '../components/Dashboard/bar/Bar';
-import { useAuth } from '../components/auth';
+import Bar from '../components/bar/Bar';
+import { useAuth } from '../components/Auth/auth';
 
 const theme = createTheme();
 
@@ -72,8 +72,8 @@ export default function Login() {
                 toast.error(data.msg, toastOptions);
             }
             if(data.status ===true){
-                auth.login(data.user.username);
-                axios.patch(profilesAPIRoute + `/${data.user.username}`,{
+                auth.login(data.user._id);
+                axios.patch(profilesAPIRoute + `/${data.user._id}`,{
                   status:"Online"
                 })
                 navigate("/dashboard");

@@ -10,13 +10,13 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import {useState,useEffect} from "react";
+import {useState} from "react";
 import axios from 'axios';
-import {Link, useNavigate} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { profilesAPIRoute, registerRoute } from "../utils/APIRoutes";
-import Bar from '../components/Dashboard/bar/Bar';
+import Bar from '../components/bar/Bar';
 
 
 const theme = createTheme();
@@ -87,7 +87,9 @@ export default function Register() {
                 toast.error(data.msg, toastOptions)
             }
             if(data.status ===true){
+              const _id = data.user._id;
               axios.post(profilesAPIRoute,{
+                _id,
                 username
               })
               navigate("/login");

@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 
 const profileSchema = new mongoose.Schema({
+    _id:{
+    },
     username: {
         type: String,
         required: true,
@@ -13,7 +15,9 @@ const profileSchema = new mongoose.Schema({
         type:String,
         default: "Profile_Pic.png"
     },
-    contacts: [],
+    contacts: {
+        type: Array
+    },
     status: {
         type: String,
         default: "Offline"
