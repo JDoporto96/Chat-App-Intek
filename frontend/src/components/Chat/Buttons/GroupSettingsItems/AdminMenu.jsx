@@ -1,8 +1,9 @@
-import { MenuItem, Typography } from '@mui/material'
+
 import React from 'react'
 import ChangeGroupName from './ChangeName'
 import DeleteGroup from './DeleteGroup'
 import LeaveGroup from './LeaveGroup'
+import ManageMembers from './ManageMembers'
 import ManageAdmins from './ManageAdmins'
 
 function AdminMenu({currentChat}) {
@@ -10,7 +11,9 @@ function AdminMenu({currentChat}) {
     <>
       <ChangeGroupName currentChat={currentChat}/>
 
-      <ManageAdmins/>
+      <ManageAdmins currentChat={currentChat}/>
+
+      <ManageMembers currentChat={currentChat}/> 
 
       <LeaveGroup currentChat={currentChat}/>
 

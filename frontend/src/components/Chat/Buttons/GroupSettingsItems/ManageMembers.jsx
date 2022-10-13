@@ -1,16 +1,16 @@
-import { MenuItem, Typography, Modal, Container, Grid, Button, IconButton } from '@mui/material'
+import { MenuItem, Typography, Modal, Container, Grid, IconButton } from '@mui/material'
 import React from 'react'
 import {useState} from 'react'
-import BasicTabs from './BasicTabs';
+import MembersTab from './MembersTab';
 import CloseIcon from '@mui/icons-material/Close';
 
-function ManageAdmins({currentChat}) {
+function ManageMembers({currentChat}) {
 
     const[open, setOpen]=useState(false);
   return (
     <>
         <MenuItem onClick={()=>setOpen(true)}>
-            <Typography> Admins</Typography>
+            <Typography> Members</Typography>
         </MenuItem>
 
         <Modal open={open}>
@@ -25,7 +25,7 @@ function ManageAdmins({currentChat}) {
             <Grid item xs={10} sx={{
                     marginTop:"0.5rem"
                 }}>
-                <BasicTabs currentChat={currentChat} />
+                <MembersTab currentChat={currentChat} />
             </Grid>
             <Grid item xs={2}>
                 <IconButton
@@ -39,12 +39,6 @@ function ManageAdmins({currentChat}) {
                     
             </Grid>
         </Grid>
-                
-
-        
-            
-            
-            
 
         </Container>
 
@@ -53,4 +47,4 @@ function ManageAdmins({currentChat}) {
   )
 }
 
-export default ManageAdmins
+export default ManageMembers

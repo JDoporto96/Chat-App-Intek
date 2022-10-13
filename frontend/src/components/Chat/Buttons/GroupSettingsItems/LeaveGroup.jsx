@@ -3,7 +3,7 @@ import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/materi
 import { useState } from 'react'
 import {useCurrentUser} from '../../../UserProvider/user'
 import axios from 'axios';
-import { addAdminsRoute, removeAdminRoute, removeMemberRoute } from '../../../../utils/APIRoutes';
+import { addAdminsRoute, removeAdminsRoute, removeMembersRoute } from '../../../../utils/APIRoutes';
 
 
 function LeaveGroup({currentChat}) {
@@ -13,9 +13,9 @@ function LeaveGroup({currentChat}) {
 
     const handleLeave = async()=>{
         if(currentChat.admins.includes(currentUser._id)){
-            await axios.patch(removeAdminRoute,{
+            await axios.patch(removeAdminsRoute,{
                 _id:currentChat._id,
-                admin:currentUser._id
+                admins:[currentUser._id]
             })
             if(currentChat.admins.length <=1){
                 const newAdmin = currentChat.members.find(member=>member!==currentUser._id);
@@ -27,9 +27,9 @@ function LeaveGroup({currentChat}) {
         } 
             
         
-        await axios.patch(removeMemberRoute,{
+        await axios.patch(removeMembersRoute,{
             _id:currentChat._id,
-            member:currentUser._id
+            members:[currentUser._id]
         })
 
         setOpen(false)
