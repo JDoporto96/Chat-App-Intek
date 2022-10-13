@@ -17,7 +17,7 @@ export default function ChatInput({ handleSendMsg }) {
   return (
     <>
       <form onSubmit={(event) => sendChat(event)}>
-        <Grid container pl={2}>
+        <Grid container sx={{pl:2, mt:1}}>
         <Grid xs={11} item>
             <TextField fullWidth onChange={(e) => setMsg(e.target.value)}
               value={msg}

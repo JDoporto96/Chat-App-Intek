@@ -8,33 +8,35 @@ import logo from './assets/ISS_lgo.png';
 import Profile from './components/Profile.js';
 import { AuthProvider } from './components/Auth/auth.js';
 import { RequireAuth } from './components/Auth/RequireAuth.js';
+import { UserProvider } from './components/UserProvider/user.js';
 
 
 
 export default function App() {
   
-  const [user, setUser] = useState(false);
+  // const [user, setUser] = useState(false);
   
-
-  const handleLogin = e => {
-    e.preventDefault();
-    setUser(true);
-  }
+  // const handleLogin = e => {
+  //   e.preventDefault();
+  //   setUser(true);
+  // }
 
 
   return (
   <AuthProvider>
+    <UserProvider>
     <BrowserRouter>
       
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path='/' element={<Landing/>} />
-        <Route path='/dashboard' element={<RequireAuth> <Dashboard/> </RequireAuth> } />
+        <Route path='/dashboard' element={<RequireAuth> <Dashboard/>  </RequireAuth> } />
         <Route path='/profile' element={<RequireAuth> <Profile/> </RequireAuth>} />
         
       </Routes>
     </BrowserRouter>
+    </UserProvider>
   </AuthProvider>
   );
 }

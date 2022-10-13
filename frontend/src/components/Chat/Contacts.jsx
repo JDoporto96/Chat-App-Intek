@@ -24,7 +24,7 @@ export default function Contacts({contacts, changeChat }) {
             <ListItemText
             onClick={()=>changeCurrentChat(index,contact)}
             >
-              {contact.name}
+              {contact.username}
 
             </ListItemText>
           </ListItemButton>

@@ -3,10 +3,13 @@ import ChatInput from "./ChatInput";
 import axios from "axios";
 import { sendMessageRoute, getAllMessagesRoute } from "../../utils/APIRoutes";
 import { Box } from "@mui/system";
-import { Grid, Typography,List, ListItem, ListItemText } from "@mui/material";
+import { Grid, Typography,List, ListItem, Tooltip, IconButton} from "@mui/material";
 import "./Chat.css"
+import GroupSetting from "./Buttons/GroupSetting";
+import { useCurrentUser } from "../UserProvider/user";
 
-export default function ChatContainer({ contacts, currentChat , currentUser, socket}) {
+export default function ChatContainer({ contacts, currentChat , socket}) {
+  const currentUser=useCurrentUser();
   const [messages,setMessages]=useState([]);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const scrollRef=useRef()
@@ -14,7 +17,7 @@ export default function ChatContainer({ contacts, currentChat , currentUser, soc
   useEffect(()=>{
     async function fetchData(){
       const response = await axios.post(getAllMessagesRoute,{
-        from: currentUser._id,
+        from: currentUser.currentUser._id,
         to: currentChat._id,
         sendToGroup: currentChat.isGroup
       });
@@ -31,7 +34,7 @@ export default function ChatContainer({ contacts, currentChat , currentUser, soc
     const timestamp = `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`;
 
     await axios.post(sendMessageRoute,{
-      from: currentUser._id,
+      from: currentUser.currentUser._id,
       to: currentChat._id,
       message:msg,
       sendToGroup: currentChat.isGroup
@@ -40,15 +43,16 @@ export default function ChatContainer({ contacts, currentChat , currentUser, soc
     if(!currentChat.isGroup){
       socket.current.emit("send-msg", {
         to: [currentChat._id],
-        from: currentUser._id,
+        from: currentUser.currentUser._id,
         message:msg,
         timestamp,
         sendToGroup: currentChat.isGroup
       });
-    }else{
+
+    }else if(currentChat.isGroup){
       socket.current.emit("send-msg", {
         to: currentChat.members,
-        from: currentUser._id,
+        from: currentUser.currentUser._id,
         message:msg,
         timestamp,
         sendToGroup: currentChat.isGroup
@@ -79,8 +83,6 @@ export default function ChatContainer({ contacts, currentChat , currentUser, soc
     scrollRef.current?.scrollIntoView({behaviour:"smooth"})
   },[messages])
 
-
-
   return (
     <React.Fragment>
       <Box
@@ -88,65 +90,120 @@ export default function ChatContainer({ contacts, currentChat , currentUser, soc
       sx={{
         width:"100%",
         backgroundColor: 'primary.light',
+        display:"flex",
+        flexDirection:"row"
       }}
       >
-        <Typography variant="h5" gutterBottom>
-          {currentChat.name}
-        </Typography>
+          
+            <Typography variant="h5" gutterBottom
+            sx={{
+              flexGrow:1
+            }}
+            >
+              {currentChat.username? currentChat.username : currentChat.name}
+            </Typography>
+          
+
+            {currentChat.isGroup?(
+                <GroupSetting currentChat={currentChat}/>
+              ) : <></> 
+            }
+            
+          
+          
+       
+        
       </Box>
 
       <Grid container spacing={4} alignItems="center">
         <Grid id="chat-window" xs={12} item>
-          <List id="chat-window-messages">
+          <List id="chat-window-messages"
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            
+          }}>
             {
               messages.map(message=>{
                 return(
                   <ListItem
                   ref={scrollRef}
                   key={message._id}
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "flex-start",
+                  }}
                   >
 
                   {message.fromSelf ? (
-                      <ListItemText
+                      <Box
                       sx={{
+                        alignSelf:"flex-end",
+                        maxWidth: "30rem",
                         textAlign:"right",
-                        backgroundColor:"orange",
-                        padding: "1rem"
-                      }}>
-                      {message.message}
-                      {message.timestamp}
-                      </ListItemText>) : 
-                      (
-                        <ListItemText
-                        sx={{
-                          textAlign:"left",
-                          backgroundColor:"primary.light",
-                          padding: "1rem",
-                        }}> 
                         
-                        {contacts.find(contact =>contact._id === message.sender)?
-                        contacts.find(contact =>contact._id === message.sender).name 
-                        :
-                        message.sender
-                        }
-                        : 
-                        {message.message}
-                        </ListItemText>) }
+                      }}
+                      >
+                        <Box
+                          sx={{
+                            textAlign:"right",
+                            padding: "1rem",
+                            borderRadius: "20px",
+                            backgroundColor: "#1877f2",
+                            color: "white",
+                            overflowWrap:"break-word"
+                            
+                          }}>
+                          {message.message} 
+                        </Box>
+                          {message.timestamp}
+                      </Box>
                       
-
+                      ) : 
+                      (
+                        
+                      <Box
+                      sx={{
+                        
+                        maxWidth: "30rem",
+                        
+                      }}
+                      >
+                        {currentChat.isGroup ? 
+                        (contacts.find(contact =>contact._id === message.sender)?
+                          contacts.find(contact =>contact._id === message.sender).username
+                          :
+                          message.sender
+                        ) +":"
+                        : ""}
+                        <Box
+                          sx={{
+                            textAlign:"left",
+                            padding: "1rem",
+                            borderRadius: "20px",
+                            backgroundColor: "rgb(245, 241, 241)",
+                            color: "black",
+                            overflowWrap:"break-word"
+                           
+                          }}>
+                          {message.message} 
+                        </Box>
+                          {message.timestamp}
+                      </Box>
+                        ) }
                   </ListItem>
                 )
               })
             }       
           </List>
-        </Grid>
-        <Grid  xs={12} item>
-            
           <ChatInput handleSendMsg={handleSendMsg} />   
         </Grid>
+        
       </Grid>
       
       
     </React.Fragment>
   );
 }
+

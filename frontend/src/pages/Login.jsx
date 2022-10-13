@@ -18,12 +18,12 @@ import axios from "axios";
 import { loginRoute, profilesAPIRoute } from "../utils/APIRoutes";
 import Bar from '../components/bar/Bar';
 import { useAuth } from '../components/Auth/auth';
+import { useCurrentUser } from '../components/UserProvider/user';
 
 const theme = createTheme();
 
 export default function Login() {
   const navigate= useNavigate();
-  const [user,setUser] = useState('');
   const [values,setValues] = useState({
     email:"",
     password:"",
@@ -60,6 +60,7 @@ export default function Login() {
 
 
   const auth = useAuth();
+  const currentUser = useCurrentUser();
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(handleValidation()){
@@ -73,9 +74,11 @@ export default function Login() {
             }
             if(data.status ===true){
                 auth.login(data.user._id);
-                axios.patch(profilesAPIRoute + `/${data.user._id}`,{
+                await axios.patch(profilesAPIRoute + `/${data.user._id}`,{
                   status:"Online"
                 })
+                const profile = await axios.get(profilesAPIRoute + `/${data.user._id}`)
+                currentUser.userLogin(profile.data);
                 navigate("/dashboard");
             }
     }

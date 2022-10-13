@@ -4,42 +4,57 @@ import ChatContainer from "./ChatContainer";
 import Contacts from "./Contacts";
 import Welcome from "./Welcome";
 import { profilesAPIRoute, messagesHost, getMyGroupsRoute } from "../../utils/APIRoutes";
-import { useAuth } from "../Auth/auth";
+import { useCurrentUser } from "../UserProvider/user";
 import { Container, } from "@mui/system";
 import { Grid, Paper, Box, Typography  } from "@mui/material";
 import {io} from 'socket.io-client';
 import Groups from "./Groups";
+import AddContact from "./Buttons/AddContact";
+import AddGroup from "./Buttons/AddGroup";
+import ContactRequests from "./Buttons/ContactRequests";
+
 
 export default function Chat() {
-  const auth = useAuth();
+  const currentUser = useCurrentUser();
   const socket = useRef();
   const [contacts, setContacts] = useState([]);
   const [groups, setGroups] = useState([]);
 
-  const [currentUser, setCurrentUser] = useState(undefined);
+  // const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   
+  // useEffect(()=>{
+  //   async function fetchData(){
+  //       const response = await axios.get(`${profilesAPIRoute}/${auth.user}`);
+  //       setCurrentUser(response.data);  
+  //   }
+  //   fetchData();
+    
+  // },[])
+
   useEffect(()=>{
     async function fetchData(){
-        const response = await axios.get(`${profilesAPIRoute}/${auth.user}`);
-        setCurrentUser(response.data);
-        const contactsList = response.data.contacts.map(contact=>{return{
+        const {data} = await axios.get(`${profilesAPIRoute}/${currentUser.currentUser._id}/contacts`);
+        const contactsList = data.map(contact=>{return{
           _id:contact._id,
-          name:contact.username,
+          username:contact.username,
           isGroup: false
         }})
-        setContacts(contactsList)
-        
+        setContacts(contactsList)   
     }
     fetchData();
     
   },[])
 
+
+
+
   useEffect(()=>{
     async function fetchData(){
         const response = await axios.post(getMyGroupsRoute,{
-          userId: auth.user
+          userId: currentUser.currentUser._id
         });
+        
         setGroups(response.data)
     }
     fetchData();
@@ -49,7 +64,7 @@ export default function Chat() {
   useEffect(()=>{
     if(currentUser){
       socket.current = io(messagesHost);
-      socket.current.emit("add-user", currentUser._id);
+      socket.current.emit("add-user", currentUser.currentUser._id);
     }
   },[currentUser])
 
@@ -79,11 +94,26 @@ export default function Chat() {
                   p={2}
                   sx={{
                     width: "100%",
-                    backgroundColor: "primary.light"
+                    backgroundColor: "primary.light",
                   }}>
-                      <Typography variant ="h4">
-                       Contacts
-                      </Typography>
+                    <Grid container>
+                      
+                      <Grid xs ={8} item
+                      >
+                        <Typography variant ="h5">
+                        Contacts
+                        </Typography>
+                      </Grid>
+                      <Grid xs ={2} item>
+                        <ContactRequests/>
+                      </Grid>
+                      <Grid xs ={2} item>
+                        <AddContact/>
+                      </Grid>
+                    </Grid>
+                     
+                      
+                      
                   </Box>
                     
                     <Contacts contacts={contacts} changeChat={handleChatChange} />
@@ -105,9 +135,24 @@ export default function Chat() {
                     width: "100%",
                     backgroundColor: "primary.light"
                   }}>
-                      <Typography variant ="h4">
+                      
+                     
+
+                      <Grid container>
+                      
+                      <Grid xs ={10} item
+                      >
+                        <Typography variant ="h5">
                        Groups
                       </Typography>
+                      </Grid>
+
+                      <Grid xs ={2} item>
+                      <AddGroup contacts={contacts}/>
+                      </Grid>
+                    </Grid>
+
+
                   </Box>
                     
                     <Groups groups={groups} changeChat={handleChatChange} />
@@ -130,9 +175,9 @@ export default function Chat() {
                 }}
                 >
                 {currentChat === undefined ? (
-                  <Welcome currentUser={currentUser} />
+                  <Welcome />
                   ) : (
-                  <ChatContainer contacts={contacts} currentChat={currentChat} currentUser={currentUser} socket={socket} />
+                  <ChatContainer contacts={contacts} currentChat={currentChat} socket={socket} />
                 )}
                 </Box>
               </Paper>
@@ -140,6 +185,7 @@ export default function Chat() {
           </Grid>
         </Grid>
       </Container>
+      
     </>
   );
 }
