@@ -1,11 +1,11 @@
-const { createGroup, deleteGroup,updateGroupName, addMembers, removeMember,addAdmins, removeAdmin, showMyGroups} = require('../controller/groupController')
+const { deleteGroup,updateGroupName, addMembers, removeMembers,addAdmins, removeAdmins, showMyGroups, createGroupConversation} = require('../controller/groupController')
 const router = require("express").Router();
 
-router.post("/creategroup", createGroup);
+router.post("/creategroup", createGroupConversation);
 router.patch("/addmembers", addMembers);
-router.patch("/removemember", removeMember);
+router.patch("/removemembers", removeMembers);
 router.patch("/addadmins", addAdmins);
-router.patch("/removeadmin", removeAdmin);
+router.patch("/removeadmins", removeAdmins);
 router.patch("/updategroupname", updateGroupName);
 router.delete("/deletegroup/:groupid",deleteGroup);
 router.post("/mygroups", showMyGroups);

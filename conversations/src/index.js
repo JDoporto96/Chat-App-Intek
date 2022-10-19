@@ -2,9 +2,9 @@ require("dotenv").config();
 const express = require('express');
 const messageRoutes = require('./routes/messageRoutes');
 const groupRoutes = require('./routes/groupRoutes');
+const conversationRoutes = require('./routes/conversationRoutes');
 const morgan = require('morgan');
 const cors = require("cors");
-const socket = require('socket.io');
 
 //Init
 const app= express();
@@ -19,42 +19,10 @@ app.use(express.json());
 //Routes
 app.use("/api/messages",messageRoutes);
 app.use("/api/groups",groupRoutes);
+app.use("/api/conversations", conversationRoutes)
 
 
 const server = app.listen(process.env.PORT, () => {
     console.log( `Server started on port ${process.env.PORT}`)
 })
-
-const io = socket(server, {
-    cors: {
-        origin: "http://localhost:3000",
-        credentials: true
-    }
-})
-
-global.onlineUsers = new Map();
-
-io.on("connection", (socket) =>{
-    global.chatSocket = socket;
-    socket.on("add-user", (userId)=>{
-        console.log(userId);
-        onlineUsers.set(userId, socket.id);
-    });
-
-    socket.on("send-msg", (data) =>{
-        const sendUserSocketsList = data.to.map(user =>onlineUsers.get(user));
-        sendUserSocketsList.forEach(user=>{
-            if(user){
-                socket.to(user).emit("msg-recieve", {message:data.message, from:data.from})
-            };
-        })
-        
-            // const sendUserSocket=onlineUsers.get(data.to[0]);
-            // if(sendUserSocket){
-            //     socket.to(sendUserSocket).emit("msg-recieve", {message:data.message, from:data.from})
-            // };
-    });
-});
-
-
 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MESSAGES_URL, {
+mongoose.connect(process.env.CONVERSATIONS_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })

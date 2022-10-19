@@ -3,7 +3,7 @@ import axios from "axios";
 import ChatContainer from "./ChatContainer";
 import Contacts from "./Contacts";
 import Welcome from "./Welcome";
-import { profilesAPIRoute, messagesHost, getMyGroupsRoute } from "../../utils/APIRoutes";
+import { conversationsRoute, getMyGroupsRoute, socketsHost } from "../../utils/APIRoutes";
 import { useCurrentUser } from "../UserProvider/user";
 import { Container, } from "@mui/system";
 import { Grid, Paper, Box, Typography  } from "@mui/material";
@@ -12,47 +12,33 @@ import Groups from "./Groups";
 import AddContact from "./Buttons/AddContact";
 import AddGroup from "./Buttons/AddGroup";
 import ContactRequests from "./Buttons/ContactRequests";
+import { useContactsList } from "../ContactsProvider/contacts";
+import ConversationsPanel from "./ConversationsPanel";
+
 
 
 export default function Chat() {
-  const currentUser = useCurrentUser();
+  const currentUser = useCurrentUser().currentUser;
   const socket = useRef();
-  const [contacts, setContacts] = useState([]);
+  const contacts = useContactsList().contacts;
+  const [conversations, setConversations]= useState([]);
   const [groups, setGroups] = useState([]);
-
-  // const [currentUser, setCurrentUser] = useState(undefined);
   const [currentChat, setCurrentChat] = useState(undefined);
   
-  // useEffect(()=>{
-  //   async function fetchData(){
-  //       const response = await axios.get(`${profilesAPIRoute}/${auth.user}`);
-  //       setCurrentUser(response.data);  
-  //   }
-  //   fetchData();
-    
-  // },[])
 
   useEffect(()=>{
-    async function fetchData(){
-        const {data} = await axios.get(`${profilesAPIRoute}/${currentUser.currentUser._id}/contacts`);
-        const contactsList = data.map(contact=>{return{
-          _id:contact._id,
-          username:contact.username,
-          isGroup: false
-        }})
-        setContacts(contactsList)   
+    async function getConversations(){
+        const response = await axios.get(conversationsRoute+currentUser._id,);
+        setConversations(response.data)
     }
-    fetchData();
+    getConversations();
     
-  },[])
-
-
-
+  },[currentUser])
 
   useEffect(()=>{
     async function fetchData(){
         const response = await axios.post(getMyGroupsRoute,{
-          userId: currentUser.currentUser._id
+          userId: currentUser._id
         });
         
         setGroups(response.data)
@@ -62,9 +48,13 @@ export default function Chat() {
   },[])
 
   useEffect(()=>{
+    socket.current = io(socketsHost)
+  },[])
+
+  useEffect(()=>{
     if(currentUser){
-      socket.current = io(messagesHost);
-      socket.current.emit("add-user", currentUser.currentUser._id);
+      socket.current.emit("add-user", currentUser._id);
+      // socket.current.on("get-users")
     }
   },[currentUser])
 
@@ -78,9 +68,11 @@ export default function Chat() {
     <>
       <Container maxWidth="100%">
         <Grid container>
-          <Grid item xs={3}>
+          <Grid item xs={2}>
+            
             <Container>
               <Paper elevation={5}>
+              
                 <Box
                 
                 sx={{
@@ -116,7 +108,7 @@ export default function Chat() {
                       
                   </Box>
                     
-                    <Contacts contacts={contacts} changeChat={handleChatChange} />
+                    <Contacts currentUser={currentUser} contacts={contacts} changeChat={handleChatChange} conversations={conversations} />
                     
                 </Box>
 
@@ -162,7 +154,7 @@ export default function Chat() {
               </Paper>
             </Container>
           </Grid>
-          <Grid item xs={9}>
+          <Grid item xs={8}>
             <Container>
               <Paper elevation={5}>
                 <Box
@@ -183,6 +175,17 @@ export default function Chat() {
               </Paper>
             </Container>
           </Grid>
+          <Grid item xs={2}>
+            
+            <Container>
+              <Paper elevation={5}>
+                    <ConversationsPanel conversations={conversations} changeChat={handleChatChange}/>
+
+              </Paper>
+              </Container>
+          </Grid>
+
+
         </Grid>
       </Container>
       

@@ -45,7 +45,7 @@ export default function AddGroup({contacts}) {
   const handleSubmit= async (e)=>{
     e.preventDefault();
     await axios.post(`${createGroupRoute}`,{
-      groupName:groupname,
+      name:groupname,
       members,
       creator: currentUser.currentUser._id
     })

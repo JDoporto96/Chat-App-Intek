@@ -20,9 +20,9 @@ export default function Groups({groups, changeChat }) {
       {groups.map((group, index)=>{
         return(
 
-          <ListItemButton key={group._id}>
+          <ListItemButton key={group._id} onClick={()=>changeCurrentChat(index,group)}>
             <ListItemText
-            onClick={()=>changeCurrentChat(index,group)}
+            
             >
               {group.name}
 

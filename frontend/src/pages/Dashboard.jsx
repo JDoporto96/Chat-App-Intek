@@ -7,9 +7,15 @@ import Grid from '@mui/material/Grid';
 import Chat from '../components/Chat/Chat';
 import MainBar from '../components/bar/MainBar';
 
+
+
+
+
+
 const mdTheme = createTheme();
 
 function DashboardContent() {
+
   return (
     <ThemeProvider theme={mdTheme}>
       <MainBar/>
@@ -31,7 +37,11 @@ function DashboardContent() {
           <Container maxWidth="100vh" >
           <Grid container>
               <Grid item xs={12} >
+                
+                
                 <Chat/>
+                
+                
               </Grid>
               </Grid>
           </Container>

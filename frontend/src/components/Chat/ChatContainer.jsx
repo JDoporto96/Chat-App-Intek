@@ -3,28 +3,47 @@ import ChatInput from "./ChatInput";
 import axios from "axios";
 import { sendMessageRoute, getAllMessagesRoute } from "../../utils/APIRoutes";
 import { Box } from "@mui/system";
-import { Grid, Typography,List, ListItem, Tooltip, IconButton} from "@mui/material";
+import { Grid, Typography,List, ListItem} from "@mui/material";
 import "./Chat.css"
 import GroupSetting from "./Buttons/GroupSetting";
 import { useCurrentUser } from "../UserProvider/user";
 
+
+const createTimestamp = (date)=>{
+  const time = new Date(date)
+  
+  return `${time.getHours()}:${time.getMinutes() < 10 ? "0"+time.getMinutes() : time.getMinutes()}`
+}
+
 export default function ChatContainer({ contacts, currentChat , socket}) {
-  const currentUser=useCurrentUser();
+  const currentUser=useCurrentUser().currentUser;
+  const [chatName, setChatName]=useState("");
   const [messages,setMessages]=useState([]);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const scrollRef=useRef()
 
   useEffect(()=>{
-    async function fetchData(){
-      const response = await axios.post(getAllMessagesRoute,{
-        from: currentUser.currentUser._id,
-        to: currentChat._id,
-        sendToGroup: currentChat.isGroup
-      });
-      setMessages(response.data)
+    async function getMessages(){
+      try{
+        const {data} = await axios.get(getAllMessagesRoute+currentChat._id);
+      setMessages(data);
+      console.log(data)
+      
+    }catch(err){
+    }
     }
     if(currentChat){
-      fetchData()
+      getMessages()
+    }
+  },[currentChat])
+
+  useEffect(()=>{
+    if(currentChat.name){
+      setChatName(currentChat.name)
+    }else{
+      const contactId=currentChat.members.find(m => m!== currentUser._id)
+      const contactName = contacts.find(contact => contact._id===contactId).username
+      setChatName(contactName)
     }
   },[currentChat])
 
@@ -34,49 +53,32 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
     const timestamp = `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`;
 
     await axios.post(sendMessageRoute,{
-      from: currentUser.currentUser._id,
-      to: currentChat._id,
+      sender: currentUser._id,
+      conversationId: currentChat._id,
       message:msg,
-      sendToGroup: currentChat.isGroup
     });
 
-    if(!currentChat.isGroup){
-      socket.current.emit("send-msg", {
-        to: [currentChat._id],
-        from: currentUser.currentUser._id,
-        message:msg,
-        timestamp,
-        sendToGroup: currentChat.isGroup
+    socket.current.emit("send-msg", {
+      to: currentChat._id,
+      from: currentUser._id,
+      message:msg,
+      timestamp,
       });
-
-    }else if(currentChat.isGroup){
-      socket.current.emit("send-msg", {
-        to: currentChat.members,
-        from: currentUser.currentUser._id,
-        message:msg,
-        timestamp,
-        sendToGroup: currentChat.isGroup
-      });
-    }
-    
-
+  
     const msgs = [...messages];
-    msgs.push({fromSelf:true, message: msg, timestamp});
+    msgs.push({sender:currentUser._id, message: msg, timestamp});
     setMessages(msgs);
   };
 
   useEffect(()=>{
-    if(socket.current){
-      const now = new Date();
-      const timestamp = `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`;
-      socket.current.on("msg-recieve", (msg)=>{
-        setArrivalMessage({fromSelf:false, message: msg.message, timestamp, sender:msg.from })
+      socket.current.on("get-msg", msg =>{
+        setArrivalMessage({ message: msg.message, timestamp:msg.timestamp, sender:msg.from })
       })
-    }
   }, []);
 
   useEffect(()=>{
-    arrivalMessage && setMessages((prev)=>[...prev,arrivalMessage])
+    arrivalMessage && currentChat._id === arrivalMessage.sender && 
+    setMessages((prev)=>[...prev,arrivalMessage])
   },[arrivalMessage]);
 
   useEffect(()=>{
@@ -100,11 +102,11 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
               flexGrow:1
             }}
             >
-              {currentChat.username? currentChat.username : currentChat.name}
+              {chatName}
             </Typography>
           
 
-            {currentChat.isGroup?(
+            {currentChat.name?(
                 <GroupSetting currentChat={currentChat}/>
               ) : <></> 
             }
@@ -136,7 +138,7 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
                   }}
                   >
 
-                  {message.fromSelf ? (
+                  {(message.sender === currentUser._id)? (
                       <Box
                       sx={{
                         alignSelf:"flex-end",
@@ -157,7 +159,7 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
                           }}>
                           {message.message} 
                         </Box>
-                          {message.timestamp}
+                          {message.timestamp? message.timestamp : createTimestamp(message.createdAt)}
                       </Box>
                       
                       ) : 
@@ -170,7 +172,7 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
                         
                       }}
                       >
-                        {currentChat.isGroup ? 
+                        {currentChat.name ? 
                         (contacts.find(contact =>contact._id === message.sender)?
                           contacts.find(contact =>contact._id === message.sender).username
                           :
@@ -189,7 +191,7 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
                           }}>
                           {message.message} 
                         </Box>
-                          {message.timestamp}
+                        {message.timestamp? message.timestamp : createTimestamp(message.createdAt)}
                       </Box>
                         ) }
                   </ListItem>

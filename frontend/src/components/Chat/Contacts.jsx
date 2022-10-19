@@ -2,14 +2,25 @@ import React, { useState} from "react";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Stack } from "@mui/material";
+import axios from "axios";
+import { newConversationRoute } from "../../utils/APIRoutes";
 
-export default function Contacts({contacts, changeChat }) {
+export default function Contacts({currentUser, contacts, changeChat,conversations }) {
  
   const [currentSelected, setCurrentSelected] = useState(undefined);
  
-  const changeCurrentChat = (index, contact) => {
+  const changeCurrentChat = async(index, contact) => {
     setCurrentSelected(index);
-    changeChat(contact);
+    const conv = conversations.find(({members})=> members.includes(contact._id)&&members.length===2)
+    if(!conv){
+      const {data} = await axios.post(newConversationRoute,{
+        senderId:currentUser._id,
+        receiverId:contact._id
+      })
+      changeChat(data)
+    }else{
+      changeChat(conv)
+    }
   };
   return (
     <React.Fragment>
@@ -20,9 +31,10 @@ export default function Contacts({contacts, changeChat }) {
       {contacts.map((contact, index)=>{
         return(
 
-          <ListItemButton key={contact._id}>
+          <ListItemButton key={contact._id}
+          onClick={()=>changeCurrentChat(index,contact)}>
             <ListItemText
-            onClick={()=>changeCurrentChat(index,contact)}
+            
             >
               {contact.username}
 

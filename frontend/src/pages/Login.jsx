@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState} from 'react';
+import { useState, useEffect} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -19,10 +19,16 @@ import { loginRoute, profilesAPIRoute } from "../utils/APIRoutes";
 import Bar from '../components/bar/Bar';
 import { useAuth } from '../components/Auth/auth';
 import { useCurrentUser } from '../components/UserProvider/user';
+import { useContactsList } from '../components/ContactsProvider/contacts';
 
 const theme = createTheme();
 
 export default function Login() {
+
+  const auth = useAuth();
+  const currentUser = useCurrentUser();
+  const contacts = useContactsList();
+
   const navigate= useNavigate();
   const [values,setValues] = useState({
     email:"",
@@ -35,6 +41,8 @@ export default function Login() {
     pauseOnHover:true,
     draggable:true,
   };
+
+
 
   const handleValidation =()=>{
     const {email,password} = values;
@@ -59,8 +67,8 @@ export default function Login() {
   };
 
 
-  const auth = useAuth();
-  const currentUser = useCurrentUser();
+  
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(handleValidation()){
@@ -73,12 +81,18 @@ export default function Login() {
                 toast.error(data.msg, toastOptions);
             }
             if(data.status ===true){
-                auth.login(data.user._id);
+                auth.login(data.token);
                 await axios.patch(profilesAPIRoute + `/${data.user._id}`,{
                   status:"Online"
                 })
                 const profile = await axios.get(profilesAPIRoute + `/${data.user._id}`)
                 currentUser.userLogin(profile.data);
+                contacts.fetchContacts(data.user._id);
+                // localStorage.setItem(
+                //   "ChatApp_CurrentUser",
+                //   JSON.stringify(data.token)
+                // );
+                
                 navigate("/dashboard");
             }
     }
