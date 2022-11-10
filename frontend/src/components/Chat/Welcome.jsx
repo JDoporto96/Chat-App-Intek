@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useCurrentUser } from '../UserProvider/user';
-
+import { Trans } from "react-i18next";
 
 export default function Welcome() {
   const currentUser=useCurrentUser();
@@ -17,10 +17,12 @@ export default function Welcome() {
   return (
     <React.Fragment>
       <Typography variant="h2">
-        Welcome, <span>{userName}!</span>
+        
+      <Trans i18nkey="Welcome">Welcome</Trans>, <span>{userName}!</span>
       </Typography>
       <Typography variant="h4">
-        Please select a chat to Start messaging.
+      <Trans i18nkey="WelcomeMsg">Please select a chat to Start messaging.</Trans>
+        
       </Typography>
     </React.Fragment>
   

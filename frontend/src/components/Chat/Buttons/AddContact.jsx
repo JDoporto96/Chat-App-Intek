@@ -3,18 +3,20 @@ import { useState } from 'react';
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone';
 import { Button, IconButton, Modal, TextField, Tooltip } from '@mui/material'
 import { Container } from '@mui/system';
-import axios from 'axios';
-import { profilesAPIRoute } from '../../../utils/APIRoutes';
 import { useCurrentUser } from '../../UserProvider/user';
+import { useMutation } from '@apollo/client';
+import SEND_REQUEST from '../../../graphql/mutations/sendContactRequest';
+import { useTranslation, Trans } from "react-i18next";
 
 
 export default function AddContact() { 
-    const currentUser=useCurrentUser();
+    const currentUser=useCurrentUser().currentUser;
     const[open, setOpen]= useState(false);
     const[contact,setContact] = useState("");
     const[result, setResult] =useState("");
+    const[sendRequest, ]=useMutation(SEND_REQUEST);
 
-    
+    const { t } = useTranslation();
 
     const handleChange=(e)=>{
         setContact(e.target.value)
@@ -23,9 +25,13 @@ export default function AddContact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            await axios.post(profilesAPIRoute +`/${currentUser.currentUser._id}/sendcontactrequest`,{
-                username: contact
-            });
+            const input ={
+                senderId: currentUser._id,
+                receiverUsername: contact
+            }
+            console.log(input)
+            await sendRequest({variables:{input}})
+
             setContact("")
             setOpen(false)
             setResult("")
@@ -39,7 +45,7 @@ export default function AddContact() {
 
     return (
         <>
-        <Tooltip title="Add contact" onClick={()=> setOpen(true)}>
+        <Tooltip title={t("Add contact")} onClick={()=> setOpen(true)}>
             <IconButton>
                 <PersonAddAltTwoToneIcon />
             </IconButton>
@@ -63,7 +69,7 @@ export default function AddContact() {
                 required
                 fullWidth
                 id="email"
-                label="Contact's username"
+                label={t("Contact's username")}
                 name="addContact"
                 autoComplete="off"
                 autoFocus/>
@@ -71,12 +77,14 @@ export default function AddContact() {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Send request</Button>
+                >
+                   <Trans i18nkey="Sendrequest">Send request</Trans> 
+                    </Button>
                 <Button 
                 onClick={()=>setOpen(false)}
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
-                >Back</Button>
+                ><Trans i18nkey="Back">Back</Trans> </Button>
 
                 <p>{result}</p>
             </form>

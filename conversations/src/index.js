@@ -4,16 +4,14 @@ const messageRoutes = require('./routes/messageRoutes');
 const groupRoutes = require('./routes/groupRoutes');
 const conversationRoutes = require('./routes/conversationRoutes');
 const morgan = require('morgan');
-const cors = require("cors");
 
 //Init
 const app= express();
-require('../config/db');
+require('./config/db');
 
 
 //middlewares
 app.use(morgan('dev'));
-app.use(cors());
 app.use(express.json());
 
 //Routes

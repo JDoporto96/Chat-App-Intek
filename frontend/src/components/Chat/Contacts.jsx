@@ -2,22 +2,25 @@ import React, { useState} from "react";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Stack } from "@mui/material";
-import axios from "axios";
-import { newConversationRoute } from "../../utils/APIRoutes";
+import { useMutation } from "@apollo/client";
+import CREATE_CONV from "../../graphql/mutations/createConversation";
 
 export default function Contacts({currentUser, contacts, changeChat,conversations }) {
  
   const [currentSelected, setCurrentSelected] = useState(undefined);
- 
+  const [createChat, ] = useMutation(CREATE_CONV);
+
   const changeCurrentChat = async(index, contact) => {
     setCurrentSelected(index);
     const conv = conversations.find(({members})=> members.includes(contact._id)&&members.length===2)
     if(!conv){
-      const {data} = await axios.post(newConversationRoute,{
+      const input = {
         senderId:currentUser._id,
         receiverId:contact._id
-      })
-      changeChat(data)
+      }
+
+      const {data} = await createChat({variables:{input}});
+      changeChat(data.createConversation.conversation)
     }else{
       changeChat(conv)
     }
@@ -26,7 +29,8 @@ export default function Contacts({currentUser, contacts, changeChat,conversation
     <React.Fragment>
       <Stack spacing={.5}
       sx={{
-        width:"100%"
+        width:"100%",
+        overflow:"auto"
       }}>
       {contacts.map((contact, index)=>{
         return(

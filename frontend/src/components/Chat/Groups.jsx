@@ -15,7 +15,8 @@ export default function Groups({groups, changeChat }) {
     <React.Fragment>
       <Stack spacing={.5}
       sx={{
-        width:"100%"
+        width:"100%",
+        overflow:"auto"
       }}>
       {groups.map((group, index)=>{
         return(

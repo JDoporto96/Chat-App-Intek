@@ -8,18 +8,18 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useCurrentUser } from '../../../UserProvider/user';
-import axios from 'axios';
-import {addMembersRoute } from '../../../../utils/APIRoutes';
+import { useContactsList } from '../../../ContactsProvider/contacts';
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 
 
 function AddMembersForm({currentChat}) {
-    const currentUser = useCurrentUser().currentUser;
-    
-    const contacts = currentUser.contacts.filter(contact=> !currentChat.members.includes(contact._id))
     const [personName, setPersonName] = React.useState([]);
     const[newMembers,setNewMembers]=useState([]);
+    const contacts = useContactsList().contacts.filter(contact=> !currentChat.members.includes(contact._id));
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
 
     const handleNamesChange=(e)=>{
         setPersonName(
@@ -37,11 +37,12 @@ function AddMembersForm({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        await axios.patch(addMembersRoute,{
-          _id:currentChat._id,
+        const input={
+          conversationId:currentChat._id,
           newMembers:newMembers
-        })
-        
+        }
+        updateGroup({variables:{input}})
+        setPersonName([])
       }
 
   return (
@@ -53,7 +54,9 @@ function AddMembersForm({currentChat}) {
     
         <div>
         <FormControl sx={{ m: "normal"}} fullWidth>
-            <InputLabel id="demo-multiple-chip-label">Add members</InputLabel>
+            <InputLabel id="demo-multiple-chip-label">
+            <Trans i18nkey="Addmembers">Add members</Trans>
+            </InputLabel>
             <Select
             labelId="demo-multiple-chip-label"
             id="demo-multiple-chip"
@@ -86,7 +89,7 @@ function AddMembersForm({currentChat}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Confirm</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
     </form>
     </>
   )

@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import RemoveMembersForm from './RemoveMembersForm';
 import AddMembersForm from './AddMembersForm'
-
+import { useTranslation, Trans } from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -43,7 +43,7 @@ function a11yProps(index) {
 
 export default function MembersTabs({currentChat}) {
   const [value, setValue] = React.useState(0);
-
+  const { t } = useTranslation();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -52,8 +52,8 @@ export default function MembersTabs({currentChat}) {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Add" {...a11yProps(0)} />
-          <Tab label="Remove" {...a11yProps(1)} />
+          <Tab label={t("Add")} {...a11yProps(0)} />
+          <Tab label={t("Remove")} {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

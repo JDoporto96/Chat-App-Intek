@@ -1,5 +1,4 @@
 import { ListItemButton, ListItemText } from '@mui/material';
-import { Box } from '@mui/system';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -11,7 +10,6 @@ function Conversation({conversation, currentUser}) {
 
   useEffect(()=>{
     if(conversation.name){
-
       setConversationName(conversation.name)
     }else{
       const contactId = conversation.members.find(m => m!== currentUser._id);

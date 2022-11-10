@@ -1,23 +1,26 @@
 import React from 'react'
 import { MenuItem, Typography,Modal, Container, Button, TextField } from '@mui/material'
 import { useState } from 'react'
-import axios from 'axios';
-import { renameGroupRoute } from '../../../../utils/APIRoutes';
-
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 function ChangeGroupName({currentChat}) {
     const[open, setOpen]=useState(false);
     const[newName, setNewName]=useState("");
-    
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+    const { t } = useTranslation();
+
     
     const handleSubmit = async(e)=>{
         e.preventDefault();
-        axios.patch(renameGroupRoute,{
-            _id: currentChat._id,
+        const input={
+            conversationId:currentChat._id,
             newName: newName
-        })
-        setNewName("");
-        setOpen(false);
+          }
+          updateGroup({variables:{input}})
+          setNewName("");
+          setOpen(false);
     }
 
     const handleChange=(e)=>{
@@ -29,7 +32,9 @@ function ChangeGroupName({currentChat}) {
 
     <>
         <MenuItem onClick={()=>setOpen(true)} key={"changeName"}>
-            <Typography textAlign="center">Change name</Typography>
+            <Typography textAlign="center">
+            <Trans i18nkey="ChangeName">Change name</Trans>
+            </Typography>
         </MenuItem>
 
         <Modal open={open}>
@@ -50,20 +55,19 @@ function ChangeGroupName({currentChat}) {
                 required
                 fullWidth
                 id="newgroupname"
-                label="New name"
+                label={t("New name")}
                 name="newgroupname"
-                autoComplete="off"
                 autoFocus/>
                 <Button 
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Accept</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
                 <Button 
                 onClick={()=>setOpen(false)}
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
-                >Back</Button>
+                ><Trans i18nkey="Back">Back</Trans></Button>
 
             </form>
         </Container>

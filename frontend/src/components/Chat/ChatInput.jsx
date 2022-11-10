@@ -1,11 +1,13 @@
 import React, {  useState } from "react";
 import SendIcon from '@mui/icons-material/Send';
 import { TextField, IconButton, Grid } from "@mui/material";
+import { useTranslation, Trans } from "react-i18next";
 
 
 export default function ChatInput({ handleSendMsg }) {
   const [msg, setMsg] = useState("");
-
+  const { t } = useTranslation();
+  
   const sendChat = (event) => {
     event.preventDefault();
     if (msg.length > 0) {
@@ -21,7 +23,7 @@ export default function ChatInput({ handleSendMsg }) {
         <Grid xs={11} item>
             <TextField fullWidth onChange={(e) => setMsg(e.target.value)}
               value={msg}
-              label ="Type your message..."
+              label ={t("Type your message...")}
               variant="outlined"
             />
         </Grid>

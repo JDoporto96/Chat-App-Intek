@@ -1,20 +1,18 @@
-import axios from "axios";
+import { useLazyQuery } from "@apollo/client";
 import { useState, createContext, useContext } from "react";
-import { profilesAPIRoute } from "../../utils/APIRoutes";
+import GET_CONTACTS from "../../graphql/queries/getContacts";
+
 
 
 const ContactsContext = createContext(null);
 
 export const ContactsProvider = ({children}) =>{
     const [contacts,setContacts] = useState([]);
+    const [getContacts,]= useLazyQuery(GET_CONTACTS)
 
-    const fetchContacts = async(userId) =>{
-        const {data} = await axios.get(`${profilesAPIRoute}/${userId}/contacts`);
-        const contactsList = data.map(contact=>{return{
-          _id:contact._id,
-          username:contact.username
-        }})
-        setContacts(contactsList);
+    const fetchContacts = async() =>{
+        const {data} = await getContacts()
+        setContacts(data.getContacts)
        
     }
 

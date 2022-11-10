@@ -9,15 +9,18 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { useCurrentUser } from '../../../UserProvider/user';
-import axios from 'axios';
-import { removeAdminsRoute } from '../../../../utils/APIRoutes';
-
+import { useContactsList } from '../../../ContactsProvider/contacts';
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 
 function RemoveAdminsForm({currentChat}) {
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+    const contacts = useContactsList().contacts;
     const currentUser = useCurrentUser().currentUser;
     const adminsList = currentChat.admins.map(admin=>{
-      const contact = currentUser.contacts.find(contact=>contact._id===admin)
+      const contact = contacts.find(contact=>contact._id===admin)
       if(contact){
         return contact
       }
@@ -55,10 +58,13 @@ function RemoveAdminsForm({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        await axios.patch(removeAdminsRoute,{
-          _id:currentChat._id,
-          admins:adminsList
-        })
+
+        const input={
+          conversationId:currentChat._id,
+          removedAdmins:eliminatedAdmins
+        }
+        updateGroup({variables:{input}})
+        setPersonName([])
         
       }
 
@@ -71,7 +77,10 @@ function RemoveAdminsForm({currentChat}) {
     
         <div>
         <FormControl sx={{ m: "normal"}} fullWidth>
-            <InputLabel id="demo-multiple-chip-label">Remove admins</InputLabel>
+            <InputLabel id="demo-multiple-chip-label">
+            <Trans i18nkey="Removeadmins">Remove admins</Trans>
+              
+              </InputLabel>
             <Select
             labelId="demo-multiple-chip-label"
             id="demo-multiple-chip"
@@ -104,7 +113,7 @@ function RemoveAdminsForm({currentChat}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Confirm</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
     </form>
     </>
   )

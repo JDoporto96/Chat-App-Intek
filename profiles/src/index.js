@@ -2,16 +2,14 @@ require("dotenv").config();
 const express = require('express');
 const profileRoutes = require('./routes/profileRoutes');
 const morgan = require('morgan');
-const cors = require("cors");
 
 //Init
 const app= express();
-require('../config/db');
+require('./config/db');
 
 
 //middlewares
 app.use(morgan('dev'));
-app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 

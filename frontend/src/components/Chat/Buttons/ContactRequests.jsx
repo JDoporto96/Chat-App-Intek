@@ -3,23 +3,27 @@ import { useState } from 'react';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import { Button, IconButton, Modal, TextField, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
 import { Container } from '@mui/system';
-import axios from 'axios';
-import { profilesAPIRoute } from '../../../utils/APIRoutes';
 import { useCurrentUser } from '../../UserProvider/user';
-
+import { useLazyQuery, useMutation } from '@apollo/client';
+import RESPOND_REQUEST from '../../../graphql/mutations/respondContactRequest';
+import GET_REQUEST from '../../../graphql/queries/getRequests';
+import { useTranslation, Trans } from "react-i18next";
 
 export default function ContactRequests() { 
     const currentUser=useCurrentUser();
     const[open, setOpen]= useState(false);
     const[requests,setRequests] = useState([]);
     const[badgeNumber, setBadgenumber]=useState(undefined);
-
+    const[ respondRequest, ]=useMutation(RESPOND_REQUEST);
+    const[getRequests, ]=useLazyQuery(GET_REQUEST)
+    const { t } = useTranslation();
+    
     useEffect(()=>{
-        async function fetchData(){
-          const response = await axios.get(`${profilesAPIRoute}/${currentUser.currentUser._id}/requests`);
-          setRequests(response.data)
+        async function fetchRequests(){
+            const {data}= await getRequests({variables:{id:currentUser.currentUser._id}})
+            setRequests(data.getRequests)
         }
-        fetchData()
+        fetchRequests()
       },[])
 
     useEffect(()=>{
@@ -28,25 +32,32 @@ export default function ContactRequests() {
 
     const handleAccept = async (e) => {
         e.preventDefault();
-        axios.post(profilesAPIRoute +`/${currentUser.currentUser._id}/respondcontactrequest`,{
-            _id:e.target.parentNode.parentNode.getAttribute("id"),
+        const input ={
+            receiverId: currentUser.currentUser._id,
+            senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:true
-        });
+        }
+        console.log(input)
+        respondRequest({variables:{input}})
+        setOpen(false)  
+        
     }
 
     const handleReject = async (e) => {
         e.preventDefault();
-        axios.post(profilesAPIRoute +`/${currentUser.currentUser._id}/respondcontactrequest`,{
-            _id:e.target.parentNode.parentNode.getAttribute("id"),
+        const input ={
+            receiverId: currentUser.currentUser._id,
+            senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:false
-        });
+        }
+        respondRequest({variables:{input}})
         setOpen(false)  
     }
     
     return (
         <>
         <Badge color= "secondary" badgeContent={badgeNumber} max={99}  >
-        <Tooltip title="Contact requests" onClick={()=> setOpen(true)}>
+        <Tooltip title={t("Contact requests")} onClick={()=> setOpen(true)}>
             <IconButton>
                 <PersonTwoToneIcon />
             </IconButton>
@@ -67,10 +78,12 @@ export default function ContactRequests() {
                     sx={{ mt: "1rem", mb: 2, left:"80%", backgroundColor:"whitesmoke", color:"black"}}
                     onClick={()=>setOpen(false)}
                 >
-                    Close
+                    <Trans i18nkey="Close">Close</Trans> 
                 </Button>
                 {requests.length === 0 ? (
-                    <Typography> You don't have any request pending </Typography>
+                    <Typography> 
+                        <Trans i18nkey="NoRequests">You don't have any pending request</Trans> 
+                    </Typography>
                 ):
                 (    <Stack spacing={.5}
                     sx={{
@@ -86,7 +99,7 @@ export default function ContactRequests() {
                                     variant="contained"
                                     onClick={handleAccept}
                                     >
-                                    Accept
+                                    <Trans i18nkey="Accept">Accept</Trans> 
                                 </Button>
                             </Grid>
                             <Grid xs={3} item >
@@ -95,7 +108,7 @@ export default function ContactRequests() {
                                     onClick={handleReject}
                                     sx={{ ml:"1rem",backgroundColor:"red" }}
                                     >
-                                    Reject
+                                    <Trans i18nkey="Reject">Reject</Trans> 
                                 </Button>
                             </Grid>
                         </Grid>

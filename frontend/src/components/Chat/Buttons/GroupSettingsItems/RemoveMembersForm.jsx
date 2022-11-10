@@ -8,17 +8,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useCurrentUser } from '../../../UserProvider/user';
-import axios from 'axios';
-import {removeMembersRoute } from '../../../../utils/APIRoutes';
+import { useContactsList } from '../../../ContactsProvider/contacts';
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 
 
 function RemoveMembersForm({currentChat}) {
-    const currentUser = useCurrentUser().currentUser;
+    const contacts = useContactsList().contacts;
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+
     
     const members = currentChat.members.map(member =>{
-      const contact = currentUser.contacts.find(contact => contact._id === member);
+      const contact = contacts.find(contact => contact._id === member);
       if(contact){
         return contact
       }
@@ -46,10 +49,12 @@ function RemoveMembersForm({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        await axios.patch(removeMembersRoute,{
-          _id:currentChat._id,
-          members:eliminatedMembers
-        })
+        const input={
+          conversationId:currentChat._id,
+          removedMembers:eliminatedMembers
+        }
+        updateGroup({variables:{input}})
+        setPersonName([])
         
       }
 
@@ -62,7 +67,9 @@ function RemoveMembersForm({currentChat}) {
     
         <div>
         <FormControl sx={{ m: "normal"}} fullWidth>
-            <InputLabel id="demo-multiple-chip-label">Remove members</InputLabel>
+            <InputLabel id="demo-multiple-chip-label">
+            <Trans i18nkey="Removemembers">Remove members</Trans>
+            </InputLabel>
             <Select
             labelId="demo-multiple-chip-label"
             id="demo-multiple-chip"
@@ -95,7 +102,7 @@ function RemoveMembersForm({currentChat}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Confirm</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
     </form>
     </>
   )

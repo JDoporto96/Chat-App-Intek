@@ -11,12 +11,14 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState} from "react";
-import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { profilesAPIRoute, registerRoute } from "../utils/APIRoutes";
 import Bar from '../components/bar/Bar';
+import { useMutation} from '@apollo/client'
+import CREATE_NEW_USER from '../graphql/mutations/createUser';
+import { useTranslation, Trans } from "react-i18next";
+
 
 
 const theme = createTheme();
@@ -29,7 +31,10 @@ export default function Register() {
         password:"",
         confirmPassword:""
     });
-    
+
+    const [createUser, ]= useMutation(CREATE_NEW_USER)
+    const { t } = useTranslation();
+
     const toastOptions={
         position:"bottom-right",
         autoClose:8000,
@@ -45,27 +50,27 @@ export default function Register() {
         const {username,email,password,confirmPassword} = values;
         if(username.length<3){
             toast.error(
-                "Username should be longer than 3 characters",
+                t("Username should be longer than 3 characters"),
                 toastOptions
             );
             return false;
         }else if(email ===""){
             toast.error(
-                "You need to provide an email",
+                t("You need to provide an email"),
                 toastOptions
             );
             return false;
         }
         else if(password.length<6){
             toast.error(
-                "Password must contain at least 6 characters",
+                t("Password must contain at least 6 characters"),
                 toastOptions
             );
             return false;
 
         }else if(password !== confirmPassword){
             toast.error(
-                "Passwords should coincide.",
+                t("Passwords should coincide"),
                 toastOptions
             );
             return false;
@@ -78,25 +83,14 @@ export default function Register() {
         e.preventDefault();
         if(handleValidation()){
             const {username,email,password} = values;
-            const { data } = await axios.post(registerRoute, {
-                username,
-                email,
-                password
-            });
-            if(data.status===false){
-                toast.error(data.msg, toastOptions)
+            const input = {
+              username, 
+              email,
+              password
             }
-            if(data.status ===true){
-              const _id = data.user._id;
-              axios.post(profilesAPIRoute,{
-                _id,
-                username
-              })
+            createUser({variables: {input}})
               navigate("/login");
             }
-            
-            
-       }
     };
 
   return (
@@ -116,7 +110,7 @@ export default function Register() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Register
+          <Trans i18nkey="Register">Register</Trans>
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} onChange={(e)=> handleChange(e)} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
@@ -127,7 +121,7 @@ export default function Register() {
                   required
                   fullWidth
                   id="username"
-                  label="Username"
+                  label={t("Username")}
                   autoFocus
                 />
               </Grid>
@@ -136,7 +130,7 @@ export default function Register() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  label={t("Email Address")}
                   name="email"
                   type="email"
                   autoComplete="email"
@@ -147,7 +141,7 @@ export default function Register() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  label={t("Password")}
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -158,7 +152,7 @@ export default function Register() {
                   required
                   fullWidth
                   name="confirmPassword"
-                  label="Confirm password"
+                  label={t("Confirm password")}
                   type="password"
                   id="confirmPassword"
                   autoComplete="new-password"
@@ -171,12 +165,14 @@ export default function Register() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Register
+              <Trans i18nkey="Register">Register</Trans>
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
                 <LinkUI href="/login" variant="body2">
+                <Trans i18nkey="login-link">
                   Already have an account? Sign in
+                  </Trans>
                 </LinkUI>
               </Grid>
             </Grid>

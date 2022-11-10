@@ -1,12 +1,16 @@
+import { useLazyQuery } from "@apollo/client";
 import { useState, createContext, useContext } from "react";
+import ME from '../../graphql/queries/me'
 
 const AuthContext = createContext(null);
 
 export const AuthProvider = ({children}) =>{
     const [user,setUser] = useState(null);
-
-    const login =(user) =>{
-        setUser(user)
+    const [getMe, ] = useLazyQuery(ME)
+    
+    const login = async() =>{
+        const {data} = await getMe();
+        setUser(data.me)
     }
 
     const logout =() =>{

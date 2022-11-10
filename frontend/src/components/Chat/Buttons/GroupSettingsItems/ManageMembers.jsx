@@ -3,6 +3,7 @@ import React from 'react'
 import {useState} from 'react'
 import MembersTab from './MembersTab';
 import CloseIcon from '@mui/icons-material/Close';
+import { useTranslation, Trans } from "react-i18next";
 
 function ManageMembers({currentChat}) {
 
@@ -10,7 +11,7 @@ function ManageMembers({currentChat}) {
   return (
     <>
         <MenuItem onClick={()=>setOpen(true)}>
-            <Typography> Members</Typography>
+            <Typography> <Trans i18nkey="Members">Members</Trans></Typography>
         </MenuItem>
 
         <Modal open={open}>

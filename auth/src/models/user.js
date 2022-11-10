@@ -20,11 +20,11 @@ const userSchema = new mongoose.Schema({
         trim: true,
         lowercase:true,
         max: 50,
-        // validate(value){
-        //     if(!validator.isEmail(value)){
-        //         throw new Error({msg:'Email is invalid'})
-        //     }
-        // }
+        validate(value){
+            if(!validator.isEmail(value)){
+                throw new Error({msg:'Email is invalid'})
+            }
+        }
 
     },
     password: {
@@ -32,11 +32,11 @@ const userSchema = new mongoose.Schema({
         required: true,
         minlength: 6,
         trim: true,
-        // validate(value){
-        //     if(value.toLowerCase().includes('password')){
-        //         throw new Error({msg:'Invalid password'})
-        //     }
-        // }
+        validate(value){
+            if(value.toLowerCase().includes('password')){
+                throw new Error({msg:'Invalid password'})
+            }
+        }
 
     },
 },{

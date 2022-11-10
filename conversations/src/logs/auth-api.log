@@ -1,0 +1,92 @@
+[2022-11-10T17:36:40.991Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:36:41.009Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:36:57.956Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:36:57.966Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:39:54.475Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:39:54.490Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:40:50.099Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:40:50.111Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:41:10.664Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T17:41:10.669Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:01:48.970Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:01:49.006Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:02:02.953Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:02:03.017Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:07:24.495Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:07:24.504Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:07:43.565Z] info: Fetching messages from conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:07:45.999Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:08:26.173Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:09:08.935Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:09:08.940Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:09:18.836Z] info: Fetching messages from conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:09:21.328Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:19:05.824Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:19:05.837Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:19:13.042Z] info: Fetching messages from conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:19:15.547Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:19:39.966Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:24:38.990Z] info: Fetching messages from conversation with id: 6362a286fafd275f04eca6e1
+[2022-11-10T18:24:39.005Z] info: Fetching conversations from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:24:39.020Z] info: Fetching groups from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:25:21.339Z] info: Fetching conversations from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:25:21.374Z] info: Fetching groups from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:25:32.886Z] info: Fetching conversations from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:25:32.897Z] info: Fetching groups from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:25:47.932Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:25:47.940Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:26:29.410Z] info: Fetching groups from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:26:29.428Z] info: Fetching conversations from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:26:34.440Z] info: Fetching messages from conversation with id: 636c38f5287a213568b82c16
+[2022-11-10T18:26:35.026Z] info: Fetching messages from conversation with id: 6362a287fafd275f04eca6e3
+[2022-11-10T18:26:36.139Z] info: New conversation created with id: 636d425c12caf3d7f6124328
+[2022-11-10T18:26:36.141Z] info: New conversation created with id: 636d425b12caf3d7f6124326
+[2022-11-10T18:26:48.638Z] info: Fetching conversations from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:26:48.647Z] info: Fetching groups from user: 63459859de8fb2509f5da9e5
+[2022-11-10T18:34:54.343Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:34:54.347Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:35:22.437Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:35:22.443Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:35:37.072Z] info: Fetching conversations from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:35:37.078Z] info: Fetching groups from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:38:33.162Z] info: Fetching conversations from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:38:33.492Z] info: Fetching groups from user: 63459833de8fb2509f5da9dd
+[2022-11-10T18:38:50.671Z] info: Fetching conversations from user: 63459845de8fb2509f5da9e1
+[2022-11-10T18:38:50.979Z] info: Fetching groups from user: 63459845de8fb2509f5da9e1
+[2022-11-10T19:43:20.493Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:44:07.462Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:44:19.977Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:46:35.796Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:46:45.175Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:47:04.726Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:47:11.747Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:47:13.072Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:48:31.705Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:48:33.160Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:48:34.304Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:54:51.248Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:57:51.285Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T19:57:54.289Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T20:00:47.782Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7
+[2022-11-10T20:01:00.824Z] info: User:63459833de8fb2509f5da9dd has sent a 
+    messages to conversation with id: 6362a28cfafd275f04eca6e7

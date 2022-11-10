@@ -8,6 +8,6 @@ router.patch("/addadmins", addAdmins);
 router.patch("/removeadmins", removeAdmins);
 router.patch("/updategroupname", updateGroupName);
 router.delete("/deletegroup/:groupid",deleteGroup);
-router.post("/mygroups", showMyGroups);
+router.get("/mygroups/:userId", showMyGroups);
 
 module.exports = router;

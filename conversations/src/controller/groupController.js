@@ -1,15 +1,20 @@
 const Conversations = require ('../model/conversationModel');
+const logger = require('../utils/logger');
 
 module.exports.createGroupConversation = async (req,res,next)=>{
     try{
         const {name,members,creator} = req.body;
+        members.push(creator);
         const group = await Conversations.create({
             name,
             admins: [creator],
             members
         })
-        if (group) return res.json({ msg: "Group created successfully." });
-        else return res.json({ msg: "Failed to create group and add it to the database", data: group });
+        if (group){
+            logger.info(`New group created with id: ${group._id}`) 
+            return res.json({ msg: "Group created successfully.", status:true });
+        }
+        else return res.json({ msg: "Failed to create group and add it to the database", status:false});
     }catch(err){
         next(err)
     }
@@ -20,12 +25,13 @@ module.exports.addMembers = async (req,res,next)=>{
     try{
         const group = await Conversations.findOne({_id});
         if(!group){
-            return res.json({msg: "Invalid group"})
+            return res.json({msg: "Invalid group", status:false})
         }
         newMembers.forEach(member => {
             group.members.push(member)
         });
         await group.save();
+        logger.info(`Group with id: ${group._id} has been updated`) 
         res.json({msg: "Members added succesfully", group})
         
     }catch(err){
@@ -42,7 +48,7 @@ module.exports.removeMembers = async (req,res,next)=>{
         }
         members.forEach(member=>group.members.pull(member))
         await group.save();
-
+        logger.info(`Group with id: ${group._id} has been updated`)
         res.json({msg: "Member removed succesfully", group})
         
     }catch(err){
@@ -60,6 +66,7 @@ module.exports.addAdmins = async (req,res,next)=>{
             group.admins.push(member)
         });
         await group.save();
+        logger.info(`Group with id: ${group._id} has been updated`)
         res.json({msg: "Admins added succesfully", group})
         
     }catch(err){
@@ -76,7 +83,7 @@ module.exports.removeAdmins = async (req,res,next)=>{
         // group.admins = group.admins.filter(element => element !== admin)
         admins.forEach(admin=> group.admins.pull(admin));
         await group.save();
-
+        logger.info(`Group with id: ${group._id} has been updated`)
         res.json({msg: "Admin removed succesfully", group})
         
     }catch(err){
@@ -93,6 +100,7 @@ module.exports.updateGroupName =async (req,res,next)=>{
         }
         group.name = newName;
         await group.save();
+        logger.info(`Group with id: ${group._id} has been updated`)
         res.send(group)
 
     }catch(err){
@@ -102,12 +110,13 @@ module.exports.updateGroupName =async (req,res,next)=>{
 
 module.exports.showMyGroups = async(req,res,next)=>{
     try{
-        const userId = req.body.userId;
+        const userId = req.params.userId;
         let groups = await Conversations.find();
         const projectedGroups = groups.filter(group=>group.members.includes(userId)&& group.members.length >2).sort((a,b)=>(a.name > b.name)?1:-1);
-        if(!groups){
+        if(!projectedGroups){
             return res.json({msg:"Haven't joined any group "})
         }
+        logger.info(`Fetching groups from user: ${userId}`)
         res.send(projectedGroups)
     }catch(err){
         next(err)
@@ -122,6 +131,7 @@ module.exports.deleteGroup =async (req,res,next)=>{
             return res.json({msg: "Invalid group"})
         }
         await group.remove();
+        logger.info(`Group with id: ${group._id} has been deleted`)
         res.send({msg:"Group removed successfully", group});
     }catch(err){
         next(err)

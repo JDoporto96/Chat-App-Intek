@@ -1,10 +1,10 @@
-import { IconButton, Tooltip,Typography,Menu,MenuItem } from '@mui/material'
+import { IconButton, Tooltip,Menu } from '@mui/material'
 import React from 'react'
 import SettingsIcon from '@mui/icons-material/Settings';
 import AdminMenu from './GroupSettingsItems/AdminMenu';
 import MemberMenu from './GroupSettingsItems/MemberMenu';
 import {useCurrentUser} from '../../UserProvider/user'
-
+import { useTranslation} from "react-i18next";
 
 
 
@@ -15,7 +15,7 @@ function GroupSetting({ currentChat}) {
     const authorized = currentChat.admins.includes(currentUser._id);
     
     const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+    const { t } = useTranslation();
   
     const handleOpenMenu = (event) => {
         setAnchorElUser(event.currentTarget);
@@ -31,7 +31,7 @@ function GroupSetting({ currentChat}) {
   return (
     <>
     
-        <Tooltip title="Group's settings" 
+        <Tooltip title={t("Group's settings" )}
                     // onClick={()=> setOpen(true)}
         sx={{
         alignSelf:"flex-end"

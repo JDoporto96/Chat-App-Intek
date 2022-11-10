@@ -6,9 +6,11 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import AddAdminsFom from './AddAdminsFom';
 import RemoveAdminsForm from './RemoveAdminForm';
+import { useTranslation, Trans } from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+ 
 
   return (
     <div
@@ -42,7 +44,7 @@ function a11yProps(index) {
 
 export default function BasicTabs({currentChat}) {
   const [value, setValue] = React.useState(0);
-
+  const { t } = useTranslation();
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -51,8 +53,8 @@ export default function BasicTabs({currentChat}) {
     <Box sx={{ width: '100%' }}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-          <Tab label="Add" {...a11yProps(0)} />
-          <Tab label="Remove" {...a11yProps(1)} />
+          <Tab label={t("Add")} {...a11yProps(0)} />
+          <Tab label={t("Remove")} {...a11yProps(1)} />
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>

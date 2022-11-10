@@ -2,6 +2,9 @@ const router =require('express').Router();
 const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const logger = require('../utils/logger');
+
+
 
 router.post('/register',
 async(req,res,next)=>{
@@ -9,21 +12,25 @@ async(req,res,next)=>{
   try{ 
     const usernameCheck = await User.findOne({username});
     if(usernameCheck){
-      return res.status(401).json({msg: "Username already used", status: false});
+      return res.json({msg: "Username already used", status: false});
     }
     const emailCheck = await User.findOne({email});
     if(emailCheck){
-      return res.status(401).json({msg: "Email already used", status: false});
+      return res.json({msg: "Email already used", status: false});
     }
     const newUser = new User(req.body);
     newUser.save()
+    logger.info(`New user registered with id: ${newUser._id}`) 
     return res.status(201).json({
-      msg: 'Register successful',
-      status: true,
-      user:req.user
-    });   
+      user:newUser,
+      msg: 'Register successfull',
+      status: true
+    });
+      
   } catch (err) {
-    res.status(500).json({msg:"An error ocurred", status:false,error: err});
+    logger.error(err);
+    return next(err);
+    
   }  
 })
 
@@ -33,7 +40,7 @@ async (req, res, next) => {
     async (err, user, info) => {
       try {
         if (err || !user) {
-            return res.json(err)
+            return res.json({status:false, msg:err})
           }
         req.login(
           user,
@@ -41,13 +48,17 @@ async (req, res, next) => {
           async (err) => {
             if (err) return next(err);
 
-            const body = { _id: user._id, email: user.email, username:user.username };
-            const token = "Bearer " + jwt.sign({ user: body }, process.env.ACCESS_TOKEN_SECRET);
-
-            return res.status(200).json({user,token, msg: 'Logged in Successfully', status: true });
+            const body = { _id: user._id, email: user.email};
+            const token = jwt.sign({ user: body }, process.env.ACCESS_TOKEN_SECRET,{expiresIn: "1d"});
+            
+            logger.info(`${user._id} logged in`) 
+            return res.status(200)
+            // .cookie('chat-user-token', token, {maxAge: 86400000, httpOnly:false})
+            .json({status:true, token, user});
           }
         );
       } catch (err) {
+        logger.error(err);
         return next(err);
       }
     }
@@ -55,13 +66,6 @@ async (req, res, next) => {
 }
 );
 
-router.get('/logout', async (req, res) => {
-
-    req.logout(function(err) {
-        if (err) { return next(err); }
-        next();
-    })
-})
 
 //Protected Routes
 router.patch('/:id',passport.authenticate('jwt', { session: false }), async(req,res,next)=>{
@@ -78,9 +82,11 @@ router.patch('/:id',passport.authenticate('jwt', { session: false }), async(req,
       }
       updates.forEach((update)=>user[update]= req.body[update]);
       await user.save();
+      logger.info(`${user._id} has made some changes on his data`);
       res.status(200).send(user);
-    }catch(e){
-      res.status(500).send(e)
+    }catch(err){
+      logger.error(err);
+      res.status(500).send(err)
     }
 })
 
@@ -88,22 +94,26 @@ router.patch('/:id',passport.authenticate('jwt', { session: false }), async(req,
 router.delete('/:id',passport.authenticate('jwt', { session: false }), async(req,res,next)=>{
   try{
     const user = await User.findOne({_id:req.params.id});
+    logger.info(`${user._id} has been removed from the database`)
     await user.remove();
     if(!user){
       return res.status(404).send();
     }
-  }catch(e){
-    res.status(500).send(e)
+    res.status(200).send(user);
+  }catch(err){
+    logger.error(err);
+    res.status(500).send(err)
   }
 })
 
 
-router.get('/profile', passport.authenticate('jwt', { session: false }), (req,res,next)=>{
-  res.json(req.user)
-})
-
-router.get('/dashboard',passport.authenticate('jwt',{session:false}), (req,res,next)=>{
-  res.json('Dashboard: ' + req.user.username)
+router.get('/authorize',passport.authenticate('jwt',{session:false}), async (req,res,next)=>{
+  try{
+    const user = await User.findById(req.user);
+    res.json(user);
+  }catch(err){
+    res.json({error:err})
+  }
 })
 
 

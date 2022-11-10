@@ -10,14 +10,30 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import ChatIcon from '@mui/icons-material/Chat';
-
-
-const settings = ['Profile', 'Logout'];
+import { useAuth } from '../Auth/auth';
+import { useCurrentUser } from '../UserProvider/user';
+import { useContactsList } from '../ContactsProvider/contacts';
+import { useNavigate} from "react-router-dom";
+import { useApolloClient } from '@apollo/client';
 
 const ResponsiveAppBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const auth = useAuth();
+  const currentUser = useCurrentUser();
+  const contacts = useContactsList();
+  const navigate= useNavigate();
+  const client = useApolloClient();
   
+    const handleLogOut = ()=>{
+        localStorage.removeItem('chat-app-user-jwt')
+        auth.logout();
+        currentUser.userLogout();
+        contacts.emptyContactsList();
+        navigate("/login");
+       
+
+    };
+
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
@@ -40,7 +56,6 @@ const ResponsiveAppBar = () => {
                     variant="h6"
                     noWrap
                     component="a"
-                    href="/"
                     sx={{
                     mr: 2,
                     display: { xs: 'none', md: 'flex' },
@@ -61,7 +76,8 @@ const ResponsiveAppBar = () => {
                 </Box>
                 <Box sx={{ flexGrow: 0, }}>
                     <Tooltip title="Open settings">
-                    <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                    <IconButton onClick={handleOpenUserMenu}
+                        sx={{ p: 0 }}>
                         <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                     </IconButton>
                     </Tooltip>
@@ -81,11 +97,13 @@ const ResponsiveAppBar = () => {
                     open={Boolean(anchorElUser)}
                     onClose={handleCloseUserMenu}
                     >
-                    {settings.map((setting) => (
-                        <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                        <Typography textAlign="center">{setting}</Typography>
+                        <MenuItem key="logOut" 
+                            onClick={()=>{
+                            handleLogOut();
+                            client.clearStore()
+                        }}>
+                        <Typography textAlign="center">Log Out</Typography>
                         </MenuItem>
-                    ))}
                     </Menu>
                 </Box>
                 </Toolbar>

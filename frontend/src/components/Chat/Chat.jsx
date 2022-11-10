@@ -1,35 +1,37 @@
 import React, { useEffect, useState, useRef} from "react";
-import axios from "axios";
 import ChatContainer from "./ChatContainer";
 import Contacts from "./Contacts";
 import Welcome from "./Welcome";
-import { conversationsRoute, getMyGroupsRoute, socketsHost } from "../../utils/APIRoutes";
+import { socketsHost } from "../../utils/APIRoutes";
 import { useCurrentUser } from "../UserProvider/user";
 import { Container, } from "@mui/system";
 import { Grid, Paper, Box, Typography  } from "@mui/material";
-import {io} from 'socket.io-client';
 import Groups from "./Groups";
 import AddContact from "./Buttons/AddContact";
 import AddGroup from "./Buttons/AddGroup";
 import ContactRequests from "./Buttons/ContactRequests";
 import { useContactsList } from "../ContactsProvider/contacts";
 import ConversationsPanel from "./ConversationsPanel";
-
+import { useLazyQuery } from "@apollo/client";
+import GET_USER_CONV from "../../graphql/queries/getUserConversations";
+import GET_USER_GROUPS from "../../graphql/queries/getGroups";
+import { Trans } from "react-i18next";
 
 
 export default function Chat() {
   const currentUser = useCurrentUser().currentUser;
-  const socket = useRef();
   const contacts = useContactsList().contacts;
   const [conversations, setConversations]= useState([]);
   const [groups, setGroups] = useState([]);
   const [currentChat, setCurrentChat] = useState(undefined);
-  
+  const [getUserConversations, ] = useLazyQuery(GET_USER_CONV);
+  const [getGroups, ] = useLazyQuery(GET_USER_GROUPS)
 
   useEffect(()=>{
     async function getConversations(){
-        const response = await axios.get(conversationsRoute+currentUser._id,);
-        setConversations(response.data)
+        const {data} = await getUserConversations({variables:{userId:currentUser._id}})
+        setConversations(data.getUserConversations)
+        
     }
     getConversations();
     
@@ -37,26 +39,12 @@ export default function Chat() {
 
   useEffect(()=>{
     async function fetchData(){
-        const response = await axios.post(getMyGroupsRoute,{
-          userId: currentUser._id
-        });
-        
-        setGroups(response.data)
+      const {data} = await getGroups({variables:{userId:currentUser._id}})
+      setGroups(data.getUserGroups)
     }
     fetchData();
     
   },[])
-
-  useEffect(()=>{
-    socket.current = io(socketsHost)
-  },[])
-
-  useEffect(()=>{
-    if(currentUser){
-      socket.current.emit("add-user", currentUser._id);
-      // socket.current.on("get-users")
-    }
-  },[currentUser])
 
 
   const handleChatChange = (chat) => {
@@ -93,7 +81,7 @@ export default function Chat() {
                       <Grid xs ={8} item
                       >
                         <Typography variant ="h5">
-                        Contacts
+                        <Trans i18nkey="Contacts">Contacts</Trans>
                         </Typography>
                       </Grid>
                       <Grid xs ={2} item>
@@ -135,7 +123,7 @@ export default function Chat() {
                       <Grid xs ={10} item
                       >
                         <Typography variant ="h5">
-                       Groups
+                        <Trans i18nkey="Groups">Groups</Trans>
                       </Typography>
                       </Grid>
 
@@ -169,7 +157,7 @@ export default function Chat() {
                 {currentChat === undefined ? (
                   <Welcome />
                   ) : (
-                  <ChatContainer contacts={contacts} currentChat={currentChat} socket={socket} />
+                  <ChatContainer contacts={contacts} currentChat={currentChat} />
                 )}
                 </Box>
               </Paper>

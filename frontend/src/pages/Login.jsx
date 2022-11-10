@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { useState, useEffect} from 'react';
+import { useState} from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -14,12 +14,13 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-import { loginRoute, profilesAPIRoute } from "../utils/APIRoutes";
 import Bar from '../components/bar/Bar';
 import { useAuth } from '../components/Auth/auth';
 import { useCurrentUser } from '../components/UserProvider/user';
 import { useContactsList } from '../components/ContactsProvider/contacts';
+import LOGIN from '../graphql/mutations/login';
+import {useApolloClient, useMutation} from '@apollo/client';
+import { useTranslation, Trans } from "react-i18next";
 
 const theme = createTheme();
 
@@ -28,12 +29,15 @@ export default function Login() {
   const auth = useAuth();
   const currentUser = useCurrentUser();
   const contacts = useContactsList();
+  const client = useApolloClient();
 
+  const [loginUser, result ]= useMutation(LOGIN);
   const navigate= useNavigate();
   const [values,setValues] = useState({
     email:"",
     password:"",
   });
+  const { t } = useTranslation();
     
   const toastOptions={
     position:"bottom-right",
@@ -48,13 +52,13 @@ export default function Login() {
     const {email,password} = values;
     if(password === ""){
       toast.error(
-        "Email and password are required",
+        t("Email and password are required"),
         toastOptions
       );
       return false;
     }else if(email.length===""){
       toast.error(
-        "Email and password are required",
+        t("Email and password are required"),
         toastOptions
       );
       return false;
@@ -67,39 +71,48 @@ export default function Login() {
   };
 
 
-  
-  
   const handleSubmit = async (e) => {
     e.preventDefault();
     if(handleValidation()){
         const {email,password} = values;
-            const {data} = await axios.post(loginRoute,{
-                email,
-                password,
-            });
-            if(data.status===false){
-                toast.error(data.msg, toastOptions);
+        const input = {
+          email,
+          password
+        }
+        const {data} = await loginUser({variables:{input}});
+        console.log(data)
+            if(data.logIn.error){
+                toast.error(data.logIn.error, toastOptions);
             }
-            if(data.status ===true){
-                auth.login(data.token);
-                await axios.patch(profilesAPIRoute + `/${data.user._id}`,{
-                  status:"Online"
-                })
-                const profile = await axios.get(profilesAPIRoute + `/${data.user._id}`)
-                currentUser.userLogin(profile.data);
-                contacts.fetchContacts(data.user._id);
-                // localStorage.setItem(
-                //   "ChatApp_CurrentUser",
-                //   JSON.stringify(data.token)
-                // );
-                
+            if(data.logIn.success ===true){
+                await auth.login();
+                await contacts.fetchContacts();
+                await currentUser.userLogin();
                 navigate("/dashboard");
-            }
-    }
-    
+            }   
+      }
   };
 
-  
+  React.useEffect(()=>{
+    if(result.data){
+      const token = result.data.logIn.token
+      localStorage.setItem('chat-app-user-jwt',token)
+    }
+  },[result.data])
+
+  React.useEffect(()=>{
+    const populate = async()=>{
+      if(localStorage.getItem('chat-app-user-jwt')){
+        await auth.login();
+        await contacts.fetchContacts();
+        await currentUser.userLogin();
+        navigate("/dashboard");
+      }
+    }
+    populate();
+    
+  },[])
+
 
   return (
     <ThemeProvider theme={theme}>
@@ -118,7 +131,7 @@ export default function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Log In
+          <Trans i18nkey="Log in">Log in</Trans>
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} onChange={(e)=> handleChange(e)} sx={{ mt: 1 }}>
             <TextField
@@ -126,7 +139,7 @@ export default function Login() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              label={t("Email Address")}
               name="email"
               autoComplete="email"
               autoFocus
@@ -136,7 +149,7 @@ export default function Login() {
               required
               fullWidth
               name="password"
-              label="Password"
+              label={t("Password")}
               type="password"
               id="password"
               autoComplete="current-password"
@@ -148,12 +161,15 @@ export default function Login() {
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Log In
+             <Trans i18nkey="Login">Log in</Trans>
             </Button>
             <Grid container>
               <Grid item>
                 <LinkUi href="/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Trans i18nkey="RegisterLink">
+                  Don't have an account? Sign Up
+                </Trans>
+                 
                 </LinkUi>
               </Grid>
             </Grid>

@@ -1,10 +1,9 @@
 
-const User = require('../src/models/user');
+const User = require('../models/user');
 
 const passport = require('passport');
 const localStrategy = require('passport-local').Strategy;
 const JWTStrategy = require('passport-jwt').Strategy;
-const ExtractJWT = require('passport-jwt').ExtractJwt;
 
 const pub_key = process.env.ACCESS_TOKEN_SECRET;
 
@@ -36,8 +35,16 @@ passport.use(
     )
   );
 
+const cookieExtractor = function (req) {
+  var token = null;
+  if (req && req.cookies) {
+    token = req.cookies['chat-user-token'];
+  }
+  return token;
+};
+
 const options ={
-    jwtFromRequest: ExtractJWT.fromAuthHeaderAsBearerToken(),
+    jwtFromRequest: cookieExtractor,
     secretOrKey: pub_key
 };
 

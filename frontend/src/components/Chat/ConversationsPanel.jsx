@@ -19,7 +19,8 @@ function ConversationsPanel({changeChat, conversations}) {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    height:"85vh"
+    height:"85vh",
+    overflow:"auto"
     }}
     >
       <Stack spacing={.5}
@@ -28,7 +29,7 @@ function ConversationsPanel({changeChat, conversations}) {
       }}>
 
         {conversations.map(c=> ( 
-          <div onClick={()=>changeCurrentChat(c)}>
+          <div key={c._id} onClick={()=>changeCurrentChat(c)}>
             <Conversation conversation={c} currentUser={currentUser} />
           </div>
             ))}

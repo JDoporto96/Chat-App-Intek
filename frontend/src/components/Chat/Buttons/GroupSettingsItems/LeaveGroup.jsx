@@ -2,43 +2,51 @@ import React from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
 import { useState } from 'react'
 import {useCurrentUser} from '../../../UserProvider/user'
-import axios from 'axios';
-import { addAdminsRoute, removeAdminsRoute, removeMembersRoute } from '../../../../utils/APIRoutes';
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 
 function LeaveGroup({currentChat}) {
     const[open, setOpen]=useState(false);
     const currentUser=useCurrentUser().currentUser;
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+
 
 
     const handleLeave = async()=>{
+        let input;
         if(currentChat.admins.includes(currentUser._id)){
-            await axios.patch(removeAdminsRoute,{
-                _id:currentChat._id,
-                admins:[currentUser._id]
-            })
+            input={
+                conversationId:currentChat._id,
+                removedAdmins:[currentUser._id]
+            }
+            updateGroup({variables:{input}})
+
             if(currentChat.admins.length <=1){
                 const newAdmin = currentChat.members.find(member=>member!==currentUser._id);
-                await axios.patch(addAdminsRoute,{
-                    _id: currentChat._id,
+                input ={
+                    conversationId:currentChat._id,
                     newAdmins: [newAdmin]
-                })
+                }
+                updateGroup({variables:{input}})
             }
-        } 
-            
-        
-        await axios.patch(removeMembersRoute,{
-            _id:currentChat._id,
-            members:[currentUser._id]
-        })
+        }
 
+        input={
+            conversationId:currentChat._id,
+            removedMembers:[currentUser._id]
+        }   
+        updateGroup({variables:{input}})
         setOpen(false)
     }
   return (
 
     <>
         <MenuItem onClick={()=>setOpen(true)} key={"leaveGroup"}>
-            <Typography textAlign="center">Leave group</Typography>
+            <Typography textAlign="center">
+            <Trans i18nkey="Leavegroup">Leave group</Trans>
+            </Typography>
         </MenuItem>
 
         <Modal open={open}>
@@ -51,7 +59,12 @@ function LeaveGroup({currentChat}) {
         }}
         > 
         <Grid container >
-            <Grid item xs={12} sx={{marginTop:"2rem"}}>Are you sure you want to leave the group?</Grid>
+            <Grid item xs={12} sx={{marginTop:"2rem"}}>
+                <Trans i18nkey="LeavegroupMsg"> 
+                Are you sure you want to leave the group?
+                </Trans>
+               
+            </Grid>
         </Grid>
         
             
@@ -60,13 +73,13 @@ function LeaveGroup({currentChat}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Leave</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
             
                 <Button 
                 onClick={()=>setOpen(false)}
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
-                >Back</Button>
+                ><Trans i18nkey="Back">Back</Trans></Button>
        
             
 

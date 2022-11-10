@@ -9,23 +9,26 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { useCurrentUser } from '../../../UserProvider/user';
-import axios from 'axios';
-import { addAdminsRoute } from '../../../../utils/APIRoutes';
-
+import { useContactsList } from '../../../ContactsProvider/contacts';
+import { useMutation } from '@apollo/client';
+import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
+import { Trans } from "react-i18next";
 
 
 function AddAdminsFom({currentChat}) {
     const currentUser = useCurrentUser().currentUser;
-    
+    const contacts = useContactsList().contacts;
+    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+
     const membersList = currentChat.members.map(member=>{
-            const contact = currentUser.contacts.find(contact=>contact._id===member)
+            const contact = contacts.find(contact=>contact._id===member)
             if(contact){
               return contact
             }
             return {
                 username:member,
                 _id:member}
-          })
+          }).filter(member=>member._id !== currentUser._id)
     const [personName, setPersonName] = React.useState([]);
     const[newAdmins,setNewAdmins]=useState([]);
 
@@ -45,10 +48,13 @@ function AddAdminsFom({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        await axios.patch(addAdminsRoute,{
-          _id:currentChat._id,
+
+        const input={
+          conversationId:currentChat._id,
           newAdmins:newAdmins
-        })
+        }
+        updateGroup({variables:{input}})
+        setPersonName([])
         
       }
 
@@ -61,7 +67,9 @@ function AddAdminsFom({currentChat}) {
     
         <div>
         <FormControl sx={{ m: "normal"}} fullWidth>
-            <InputLabel id="demo-multiple-chip-label">Add admins</InputLabel>
+            <InputLabel id="demo-multiple-chip-label"> 
+            <Trans i18nkey="Addadmins">Add admins</Trans>
+            </InputLabel>
             <Select
             labelId="demo-multiple-chip-label"
             id="demo-multiple-chip"
@@ -94,7 +102,7 @@ function AddAdminsFom({currentChat}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Confirm</Button>
+                ><Trans i18nkey="Accept">Accept</Trans></Button>
     </form>
     </>
   )

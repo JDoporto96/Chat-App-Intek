@@ -1,13 +1,13 @@
 import React, { useState, useEffect, useRef} from "react";
 import ChatInput from "./ChatInput";
-import axios from "axios";
-import { sendMessageRoute, getAllMessagesRoute } from "../../utils/APIRoutes";
 import { Box } from "@mui/system";
 import { Grid, Typography,List, ListItem} from "@mui/material";
 import "./Chat.css"
 import GroupSetting from "./Buttons/GroupSetting";
 import { useCurrentUser } from "../UserProvider/user";
-
+import { useLazyQuery, useMutation } from "@apollo/client";
+import GET_CONV from "../../graphql/queries/getConversation";
+import SEND_MESSAGE from "../../graphql/mutations/sendMessage";
 
 const createTimestamp = (date)=>{
   const time = new Date(date)
@@ -21,16 +21,17 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
   const [messages,setMessages]=useState([]);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const scrollRef=useRef()
+  const [getConv, ] = useLazyQuery(GET_CONV);
+  const [sendMsg,] = useMutation(SEND_MESSAGE);
 
   useEffect(()=>{
     async function getMessages(){
       try{
-        const {data} = await axios.get(getAllMessagesRoute+currentChat._id);
-      setMessages(data);
-      console.log(data)
+        const {data} = await getConv({variables:{conversationId:currentChat._id}})
+        setMessages(data.getConversation);
       
-    }catch(err){
-    }
+      }catch(err){
+      }
     }
     if(currentChat){
       getMessages()
@@ -51,30 +52,36 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
   const handleSendMsg = async (msg)=>{
     const now = new Date();
     const timestamp = `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`;
+    const receiverId = currentChat.members.find(member=>member!==  currentUser._id)
 
-    await axios.post(sendMessageRoute,{
-      sender: currentUser._id,
+    const input ={
       conversationId: currentChat._id,
-      message:msg,
-    });
+      sender: currentUser._id,
+      message: msg
+    }
 
-    socket.current.emit("send-msg", {
-      to: currentChat._id,
-      from: currentUser._id,
-      message:msg,
-      timestamp,
-      });
+    sendMsg({variables: {input}});
+
+    // socket.current.emit("send-msg", {
+    //   to: receiverId,
+    //   from: currentUser._id,
+    //   message:msg,
+    //   timestamp,
+    //   });
   
     const msgs = [...messages];
     msgs.push({sender:currentUser._id, message: msg, timestamp});
     setMessages(msgs);
   };
 
-  useEffect(()=>{
-      socket.current.on("get-msg", msg =>{
-        setArrivalMessage({ message: msg.message, timestamp:msg.timestamp, sender:msg.from })
-      })
-  }, []);
+  // useEffect(()=>{
+  //   if(socket.current){
+  //     socket.current.on("get-msg", msg =>{
+  //       setArrivalMessage({ message: msg.message, timestamp:msg.timestamp, sender:msg.from })
+  //     })
+  //   }
+    
+  // },[]);
 
   useEffect(()=>{
     arrivalMessage && currentChat._id === arrivalMessage.sender && 

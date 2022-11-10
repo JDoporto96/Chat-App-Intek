@@ -10,9 +10,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import axios from 'axios';
-import { createGroupRoute } from '../../../utils/APIRoutes';
 import { useCurrentUser } from '../../UserProvider/user';
+import { useMutation } from '@apollo/client';
+import CREATE_GROUP_CONV from '../../../graphql/mutations/createGroup';
+import { useTranslation, Trans } from "react-i18next";
 
 
 export default function AddGroup({contacts}) {
@@ -20,6 +21,8 @@ export default function AddGroup({contacts}) {
   const[groupname,setGroupname]=useState("");
   const[members,setMembers]=useState([]);
   const [personName, setPersonName] = React.useState([]);
+  const [createGroup, ] = useMutation(CREATE_GROUP_CONV)
+  const { t } = useTranslation();
 
   const handleChange=(e)=>{
     setGroupname(e.target.value)
@@ -44,12 +47,12 @@ export default function AddGroup({contacts}) {
 
   const handleSubmit= async (e)=>{
     e.preventDefault();
-    await axios.post(`${createGroupRoute}`,{
+    const input ={
       name:groupname,
       members,
       creator: currentUser.currentUser._id
-    })
-    
+    }
+    await createGroup({variables:{input}})
     setOpen(false)
   }
   
@@ -58,7 +61,7 @@ export default function AddGroup({contacts}) {
 
   return (
     <>
-      <Tooltip title="Create new group" aria-label='create group' onClick={()=> setOpen(true)}>
+      <Tooltip title={t("Create new group")} aria-label='create group' onClick={()=> setOpen(true)}>
           <IconButton>
               <AddIcon />
           </IconButton>
@@ -82,7 +85,7 @@ export default function AddGroup({contacts}) {
                 required
                 fullWidth
                 id="groupname"
-                label="Group's name"
+                label={t("Group's name")}
                 name="groupname"
                 autoComplete="off"
                 autoFocus/>
@@ -91,7 +94,9 @@ export default function AddGroup({contacts}) {
 
 <div>
       <FormControl sx={{ m: "normal"}} fullWidth>
-        <InputLabel id="demo-multiple-chip-label">Members</InputLabel>
+        <InputLabel id="demo-multiple-chip-label">
+        <Trans i18nkey="Members">Members</Trans> 
+        </InputLabel>
         <Select
           labelId="demo-multiple-chip-label"
           id="demo-multiple-chip"
@@ -126,7 +131,9 @@ export default function AddGroup({contacts}) {
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}
-                >Create group</Button>
+                >
+                  <Trans i18nkey="CreateGroupBtn">Create Group</Trans> 
+                </Button>
                 <Button 
                 onClick={()=>{
                   setOpen(false);
@@ -135,7 +142,9 @@ export default function AddGroup({contacts}) {
                 }}
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
-                >Back</Button>
+                >
+                  <Trans i18nkey="Back">Back</Trans> 
+                </Button>
             </form>
             
             </Container>

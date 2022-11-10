@@ -6,7 +6,6 @@ export const RequireAuth = ({children}) => {
     const auth = useAuth()
     
     if(!auth.user){
-      console.log("no user")
         return <Navigate to= '/login'/>
     }
   return children
