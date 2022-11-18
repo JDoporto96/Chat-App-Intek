@@ -8,20 +8,25 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useCurrentUser } from '../../../UserProvider/user';
-import { useContactsList } from '../../../ContactsProvider/contacts';
 import { useMutation } from '@apollo/client';
 import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import { useSelector } from 'react-redux';
 
 
 function AddAdminsFom({currentChat}) {
-    const currentUser = useCurrentUser().currentUser;
-    const contacts = useContactsList().contacts;
-    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+  const currentUser = useSelector((state) => {
+    return state.currentUser
+  });
 
-    const membersList = currentChat.members.map(member=>{
-            const contact = contacts.find(contact=>contact._id===member)
+  const contacts = useSelector((state) => {
+    return state.contacts
+  });
+    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
+    const list = currentChat.members.filter(member => !currentChat.admins.includes(member))
+    const membersList = list.map(member=>{
+            const contact = contacts.find(contact=>(contact._id===member))
             if(contact){
               return contact
             }

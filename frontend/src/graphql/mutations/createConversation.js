@@ -1,9 +1,14 @@
 import { gql } from "@apollo/client";
 
 const CREATE_CONV = gql`
-mutation Mutation($input: NewConversationInput) {
-  createConversation(input: $input) {
+mutation Mutation($receiverId: String!) {
+  createConversation(receiverId: $receiverId) {
+    conversation {
+      _id
+      members
+    }
     success
+    error
   }
 }
 `;

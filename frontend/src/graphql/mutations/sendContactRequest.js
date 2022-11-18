@@ -1,12 +1,13 @@
 import { gql } from "@apollo/client";
 
 const SEND_REQUEST = gql`
-  mutation Mutation($input: SendRequestInput!) {
-    sendContactRequest(input: $input) {
-      success
-      error
-    }
+mutation Mutation($receiverUsername: String!) {
+  sendContactRequest(receiverUsername: $receiverUsername) {
+    error
+    message
+    success
   }
+}
 `;
 
 export default SEND_REQUEST;

@@ -4,11 +4,12 @@ import { useState } from 'react'
 import { useMutation } from '@apollo/client';
 import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { useTranslation, Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
 
 function ChangeGroupName({currentChat}) {
     const[open, setOpen]=useState(false);
     const[newName, setNewName]=useState("");
-    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
     const { t } = useTranslation();
 
     

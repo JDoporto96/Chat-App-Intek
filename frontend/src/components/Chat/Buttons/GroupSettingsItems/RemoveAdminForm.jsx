@@ -8,17 +8,22 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useCurrentUser } from '../../../UserProvider/user';
-import { useContactsList } from '../../../ContactsProvider/contacts';
 import { useMutation } from '@apollo/client';
 import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
-import { useTranslation, Trans } from "react-i18next";
+import { Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import { useSelector } from 'react-redux';
 
 
 function RemoveAdminsForm({currentChat}) {
-    const [updateGroup, ]=useMutation(UPDATE_GROUP);
-    const contacts = useContactsList().contacts;
-    const currentUser = useCurrentUser().currentUser;
+    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
+    const currentUser = useSelector((state) => {
+      return state.currentUser
+    });
+  
+    const contacts = useSelector((state) => {
+      return state.contacts
+    });
     const adminsList = currentChat.admins.map(admin=>{
       const contact = contacts.find(contact=>contact._id===admin)
       if(contact){

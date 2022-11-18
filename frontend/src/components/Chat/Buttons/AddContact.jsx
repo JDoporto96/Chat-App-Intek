@@ -3,14 +3,12 @@ import { useState } from 'react';
 import PersonAddAltTwoToneIcon from '@mui/icons-material/PersonAddAltTwoTone';
 import { Button, IconButton, Modal, TextField, Tooltip } from '@mui/material'
 import { Container } from '@mui/system';
-import { useCurrentUser } from '../../UserProvider/user';
 import { useMutation } from '@apollo/client';
 import SEND_REQUEST from '../../../graphql/mutations/sendContactRequest';
 import { useTranslation, Trans } from "react-i18next";
 
 
 export default function AddContact() { 
-    const currentUser=useCurrentUser().currentUser;
     const[open, setOpen]= useState(false);
     const[contact,setContact] = useState("");
     const[result, setResult] =useState("");
@@ -25,16 +23,15 @@ export default function AddContact() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try{
-            const input ={
-                senderId: currentUser._id,
-                receiverUsername: contact
+            const {data} = await sendRequest({variables:{ receiverUsername: contact}})
+            if(data.sendContactRequest.success){
+                setContact("")
+                setOpen(false)
+                setResult("")
+            }else{
+                setResult(data.sendContactRequest.error)
             }
-            console.log(input)
-            await sendRequest({variables:{input}})
-
-            setContact("")
-            setOpen(false)
-            setResult("")
+            
         }catch(err){
             setResult(err.response.data.msg)
         }

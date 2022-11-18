@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useEffect } from 'react'
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,29 +10,36 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import ChatIcon from '@mui/icons-material/Chat';
-import { useAuth } from '../Auth/auth';
-import { useCurrentUser } from '../UserProvider/user';
-import { useContactsList } from '../ContactsProvider/contacts';
 import { useNavigate} from "react-router-dom";
 import { useApolloClient } from '@apollo/client';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ResponsiveAppBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-  const auth = useAuth();
-  const currentUser = useCurrentUser();
-  const contacts = useContactsList();
+  const {isLogged} = useSelector((state) => {
+    return state.auth
+  });
+
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
+
   const navigate= useNavigate();
   const client = useApolloClient();
-  
-    const handleLogOut = ()=>{
-        localStorage.removeItem('chat-app-user-jwt')
-        auth.logout();
-        currentUser.userLogout();
-        contacts.emptyContactsList();
-        navigate("/login");
-       
-
+  const dispatch = useDispatch();
+    
+  const handleLogOut = async(e)=>{
+        e.preventDefault();
+        dispatch({type:'LOGOUT'})
+        client.clearStore();
+        localStorage.removeItem('chat-app-user-jwt');
+        
     };
+
+useEffect(()=>{
+    console.log(isLogged)
+}, [isLogged])
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
@@ -98,9 +105,8 @@ const ResponsiveAppBar = () => {
                     onClose={handleCloseUserMenu}
                     >
                         <MenuItem key="logOut" 
-                            onClick={()=>{
-                            handleLogOut();
-                            client.clearStore()
+                            onClick={(e)=>{
+                            handleLogOut(e);
                         }}>
                         <Typography textAlign="center">Log Out</Typography>
                         </MenuItem>

@@ -2,10 +2,12 @@ import { ListItemButton, ListItemText } from '@mui/material';
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useContactsList } from "../ContactsProvider/contacts";
+import { useSelector } from 'react-redux';
 
 function Conversation({conversation, currentUser}) {
-  const contacts = useContactsList().contacts;
+  const {contacts} = useSelector((state) => {
+    return state.contacts
+  });
   const[ conversationName, setConversationName] = useState("");
 
   useEffect(()=>{

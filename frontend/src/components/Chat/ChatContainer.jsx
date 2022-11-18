@@ -1,43 +1,25 @@
-import React, { useState, useEffect, useRef} from "react";
+import React, { useState, useEffect} from "react";
 import ChatInput from "./ChatInput";
 import { Box } from "@mui/system";
-import { Grid, Typography,List, ListItem} from "@mui/material";
+import { Grid, Typography} from "@mui/material";
 import "./Chat.css"
 import GroupSetting from "./Buttons/GroupSetting";
-import { useCurrentUser } from "../UserProvider/user";
-import { useLazyQuery, useMutation } from "@apollo/client";
-import GET_CONV from "../../graphql/queries/getConversation";
+import { useMutation } from "@apollo/client";
 import SEND_MESSAGE from "../../graphql/mutations/sendMessage";
+import Messages from "../Messages";
+import { useSelector } from "react-redux";
 
-const createTimestamp = (date)=>{
-  const time = new Date(date)
-  
-  return `${time.getHours()}:${time.getMinutes() < 10 ? "0"+time.getMinutes() : time.getMinutes()}`
-}
 
-export default function ChatContainer({ contacts, currentChat , socket}) {
-  const currentUser=useCurrentUser().currentUser;
+export default function ChatContainer({ contacts, currentChat}) {
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
   const [chatName, setChatName]=useState("");
-  const [messages,setMessages]=useState([]);
-  const [arrivalMessage, setArrivalMessage] = useState(null);
-  const scrollRef=useRef()
-  const [getConv, ] = useLazyQuery(GET_CONV);
+  
   const [sendMsg,] = useMutation(SEND_MESSAGE);
 
-  useEffect(()=>{
-    async function getMessages(){
-      try{
-        const {data} = await getConv({variables:{conversationId:currentChat._id}})
-        setMessages(data.getConversation);
-      
-      }catch(err){
-      }
-    }
-    if(currentChat){
-      getMessages()
-    }
-  },[currentChat])
-
+  
   useEffect(()=>{
     if(currentChat.name){
       setChatName(currentChat.name)
@@ -50,47 +32,14 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
 
 
   const handleSendMsg = async (msg)=>{
-    const now = new Date();
-    const timestamp = `${now.getHours()}:${now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes()}`;
-    const receiverId = currentChat.members.find(member=>member!==  currentUser._id)
-
     const input ={
       conversationId: currentChat._id,
-      sender: currentUser._id,
       message: msg
     }
 
     sendMsg({variables: {input}});
 
-    // socket.current.emit("send-msg", {
-    //   to: receiverId,
-    //   from: currentUser._id,
-    //   message:msg,
-    //   timestamp,
-    //   });
-  
-    const msgs = [...messages];
-    msgs.push({sender:currentUser._id, message: msg, timestamp});
-    setMessages(msgs);
   };
-
-  // useEffect(()=>{
-  //   if(socket.current){
-  //     socket.current.on("get-msg", msg =>{
-  //       setArrivalMessage({ message: msg.message, timestamp:msg.timestamp, sender:msg.from })
-  //     })
-  //   }
-    
-  // },[]);
-
-  useEffect(()=>{
-    arrivalMessage && currentChat._id === arrivalMessage.sender && 
-    setMessages((prev)=>[...prev,arrivalMessage])
-  },[arrivalMessage]);
-
-  useEffect(()=>{
-    scrollRef.current?.scrollIntoView({behaviour:"smooth"})
-  },[messages])
 
   return (
     <React.Fragment>
@@ -126,86 +75,7 @@ export default function ChatContainer({ contacts, currentChat , socket}) {
 
       <Grid container spacing={4} alignItems="center">
         <Grid id="chat-window" xs={12} item>
-          <List id="chat-window-messages"
-          sx={{
-            display: "flex",
-            flexDirection: "column",
-            
-          }}>
-            {
-              messages.map(message=>{
-                return(
-                  <ListItem
-                  ref={scrollRef}
-                  key={message._id}
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "flex-start",
-                  }}
-                  >
-
-                  {(message.sender === currentUser._id)? (
-                      <Box
-                      sx={{
-                        alignSelf:"flex-end",
-                        maxWidth: "30rem",
-                        textAlign:"right",
-                        
-                      }}
-                      >
-                        <Box
-                          sx={{
-                            textAlign:"right",
-                            padding: "1rem",
-                            borderRadius: "20px",
-                            backgroundColor: "#1877f2",
-                            color: "white",
-                            overflowWrap:"break-word"
-                            
-                          }}>
-                          {message.message} 
-                        </Box>
-                          {message.timestamp? message.timestamp : createTimestamp(message.createdAt)}
-                      </Box>
-                      
-                      ) : 
-                      (
-                        
-                      <Box
-                      sx={{
-                        
-                        maxWidth: "30rem",
-                        
-                      }}
-                      >
-                        {currentChat.name ? 
-                        (contacts.find(contact =>contact._id === message.sender)?
-                          contacts.find(contact =>contact._id === message.sender).username
-                          :
-                          message.sender
-                        ) +":"
-                        : ""}
-                        <Box
-                          sx={{
-                            textAlign:"left",
-                            padding: "1rem",
-                            borderRadius: "20px",
-                            backgroundColor: "rgb(245, 241, 241)",
-                            color: "black",
-                            overflowWrap:"break-word"
-                           
-                          }}>
-                          {message.message} 
-                        </Box>
-                        {message.timestamp? message.timestamp : createTimestamp(message.createdAt)}
-                      </Box>
-                        ) }
-                  </ListItem>
-                )
-              })
-            }       
-          </List>
+          <Messages contacts={contacts} currentChat={currentChat}/>
           <ChatInput handleSendMsg={handleSendMsg} />   
         </Grid>
         

@@ -3,15 +3,12 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Register from './pages/Register.jsx';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard.jsx';
-import { Landing } from './components/Landing';
-import { AuthProvider } from './components/Auth/auth.js';
-import { RequireAuth } from './components/Auth/RequireAuth.js';
-import { UserProvider } from './components/UserProvider/user.js';
-import { ContactsProvider } from './components/ContactsProvider/contacts.js';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/apollo-client.js';
 import { useTranslation} from 'react-i18next';
-
+import Test from './pages/Test.jsx';
+import { Provider } from "react-redux";
+import configureAppStore from "./redux/store";
 
 
 export default function App() {
@@ -26,9 +23,7 @@ export default function App() {
   
   return (
   <ApolloProvider client = {client}>
-  <AuthProvider>
-    <UserProvider>
-      <ContactsProvider>
+    <Provider store={configureAppStore()}>
     <BrowserRouter>
     <div>
           {Object.keys(lngs).map((lng) => (
@@ -40,14 +35,12 @@ export default function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/' element={<Landing/>} />
-        <Route path='/dashboard' element={<RequireAuth> <Dashboard/>  </RequireAuth> } />
+        <Route path='/' element={<Test/>} />
+        <Route path='/dashboard' element={<Dashboard/>} />
         
       </Routes>
     </BrowserRouter>
-    </ContactsProvider>
-    </UserProvider>
-  </AuthProvider>
+  </Provider>
   </ApolloProvider>
   );
 }

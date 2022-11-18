@@ -1,14 +1,16 @@
 import { gql } from "@apollo/client";
 
-const NEW_MESSAGE_SUBSCRIPTION = gql`
-subscription Subscription($conversationId: String!) {
+
+const MESSAGES_SUBSCRIPTION = gql`
+    subscription Subscription($conversationId: ID!) {
     newMessage(conversationId: $conversationId) {
       _id
       createdAt
       message
       sender
+      conversationId
     }
   }
 `;
 
-export default NEW_MESSAGE_SUBSCRIPTION;
+export default MESSAGES_SUBSCRIPTION;

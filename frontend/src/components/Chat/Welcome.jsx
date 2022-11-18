@@ -2,15 +2,18 @@ import { Typography } from "@mui/material";
 import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
-import { useCurrentUser } from '../UserProvider/user';
 import { Trans } from "react-i18next";
+import { useSelector } from "react-redux";
 
 export default function Welcome() {
-  const currentUser=useCurrentUser();
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
   const[userName,setUserName] = useState("");
   useEffect(()=>{
-    if(currentUser.currentUser){
-      setUserName(currentUser.currentUser.username)
+    if(currentUser){
+      setUserName(currentUser.username)
     }
   },[])
 

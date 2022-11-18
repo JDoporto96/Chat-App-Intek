@@ -1,31 +1,31 @@
-import React, { useEffect, useState, useRef} from "react";
+import React, { useEffect, useState} from "react";
 import ChatContainer from "./ChatContainer";
 import Contacts from "./Contacts";
 import Welcome from "./Welcome";
-import { socketsHost } from "../../utils/APIRoutes";
-import { useCurrentUser } from "../UserProvider/user";
 import { Container, } from "@mui/system";
 import { Grid, Paper, Box, Typography  } from "@mui/material";
 import Groups from "./Groups";
 import AddContact from "./Buttons/AddContact";
 import AddGroup from "./Buttons/AddGroup";
 import ContactRequests from "./Buttons/ContactRequests";
-import { useContactsList } from "../ContactsProvider/contacts";
 import ConversationsPanel from "./ConversationsPanel";
 import { useLazyQuery } from "@apollo/client";
 import GET_USER_CONV from "../../graphql/queries/getUserConversations";
-import GET_USER_GROUPS from "../../graphql/queries/getGroups";
 import { Trans } from "react-i18next";
+import { useSelector } from "react-redux";
 
 
 export default function Chat() {
-  const currentUser = useCurrentUser().currentUser;
-  const contacts = useContactsList().contacts;
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
+  const {contacts} = useSelector((state) => {
+    return state.contacts
+  });
   const [conversations, setConversations]= useState([]);
-  const [groups, setGroups] = useState([]);
   const [currentChat, setCurrentChat] = useState(undefined);
   const [getUserConversations, ] = useLazyQuery(GET_USER_CONV);
-  const [getGroups, ] = useLazyQuery(GET_USER_GROUPS)
 
   useEffect(()=>{
     async function getConversations(){
@@ -37,21 +37,11 @@ export default function Chat() {
     
   },[currentUser])
 
-  useEffect(()=>{
-    async function fetchData(){
-      const {data} = await getGroups({variables:{userId:currentUser._id}})
-      setGroups(data.getUserGroups)
-    }
-    fetchData();
-    
-  },[])
-
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
     
   };
-
   return (
     <>
       <Container maxWidth="100%">
@@ -96,7 +86,7 @@ export default function Chat() {
                       
                   </Box>
                     
-                    <Contacts currentUser={currentUser} contacts={contacts} changeChat={handleChatChange} conversations={conversations} />
+                    <Contacts changeChat={handleChatChange} conversations={conversations} />
                     
                 </Box>
 
@@ -135,7 +125,7 @@ export default function Chat() {
 
                   </Box>
                     
-                    <Groups groups={groups} changeChat={handleChatChange} />
+                    <Groups changeChat={handleChatChange} />
                     
                 </Box>
                 

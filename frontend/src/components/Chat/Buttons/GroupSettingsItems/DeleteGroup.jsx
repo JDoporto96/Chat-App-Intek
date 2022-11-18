@@ -3,12 +3,13 @@ import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/materi
 import { useState } from 'react'
 import { useMutation } from '@apollo/client';
 import DELETE_GROUP_CONV from '../../../../graphql/mutations/deleteGroup';
-import { useTranslation, Trans } from "react-i18next";
+import { Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import GET_USER_GROUPS from '../../../../graphql/queries/getGroups';
 
 function DeleteGroup({currentChat}) {
     const[open, setOpen]=useState(false);
-    const[deleteGroup, ]= useMutation(DELETE_GROUP_CONV);
-    const { t } = useTranslation();
+    const[deleteGroup, ]= useMutation(DELETE_GROUP_CONV,{refetchQueries:[{query:GET_USER_CONV},{query:GET_USER_GROUPS}]});
 
 
     const handleDelete = async()=>{

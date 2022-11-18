@@ -8,18 +8,23 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useContactsList } from '../../../ContactsProvider/contacts';
 import { useMutation } from '@apollo/client';
 import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
-import { useTranslation, Trans } from "react-i18next";
+import { Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import { useSelector } from 'react-redux';
 
 
 
 function AddMembersForm({currentChat}) {
     const [personName, setPersonName] = React.useState([]);
     const[newMembers,setNewMembers]=useState([]);
-    const contacts = useContactsList().contacts.filter(contact=> !currentChat.members.includes(contact._id));
-    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+    const contactsList = useSelector((state) => {
+      return state.contacts
+    });
+    const contacts = contactsList.filter(contact=> !currentChat.members.includes(contact._id));
+    const [updateGroup, ]=useMutation(UPDATE_GROUP,
+      {refetchQueries:[{query:GET_USER_CONV}]});
 
     const handleNamesChange=(e)=>{
         setPersonName(

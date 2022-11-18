@@ -10,18 +10,24 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useCurrentUser } from '../../UserProvider/user';
 import { useMutation } from '@apollo/client';
 import CREATE_GROUP_CONV from '../../../graphql/mutations/createGroup';
 import { useTranslation, Trans } from "react-i18next";
-
+import GET_USER_CONV from '../../../graphql/queries/getUserConversations';
+import GET_USER_GROUPS from "../../../graphql/queries/getGroups";
+import { useSelector } from 'react-redux';
 
 export default function AddGroup({contacts}) {
-  const currentUser=useCurrentUser();
+  const {currentUser }= useSelector((state) => {
+    return state.currentUser
+  });
+
   const[groupname,setGroupname]=useState("");
   const[members,setMembers]=useState([]);
   const [personName, setPersonName] = React.useState([]);
-  const [createGroup, ] = useMutation(CREATE_GROUP_CONV)
+  const [createGroup, ] = useMutation(CREATE_GROUP_CONV,
+    {refetchQueries:[{query:GET_USER_CONV}, {query:GET_USER_GROUPS}],
+  })
   const { t } = useTranslation();
 
   const handleChange=(e)=>{
@@ -39,7 +45,7 @@ export default function AddGroup({contacts}) {
       const member =contacts.find(contact=>contact.username===name)
       return member._id
     })
-    list.push(currentUser.currentUser._id);
+    list.push(currentUser._id);
     setMembers(list)
   },[personName])
 
@@ -49,8 +55,7 @@ export default function AddGroup({contacts}) {
     e.preventDefault();
     const input ={
       name:groupname,
-      members,
-      creator: currentUser.currentUser._id
+      members
     }
     await createGroup({variables:{input}})
     setOpen(false)

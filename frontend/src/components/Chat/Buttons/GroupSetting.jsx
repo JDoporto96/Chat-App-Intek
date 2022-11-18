@@ -3,14 +3,16 @@ import React from 'react'
 import SettingsIcon from '@mui/icons-material/Settings';
 import AdminMenu from './GroupSettingsItems/AdminMenu';
 import MemberMenu from './GroupSettingsItems/MemberMenu';
-import {useCurrentUser} from '../../UserProvider/user'
 import { useTranslation} from "react-i18next";
+import { useSelector } from 'react-redux';
 
 
 
 function GroupSetting({ currentChat}) {
 
-    const currentUser=useCurrentUser().currentUser;
+    const {currentUser} = useSelector((state) => {
+        return state.currentUser
+      });
 
     const authorized = currentChat.admins.includes(currentUser._id);
     

@@ -1,16 +1,21 @@
 import React from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
 import { useState } from 'react'
-import {useCurrentUser} from '../../../UserProvider/user'
 import { useMutation } from '@apollo/client';
 import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
-import { useTranslation, Trans } from "react-i18next";
+import {Trans } from "react-i18next";
+import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import GET_USER_GROUPS from '../../../../graphql/queries/getGroups';
+import { useSelector } from 'react-redux';
 
 
 function LeaveGroup({currentChat}) {
     const[open, setOpen]=useState(false);
-    const currentUser=useCurrentUser().currentUser;
-    const [updateGroup, ]=useMutation(UPDATE_GROUP);
+    const currentUser = useSelector((state) => {
+        return state.currentUser
+      });
+    
+    const [updateGroup, ]=useMutation(UPDATE_GROUP,{query:GET_USER_CONV},{query:GET_USER_GROUPS});
 
 
 

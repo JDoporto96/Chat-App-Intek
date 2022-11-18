@@ -1,43 +1,62 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
-import { Button, IconButton, Modal, TextField, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
+import { Button, IconButton, Modal, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
 import { Container } from '@mui/system';
-import { useCurrentUser } from '../../UserProvider/user';
-import { useLazyQuery, useMutation } from '@apollo/client';
+import {useMutation, useQuery } from '@apollo/client';
 import RESPOND_REQUEST from '../../../graphql/mutations/respondContactRequest';
 import GET_REQUEST from '../../../graphql/queries/getRequests';
 import { useTranslation, Trans } from "react-i18next";
+import NEW_REQUEST_SUBSCRIPTION from '../../../graphql/subscription/newRequest';
+import GET_CONTACTS from '../../../graphql/queries/getContacts';
+import { useSelector } from 'react-redux';
 
 export default function ContactRequests() { 
-    const currentUser=useCurrentUser();
+    const {currentUser} = useSelector((state) => {
+        return state.currentUser
+      });
+    
     const[open, setOpen]= useState(false);
     const[requests,setRequests] = useState([]);
     const[badgeNumber, setBadgenumber]=useState(undefined);
-    const[ respondRequest, ]=useMutation(RESPOND_REQUEST);
-    const[getRequests, ]=useLazyQuery(GET_REQUEST)
+    const[ respondRequest, ]=useMutation(RESPOND_REQUEST, 
+        {refetchQueries:[{query:GET_CONTACTS}]});
     const { t } = useTranslation();
     
-    useEffect(()=>{
-        async function fetchRequests(){
-            const {data}= await getRequests({variables:{id:currentUser.currentUser._id}})
-            setRequests(data.getRequests)
-        }
-        fetchRequests()
-      },[])
+    const {data, loading, subscribeToMore}=useQuery(GET_REQUEST)
 
     useEffect(()=>{
+        if(!loading){
+            // setBadgenumber(data.getRequests.length)
+            setRequests(data.getRequests)
+        }
+      },[data])
+    
+      useEffect(()=>{
         setBadgenumber(requests.length)
       },[requests])
+
+      useEffect(()=>{
+        subscribeToMore({
+            document:NEW_REQUEST_SUBSCRIPTION, 
+            updateQuery:(prev,{subscriptionData})=>{
+                if(!subscriptionData.data) return prev;
+                
+                const newRequest= subscriptionData.data.requestSend;
+                const updatedRequestList = Object.assign({},prev,{getRequests:[...prev.getRequests, newRequest]})      
+                return updatedRequestList 
+        }
+    })
+    },[])
 
     const handleAccept = async (e) => {
         e.preventDefault();
         const input ={
-            receiverId: currentUser.currentUser._id,
             senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:true
         }
-        console.log(input)
+        const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
+        setRequests(updateList);
         respondRequest({variables:{input}})
         setOpen(false)  
         
@@ -51,6 +70,8 @@ export default function ContactRequests() {
             accepted:false
         }
         respondRequest({variables:{input}})
+        const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
+        setRequests(updateList);
         setOpen(false)  
     }
     
@@ -104,6 +125,7 @@ export default function ContactRequests() {
                             </Grid>
                             <Grid xs={3} item >
                                 <Button 
+                                    
                                     variant="contained"
                                     onClick={handleReject}
                                     sx={{ ml:"1rem",backgroundColor:"red" }}

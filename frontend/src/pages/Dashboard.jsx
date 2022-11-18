@@ -6,11 +6,8 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Chat from '../components/Chat/Chat';
 import MainBar from '../components/bar/MainBar';
-
-
-
-
-
+import { useSelector } from 'react-redux';
+import { Navigate} from 'react-router-dom';
 
 const mdTheme = createTheme();
 
@@ -52,5 +49,25 @@ function DashboardContent() {
 }
 
 export default function Dashboard() {
+
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
+  const {contacts} = useSelector((state) => {
+    return state.contacts
+  });
+
+  const {isLogged} = useSelector((state) => {
+    return state.auth
+  });
+
+  
+  if(isLogged && currentUser && contacts){
+    
     return <DashboardContent />;
+  }
+  console.log(isLogged)
+  console.log("Returning to login")
+  return <Navigate to="/login"/>
 }

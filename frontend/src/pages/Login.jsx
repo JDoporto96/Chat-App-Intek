@@ -11,28 +11,26 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useNavigate} from "react-router-dom";
+import { Navigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Bar from '../components/bar/Bar';
-import { useAuth } from '../components/Auth/auth';
-import { useCurrentUser } from '../components/UserProvider/user';
-import { useContactsList } from '../components/ContactsProvider/contacts';
-import LOGIN from '../graphql/mutations/login';
-import {useApolloClient, useMutation} from '@apollo/client';
 import { useTranslation, Trans } from "react-i18next";
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { client } from '../graphql/apollo-client';
 
 const theme = createTheme();
 
 export default function Login() {
 
-  const auth = useAuth();
-  const currentUser = useCurrentUser();
-  const contacts = useContactsList();
-  const client = useApolloClient();
+  const {auth} = useSelector((state) => {
+    return state
+  });
 
-  const [loginUser, result ]= useMutation(LOGIN);
-  const navigate= useNavigate();
+
+
+  const dispatch = useDispatch();
   const [values,setValues] = useState({
     email:"",
     password:"",
@@ -45,8 +43,6 @@ export default function Login() {
     pauseOnHover:true,
     draggable:true,
   };
-
-
 
   const handleValidation =()=>{
     const {email,password} = values;
@@ -73,47 +69,35 @@ export default function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    await client.clearStore();
     if(handleValidation()){
         const {email,password} = values;
         const input = {
           email,
           password
         }
-        const {data} = await loginUser({variables:{input}});
-        console.log(data)
-            if(data.logIn.error){
-                toast.error(data.logIn.error, toastOptions);
-            }
-            if(data.logIn.success ===true){
-                await auth.login();
-                await contacts.fetchContacts();
-                await currentUser.userLogin();
-                navigate("/dashboard");
-            }   
+        dispatch({type:'LOGIN', payload: {input}})
+        if(auth.loginError){
+          toast.error(auth.loginError, toastOptions);
+        }
       }
+
+    // dispatch({type:"LOGGED"});
   };
 
-  React.useEffect(()=>{
-    if(result.data){
-      const token = result.data.logIn.token
-      localStorage.setItem('chat-app-user-jwt',token)
+  useEffect(()=>{
+    if(auth.token){
+      localStorage.setItem('chat-app-user-jwt',auth.token)
+      dispatch({type: 'GET_CURRENT_USER'})
+      dispatch({type: 'GET_CONTACTS'})
+      dispatch({type:'LOGGED'})
     }
-  },[result.data])
-
-  React.useEffect(()=>{
-    const populate = async()=>{
-      if(localStorage.getItem('chat-app-user-jwt')){
-        await auth.login();
-        await contacts.fetchContacts();
-        await currentUser.userLogin();
-        navigate("/dashboard");
-      }
-    }
-    populate();
-    
-  },[])
+  },[auth])
 
 
+  if(auth.isLogged){
+    return  <Navigate to="/dashboard"/>
+  }
   return (
     <ThemeProvider theme={theme}>
       <Bar/>

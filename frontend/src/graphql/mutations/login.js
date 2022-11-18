@@ -1,15 +1,11 @@
 import { gql } from "@apollo/client";
 
 const LOGIN = gql`
-mutation Mutation($input: UserCredentials!) {
+mutation LogIn($input: UserCredentials!) {
   logIn(input: $input) {
     error
     success
     token
-    user {
-      _id
-      username
-    }
   }
 }
 `;
