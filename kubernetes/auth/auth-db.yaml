@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: auth-db-deployment
+  labels:
+    app: auth-db
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: auth-db
+  template:
+    metadata:
+      labels:
+        app: auth-db
+    spec:
+      volumes:
+      - name: auth-db-data
+        persistentVolumeClaim:
+          claimName: auth-db-pvc
+      containers:
+      - name: mongodb
+        image: mongo
+        volumeMounts:
+          - mountPath: /data/auth-db
+            name: auth-db-data
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-username 
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-password
+        - name: ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: jwt-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: auth-db-service
+spec:
+  selector:
+    app: auth-db
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017

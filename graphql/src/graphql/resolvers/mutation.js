@@ -61,6 +61,7 @@ const mutationResolvers={
                 user = authServerResponse.data.user;
                 logger.info(`User logged in with id:${_id}`)
             }catch(err){
+                console.log(err)
                 return {success:false, error:err}
             }
 
@@ -155,7 +156,7 @@ const mutationResolvers={
                 }
                 logger.info(`Group conversation has been updated`)
                 pubsub.publish('GROUP_UPDATED',{updateGroup: response.data.group})
-                return {success: true, message: "Group updated successfully"}
+                return response.data.group
 
             }catch(err){
                 return {success: false, err: err}
@@ -202,6 +203,7 @@ const mutationResolvers={
                 pubsub.publish(`REQUEST_SENT`, {requestSend: {
                     to:receiverUsername,
                     from:senderId,
+                    senderUsername: currentUser.username,
                     status:"Pending"
                 }} )
                 return{success: true,message: response.data.msg}
@@ -238,7 +240,7 @@ const mutationResolvers={
     },
     Subscription:{
         newMessage:{
-            subscribe: () => {
+            subscribe: (_,{conversationId}) => {
               return pubsub.asyncIterator([`MESSAGE_SENT`]);
             },
         },

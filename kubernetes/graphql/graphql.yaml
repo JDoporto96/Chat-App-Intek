@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: graphql-micro-deployment
+  labels:
+    microservice: graphql
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: graphql-micro
+  template:
+    metadata:
+      labels:
+        app: graphql-micro
+    spec:
+      containers:
+      - name: chat-gqlserver
+        image: josedoporto/chat-gqlserver
+        ports:
+        - containerPort: 4000
+        env:
+        - name: ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: jwt-secret
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: chat-gqlserver-service
+spec:
+  selector:
+    app: chat-gqlserver-micro
+  ports:
+  - protocol: TCP
+    port: 4000
+    targetPort: 4000

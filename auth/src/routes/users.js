@@ -48,7 +48,7 @@ async (req, res, next) => {
           async (err) => {
             if (err) return next(err);
 
-            const body = { _id: user._id, email: user.email};
+            const body = { _id: user._id, email: user.email, username:user.username};
             const token = jwt.sign({ user: body }, process.env.ACCESS_TOKEN_SECRET,{expiresIn: "1d"});
             
             logger.info(`${user._id} logged in`) 

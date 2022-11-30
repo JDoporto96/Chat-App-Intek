@@ -6,7 +6,6 @@ import Dashboard from './pages/Dashboard.jsx';
 import { ApolloProvider } from '@apollo/client';
 import { client } from './graphql/apollo-client.js';
 import { useTranslation} from 'react-i18next';
-import Test from './pages/Test.jsx';
 import { Provider } from "react-redux";
 import configureAppStore from "./redux/store";
 
@@ -35,7 +34,7 @@ export default function App() {
       <Routes>
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        <Route path='/' element={<Test/>} />
+        <Route path='/' element={<Login/>} />
         <Route path='/dashboard' element={<Dashboard/>} />
         
       </Routes>

@@ -13,10 +13,7 @@ router.post('/profiles', async (req,res,next)=>{
         const newProfile = new Profile(req.body);
         newProfile.save()
         logger.info(`New profile created with id: ${_id}`) 
-        return res.status(201).json({
-            msg: 'Profile created successfully',
-            status: true
-        });   
+        return res.status(201).json(newProfile);   
     }catch (err) {
         logger.error(err);
         res.status(500).json({msg:"An error ocurred", status:false,error: err});

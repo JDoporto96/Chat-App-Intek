@@ -66,7 +66,7 @@ type Mutation {
   logOut: ActionResponse!
   createConversation(receiverId: String!): NewConversationActionResponse!
   createGroup(input: NewGroupInput): NewConversationActionResponse!
-  updateGroup(input: UpdateGroupInput): ActionResponse!
+  updateGroup(input: UpdateGroupInput): Conversation!
   sendMessage(input: newMessageInput):MessageActionResponse!
   sendContactRequest(receiverUsername:String!):ActionResponse!
   respondContactRequest(input: RespondRequestInput!):ActionResponse!

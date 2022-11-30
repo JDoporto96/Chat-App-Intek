@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: profiles-db-deployment
+  labels:
+    app: profiles-db
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: profiles-db
+  template:
+    metadata:
+      labels:
+        app: profiles-db
+    spec:
+      volumes:
+      - name: profiles-db-data
+        persistentVolumeClaim:
+          claimName: profiles-db-pvc
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-username 
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-password
+        - name: ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: jwt-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: profiles-db-service
+spec:
+  selector:
+    app: profiles-db
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017

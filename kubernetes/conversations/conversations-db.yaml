@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: conv-db-deployment
+  labels:
+    app: conv-db
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: conv-db
+  template:
+    metadata:
+      labels:
+        app: conv-db
+    spec:
+      volumes:
+      - name: conv-db-data
+        persistentVolumeClaim:
+          claimName: conv-db-pvc
+      containers:
+      - name: mongodb
+        image: mongo
+        volumeMounts:
+          - mountPath: /data/conv-db
+            name: conv-db-data
+        ports:
+        - containerPort: 27017
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-username 
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: mongo-root-password
+        - name: ACCESS_TOKEN_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: chat-app-secret
+              key: jwt-secret
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: conv-db-service
+spec:
+  selector:
+    app: conv-db
+  ports:
+  - protocol: TCP
+    port: 27017
+    targetPort: 27017

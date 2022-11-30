@@ -12,7 +12,7 @@ module.exports.createGroupConversation = async (req,res,next)=>{
         })
         if (group){
             logger.info(`New group created with id: ${group._id}`) 
-            return res.json({ msg: "Group created successfully.", status:true });
+            return res.json(group);
         }
         else return res.json({ msg: "Failed to create group and add it to the database", status:false});
     }catch(err){
@@ -20,89 +20,47 @@ module.exports.createGroupConversation = async (req,res,next)=>{
     }
 }
 
-module.exports.addMembers = async (req,res,next)=>{
-    const {_id,newMembers} = req.body;
+module.exports.updateGroup = async (req,res,next)=>{
+    const {conversationId,newMembers,removedMembers,newAdmins,removedAdmins,newName} = req.body;
     try{
-        const group = await Conversations.findOne({_id});
+        const group = await Conversations.findOne({_id:conversationId});
         if(!group){
             return res.json({msg: "Invalid group", status:false})
         }
-        newMembers.forEach(member => {
-            group.members.push(member)
-        });
-        await group.save();
+       
+        if(newAdmins){
+            newAdmins.forEach(member => {
+                if(!group.admins.includes(member)){
+                    group.admins.push(member)
+                }   
+            });
+            await group.save();
+        }
+        if(newMembers){
+            newMembers.forEach(member => {
+                if(!group.members.includes(member)){
+                    group.members.push(member)
+                }   
+            });
+            await group.save();
+        }
+        if(removedMembers){
+            removedMembers.forEach(member=>group.members.pull(member));
+            removedMembers.forEach(member=>group.admins.pull(member))
+            await group.save();
+        }
+        if(removedAdmins){
+            removedAdmins.forEach(admin=> group.admins.pull(admin));
+            await group.save();
+        }
+        
+        if(newName){
+            group.name = newName;
+            await group.save();
+        }
         logger.info(`Group with id: ${group._id} has been updated`) 
-        res.json({msg: "Members added succesfully", group})
+        res.json({status:true, group})
         
-    }catch(err){
-        next(err)
-    }
-}
-
-module.exports.removeMembers = async (req,res,next)=>{
-    const {_id,members} = req.body;
-    try{
-        const group = await Conversations.findOne({_id});
-        if(!group){
-            return res.json({msg: "Invalid group"})
-        }
-        members.forEach(member=>group.members.pull(member))
-        await group.save();
-        logger.info(`Group with id: ${group._id} has been updated`)
-        res.json({msg: "Member removed succesfully", group})
-        
-    }catch(err){
-        next(err)
-    }
-}
-module.exports.addAdmins = async (req,res,next)=>{
-    const {_id,newAdmins} = req.body;
-    try{
-        const group = await Conversations.findById(_id);
-        if(!group){
-            return res.json({msg: "Invalid group"})
-        }
-        newAdmins.forEach(member => {
-            group.admins.push(member)
-        });
-        await group.save();
-        logger.info(`Group with id: ${group._id} has been updated`)
-        res.json({msg: "Admins added succesfully", group})
-        
-    }catch(err){
-        next(err)
-    }
-}
-module.exports.removeAdmins = async (req,res,next)=>{
-    const {_id,admins} = req.body;
-    try{
-        const group = await Conversations.findOne({_id});
-        if(!group){
-            return res.json({msg: "Invalid group"})
-        }
-        // group.admins = group.admins.filter(element => element !== admin)
-        admins.forEach(admin=> group.admins.pull(admin));
-        await group.save();
-        logger.info(`Group with id: ${group._id} has been updated`)
-        res.json({msg: "Admin removed succesfully", group})
-        
-    }catch(err){
-        next(err)
-    }
-}
-
-module.exports.updateGroupName =async (req,res,next)=>{
-    const {_id, newName} = req.body;
-    try{
-        const group = await Conversations.findOne({_id});
-        if(!group){
-            return res.json({msg: "Invalid group"})
-        }
-        group.name = newName;
-        await group.save();
-        logger.info(`Group with id: ${group._id} has been updated`)
-        res.send(group)
-
     }catch(err){
         next(err)
     }

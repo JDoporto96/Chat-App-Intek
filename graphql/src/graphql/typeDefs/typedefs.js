@@ -27,9 +27,10 @@ type Contact{
 }
 
 type Request {
-    to:String!
     from: ID!
-    status: String!
+    senderUsername: String!
+    to:String!
+    status:String
 }
 `
 
