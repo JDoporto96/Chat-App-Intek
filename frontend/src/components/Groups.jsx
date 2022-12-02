@@ -16,7 +16,7 @@ function Groups() {
             width:"100%",
             overflow:"auto"
           }}>
-          {data.getUserGroups.map((group, index)=>{
+          {data.getUserGroups.map((group)=>{
             return(
     
               <ListItemButton key={group._id}>

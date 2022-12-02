@@ -10,7 +10,6 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Navigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -20,7 +19,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { client } from '../graphql/apollo-client';
 
-const theme = createTheme();
 
 export default function Login() {
 
@@ -82,7 +80,6 @@ export default function Login() {
         }
       }
 
-    // dispatch({type:"LOGGED"});
   };
 
   useEffect(()=>{
@@ -99,7 +96,7 @@ export default function Login() {
     return  <Navigate to="/dashboard"/>
   }
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Bar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -161,6 +158,6 @@ export default function Login() {
         </Box>
       </Container>
       <ToastContainer/>
-    </ThemeProvider>
+    </>
   );
 }

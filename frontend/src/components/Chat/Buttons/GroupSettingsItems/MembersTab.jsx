@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import RemoveMembersForm from './RemoveMembersForm';
 import AddMembersForm from './AddMembersForm'
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation} from "react-i18next";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;

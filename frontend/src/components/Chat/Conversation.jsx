@@ -1,7 +1,5 @@
 import { ListItemButton, ListItemText } from '@mui/material';
-import React from 'react'
-import { useEffect } from 'react';
-import { useState } from 'react';
+import React, { useEffect, useState  } from 'react';
 import { useSelector } from 'react-redux';
 
 function Conversation({conversation, currentUser}) {
@@ -18,7 +16,7 @@ function Conversation({conversation, currentUser}) {
       const contactUsername = contacts.find(contact => contact._id === contactId).username;
       setConversationName(contactUsername)
     }
-  },[])
+  },[conversation])
 
 
   return (

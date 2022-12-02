@@ -1,6 +1,5 @@
-import { MenuItem, Typography, Modal, Container, Grid, Button, IconButton } from '@mui/material'
-import React from 'react'
-import {useState} from 'react'
+import { MenuItem, Typography, Modal, Container, Grid, IconButton } from '@mui/material'
+import React, { useState } from 'react'
 import BasicTabs from './BasicTabs';
 import CloseIcon from '@mui/icons-material/Close';
 

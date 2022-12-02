@@ -10,7 +10,6 @@ import Avatar from '@mui/material/Avatar';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import ChatIcon from '@mui/icons-material/Chat';
-import { useNavigate} from "react-router-dom";
 import { useApolloClient } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
 
@@ -20,12 +19,6 @@ const ResponsiveAppBar = () => {
     return state.auth
   });
 
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
-  });
-
-
-  const navigate= useNavigate();
   const client = useApolloClient();
   const dispatch = useDispatch();
     

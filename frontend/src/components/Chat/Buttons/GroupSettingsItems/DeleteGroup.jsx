@@ -1,6 +1,5 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
-import { useState } from 'react'
 import { useMutation } from '@apollo/client';
 import DELETE_GROUP_CONV from '../../../../graphql/mutations/deleteGroup';
 import { Trans } from "react-i18next";

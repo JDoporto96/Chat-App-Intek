@@ -9,7 +9,6 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
@@ -21,7 +20,6 @@ import { useTranslation, Trans } from "react-i18next";
 
 
 
-const theme = createTheme();
 
 export default function Register() {
     const navigate= useNavigate();
@@ -94,7 +92,7 @@ export default function Register() {
     };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Bar/>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
@@ -180,7 +178,7 @@ export default function Register() {
         </Box>
       </Container>
       <ToastContainer/>
-    </ThemeProvider>
+    </>
     
   );
 }

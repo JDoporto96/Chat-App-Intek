@@ -8,6 +8,8 @@ import { client } from './graphql/apollo-client.js';
 import { useTranslation} from 'react-i18next';
 import { Provider } from "react-redux";
 import configureAppStore from "./redux/store";
+import { ThemeProvider } from '@emotion/react';
+import theme from './theme/theme.js';
 
 
 export default function App() {
@@ -23,6 +25,7 @@ export default function App() {
   return (
   <ApolloProvider client = {client}>
     <Provider store={configureAppStore()}>
+      <ThemeProvider theme ={theme}>
     <BrowserRouter>
     <div>
           {Object.keys(lngs).map((lng) => (
@@ -39,6 +42,7 @@ export default function App() {
         
       </Routes>
     </BrowserRouter>
+    </ThemeProvider>
   </Provider>
   </ApolloProvider>
   );

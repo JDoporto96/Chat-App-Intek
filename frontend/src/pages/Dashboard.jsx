@@ -9,12 +9,10 @@ import MainBar from '../components/bar/MainBar';
 import { useSelector } from 'react-redux';
 import { Navigate} from 'react-router-dom';
 
-const mdTheme = createTheme();
-
 function DashboardContent() {
 
   return (
-    <ThemeProvider theme={mdTheme}>
+    <>
       <MainBar/>
       <Box sx={{ display: 'flex' }}>
         <CssBaseline />
@@ -44,7 +42,7 @@ function DashboardContent() {
           </Container>
         </Box>
       </Box>
-    </ThemeProvider>
+    </>
   );
 }
 
@@ -67,7 +65,5 @@ export default function Dashboard() {
     
     return <DashboardContent />;
   }
-  console.log(isLogged)
-  console.log("Returning to login")
   return <Navigate to="/login"/>
 }

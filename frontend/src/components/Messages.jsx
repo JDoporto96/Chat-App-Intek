@@ -1,9 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { List, ListItem,} from '@mui/material';
 import { Box} from '@mui/system';
-import React, { useRef } from 'react'
-import { useState } from 'react';
-import { useEffect } from 'react';
+import React, { useRef, useState,useEffect } from 'react'
 import GET_CONV from '../graphql/queries/getConversation';
 import MESSAGES_SUBSCRIPTION from '../graphql/subscription/newMessage';
 import { useSelector } from "react-redux";
@@ -56,7 +54,8 @@ return (
           sx={{
             display: "flex",
             flexDirection: "column",
-            
+            height: "65vh",
+            overflow: "auto"
           }}>
             {
               messages.map(message=>{

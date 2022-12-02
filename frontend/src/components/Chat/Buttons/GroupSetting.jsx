@@ -34,7 +34,6 @@ function GroupSetting({ currentChat}) {
     <>
     
         <Tooltip title={t("Group's settings" )}
-                    // onClick={()=> setOpen(true)}
         sx={{
         alignSelf:"flex-end"
         }}

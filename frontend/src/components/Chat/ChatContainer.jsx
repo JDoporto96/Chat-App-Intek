@@ -2,7 +2,6 @@ import React, { useState, useEffect} from "react";
 import ChatInput from "./ChatInput";
 import { Box } from "@mui/system";
 import { Grid, Typography} from "@mui/material";
-import "./Chat.css"
 import GroupSetting from "./Buttons/GroupSetting";
 import { useMutation } from "@apollo/client";
 import SEND_MESSAGE from "../../graphql/mutations/sendMessage";
@@ -74,7 +73,10 @@ export default function ChatContainer({ contacts, currentChat}) {
       </Box>
 
       <Grid container spacing={4} alignItems="center">
-        <Grid id="chat-window" xs={12} item>
+        <Grid id="chat-window" xs={12}
+        sx={{
+          height: "70vh"
+          }} item>
           <Messages contacts={contacts} currentChat={currentChat}/>
           <ChatInput handleSendMsg={handleSendMsg} />   
         </Grid>

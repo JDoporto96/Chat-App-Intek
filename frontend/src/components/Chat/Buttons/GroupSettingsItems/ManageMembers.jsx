@@ -1,9 +1,8 @@
 import { MenuItem, Typography, Modal, Container, Grid, IconButton } from '@mui/material'
-import React from 'react'
-import {useState} from 'react'
+import React, { useState } from 'react'
 import MembersTab from './MembersTab';
 import CloseIcon from '@mui/icons-material/Close';
-import { useTranslation, Trans } from "react-i18next";
+import {Trans } from "react-i18next";
 
 function ManageMembers({currentChat}) {
 
