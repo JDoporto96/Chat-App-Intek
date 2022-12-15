@@ -25,6 +25,21 @@ spec:
             secretKeyRef:
               name: chat-app-secret
               key: jwt-secret
+        - name: AUTH_URL
+          valueFrom:
+            configMapKeyRef:
+              name: chat-app-configmap
+              key: AUTH_URL
+        - name: PROFILES_URL
+          valueFrom:
+            configMapKeyRef:
+              name: chat-app-configmap
+              key: PROFILES_URL
+        - name: CONVERSATIONS_URL
+          valueFrom:
+            configMapKeyRef:
+              name: chat-app-configmap
+              key: CONVERSATIONS_URL
         
 ---
 apiVersion: v1

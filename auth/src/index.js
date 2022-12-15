@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 const express = require('express');
 const userRoutes = require('./routes/users');
 const morgan = require('morgan');
@@ -15,7 +15,7 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: process.env.ACCESS_TOKEN_SECRET,
     resave:false,
     saveUninitialized:false
 }))

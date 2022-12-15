@@ -20,7 +20,7 @@ const httpLink = new HttpLink({
 })
 
 const wsLink = new GraphQLWsLink(createClient({
-    url: 'ws://'+window.location.host+'/graphql',
+    url: 'ws://'+window.location.host+'/subscription',
   }));
 
 const splitLink = split(({query})=>{

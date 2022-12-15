@@ -1,27 +1,27 @@
-const authHost = "http://localhost:5000/api/auth";
+import * as dotenv from "dotenv";
+dotenv.config();
+
+
+const authHost = process.env.AUTH_URL+"/api/auth";
 export const registerRoute = `${authHost}/register`
 export const loginRoute = `${authHost}/login`
 export const dashboardRoute = `${authHost}/dashboard`
 export const authorizationRoute = `${authHost}/authorize`
 
 
-const profilesHost = "http://localhost:5001/api/profiles";
+const profilesHost = process.env.PROFILES_URL+ "/api/profiles";
 export const profilesAPIRoute = `${profilesHost}`
 
 
-export const messagesHost = "http://localhost:5002/api/messages";
-export const groupsHost = "http://localhost:5002/api/groups";
-export const conversationsHost = "http://localhost:5002/api/conversations";
+export const messagesHost =process.env.CONVERSATIONS_URL+ "/api/messages";
+export const groupsHost = process.env.CONVERSATIONS_URL+"/api/groups";
+export const conversationsHost = process.env.CONVERSATIONS_URL+"/api/conversations";
 
 export const sendMessageRoute = `${messagesHost}/addmsg`
 export const getAllMessagesRoute = `${messagesHost}`
 
 export const getMyGroupsRoute = `${groupsHost}/mygroups`
 export const createGroupRoute = `${groupsHost}/creategroup`
-// export const addAdminsRoute = `${groupsHost}/addadmins`
-// export const removeAdminsRoute = `${groupsHost}/removeadmins`
-// export const removeMembersRoute = `${groupsHost}/removemembers`
-// export const addMembersRoute = `${groupsHost}/addmembers`
 export const deleteGroupRoute = `${groupsHost}/deleteGroup`
 export const updateGroupRoute = `${groupsHost}/updategroup`
 

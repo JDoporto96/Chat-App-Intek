@@ -21,7 +21,8 @@ function Messages({contacts, currentChat}) {
     const conversationId=currentChat._id
     const scrollRef=useRef()
 
-    const {data, loading, subscribeToMore} = useQuery(GET_CONV, { variables: {conversationId} })
+    const {data, loading, subscribeToMore} = useQuery(GET_CONV, { variables: 
+      {conversationId} })
     
 
     useEffect(()=>{

@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: profiles-db-pvc
 spec:
-  storageClassName: manual
+  storageClassName:
   accessModes:
    - ReadWriteOnce
   resources:
    requests:
-    storage: 1Gi
+    storage: 256Mi

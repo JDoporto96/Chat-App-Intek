@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Navigate} from "react-router-dom";
+import { Link, Navigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Bar from '../components/bar/Bar';
@@ -18,7 +18,6 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { client } from '../graphql/apollo-client';
-
 
 export default function Login() {
 
@@ -85,16 +84,18 @@ export default function Login() {
   useEffect(()=>{
     if(auth.token){
       localStorage.setItem('chat-app-user-jwt',auth.token)
+      dispatch({type:'LOGGED'})
       dispatch({type: 'GET_CURRENT_USER'})
       dispatch({type: 'GET_CONTACTS'})
-      dispatch({type:'LOGGED'})
+      
     }
+    
   },[auth])
-
 
   if(auth.isLogged){
     return  <Navigate to="/dashboard"/>
   }
+  
   return (
     <>
       <Bar/>
@@ -146,12 +147,15 @@ export default function Login() {
             </Button>
             <Grid container>
               <Grid item>
-                <LinkUi href="/register" variant="body2">
-                <Trans i18nkey="RegisterLink">
+                <Link to ="/register" >
+               
+                  <LinkUi variant="body2">
+                  <Trans i18nkey="RegisterLink">
                   Don't have an account? Sign Up
+                  
                 </Trans>
-                 
                 </LinkUi>
+                </Link>
               </Grid>
             </Grid>
           </Box>

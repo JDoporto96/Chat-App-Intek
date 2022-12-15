@@ -10,7 +10,7 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import {useState} from "react";
-import {useNavigate} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Bar from '../components/bar/Bar';
@@ -167,11 +167,16 @@ export default function Register() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <LinkUI href="/login" variant="body2">
+                <Link to="/login">
+                <LinkUI  variant="body2">
                 <Trans i18nkey="login-link">
+                
                   Already have an account? Sign in
-                  </Trans>
+                
+                </Trans>
                 </LinkUI>
+                </Link>
+               
               </Grid>
             </Grid>
           </Box>

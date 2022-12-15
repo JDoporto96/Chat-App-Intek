@@ -7,7 +7,6 @@ import { makeExecutableSchema } from '@graphql-tools/schema';
 import { WebSocketServer } from 'ws';
 import { useServer } from 'graphql-ws/lib/use/ws';
 import bodyParser from 'body-parser';
-import cors from 'cors';
 import resolvers from "./graphql/resolvers/resolvers.js";
 import typeDefs from "./graphql/typeDefs/index.js";
 import * as dotenv from "dotenv";
@@ -68,9 +67,9 @@ const context = async ({req}) =>{
 }
 
 await server.start();
-app.use('/graphql', cors(), bodyParser.json(), expressMiddleware(server,{context}));
+app.use('/graphql', bodyParser.json(), expressMiddleware(server,{context}));
 
-const PORT = 4000;
+const PORT= process.env.PORT;
 // Now that our HTTP server is fully set up, we can listen to it.
 httpServer.listen(PORT, () => {
   console.log(`Server is now running on http://localhost:${PORT}/graphql`);

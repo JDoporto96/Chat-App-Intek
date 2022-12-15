@@ -1,3 +1,4 @@
 node_modules
 dev.env
 request.rest
+src/logs

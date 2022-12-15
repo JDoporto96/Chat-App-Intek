@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: chat-app-configmap
+    name: chat-app-configmap
 data:
-  auth-database_url: auth-db-service
-  profiles-database_url: profiles-db-service
-  conversations-database_url: conv-db-service
+    AUTH_URL: auth-micro-service
+    PROFILES_URL: conv-micro-service
+    CONVERSATIONS_URL: profiles-micro-service
