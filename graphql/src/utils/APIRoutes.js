@@ -9,11 +9,11 @@ export const dashboardRoute = `${authHost}/dashboard`
 export const authorizationRoute = `${authHost}/authorize`
 
 
-const profilesHost = process.env.PROFILES_URL+ "/api/profiles";
+const profilesHost = process.env.PROFILES_URL+"/api/profiles";
 export const profilesAPIRoute = `${profilesHost}`
 
 
-export const messagesHost =process.env.CONVERSATIONS_URL+ "/api/messages";
+export const messagesHost = process.env.CONVERSATIONS_URL+"/api/messages";
 export const groupsHost = process.env.CONVERSATIONS_URL+"/api/groups";
 export const conversationsHost = process.env.CONVERSATIONS_URL+"/api/conversations";
 

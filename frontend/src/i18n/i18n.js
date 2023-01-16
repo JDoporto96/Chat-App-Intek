@@ -17,18 +17,7 @@ i18n
     interpolation: {
       escapeValue: false, 
     },
-    // resources: {
-    //   en: {
-    //     translation:{
-    //         global_en
-    //     }
-    //   },
-    //   es: {
-    //     translation:{
-    //         global_es
-    //     }
-    //   }
-    // }
+    
   });
 
 export default i18n;

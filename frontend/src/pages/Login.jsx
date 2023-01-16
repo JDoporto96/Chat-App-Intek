@@ -18,22 +18,29 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { client } from '../graphql/apollo-client';
+import LOGIN from '../graphql/mutations/login';
+import { useMutation } from '@apollo/client';
 
 export default function Login() {
+  const {currentUser} = useSelector((state) => {
+    return state.currentUser
+  });
+
+  const {contacts} = useSelector((state) => {
+    return state.contacts
+  });
 
   const {auth} = useSelector((state) => {
     return state
   });
-
-
-
+  const [login, ]= useMutation(LOGIN)
   const dispatch = useDispatch();
   const [values,setValues] = useState({
     email:"",
     password:"",
   });
   const { t } = useTranslation();
-    
+
   const toastOptions={
     position:"bottom-right",
     autoClose:5000,
@@ -58,7 +65,7 @@ export default function Login() {
     }
     return true
   };
-  
+
   const handleChange=(e)=>{
     setValues({...values,[e.target.name]:e.target.value})
   };
@@ -73,29 +80,38 @@ export default function Login() {
           email,
           password
         }
-        dispatch({type:'LOGIN', payload: {input}})
-        if(auth.loginError){
-          toast.error(auth.loginError, toastOptions);
-        }
-      }
+        login({variables:{input}}).then(a=>{
+          if(a.data.logIn.error){
+            toast.error(a.data.logIn.error,toastOptions)
+          }else{
+            localStorage.setItem('chat-app-user-jwt',a.data.logIn.token)
+            dispatch({type:'LOGIN', payload: {input}})
+           
+          }
+          
+        })
 
+      }
   };
 
   useEffect(()=>{
     if(auth.token){
-      localStorage.setItem('chat-app-user-jwt',auth.token)
-      dispatch({type:'LOGGED'})
-      dispatch({type: 'GET_CURRENT_USER'})
       dispatch({type: 'GET_CONTACTS'})
-      
+      dispatch({type: 'GET_CURRENT_USER'})
+      dispatch({type:'LOGGED'})
     }
-    
-  },[auth])
+  },[auth.token])
 
-  if(auth.isLogged){
+  if(localStorage.getItem('chat-app-user-jwt')){
+    dispatch({type: 'GET_CONTACTS'})
+      dispatch({type: 'GET_CURRENT_USER'})
+      dispatch({type:'LOGGED'})
+  }
+
+  if(auth.isLogged && currentUser && contacts){
     return  <Navigate to="/dashboard"/>
   }
-  
+
   return (
     <>
       <Bar/>
@@ -136,7 +152,7 @@ export default function Login() {
               id="password"
               autoComplete="current-password"
             />
-            
+
             <Button
               type="submit"
               fullWidth
@@ -148,11 +164,11 @@ export default function Login() {
             <Grid container>
               <Grid item>
                 <Link to ="/register" >
-               
+
                   <LinkUi variant="body2">
                   <Trans i18nkey="RegisterLink">
                   Don't have an account? Sign Up
-                  
+
                 </Trans>
                 </LinkUi>
                 </Link>

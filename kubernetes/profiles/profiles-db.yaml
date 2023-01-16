@@ -50,6 +50,7 @@ metadata:
 spec:
   selector:
     app: profiles-db
+  type: NodePort
   ports:
   - protocol: TCP
     port: 27017

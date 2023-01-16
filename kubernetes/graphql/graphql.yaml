@@ -48,7 +48,8 @@ metadata:
   name: chat-gqlserver-service
 spec:
   selector:
-    app: chat-gqlserver-micro
+    app: graphql-micro
+  type: NodePort
   ports:
   - protocol: TCP
     port: 4000

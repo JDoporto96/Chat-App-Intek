@@ -86,8 +86,13 @@ export default function Register() {
               email,
               password
             }
-            createUser({variables: {input}})
-              navigate("/login");
+            createUser({variables: {input}}).then(a=>{
+              if(a.data.createUser.error){
+                toast.error(a.data.createUser.error,toastOptions);
+              }else{
+                navigate("/login");
+              }
+            });  
             }
     };
 

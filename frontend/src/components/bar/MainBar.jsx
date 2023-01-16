@@ -31,7 +31,6 @@ const ResponsiveAppBar = () => {
     };
 
 useEffect(()=>{
-    console.log(isLogged)
 }, [isLogged])
 
   const handleOpenUserMenu = (event) => {

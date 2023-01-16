@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 const express = require('express');
 const userRoutes = require('./routes/users');
 const morgan = require('morgan');
@@ -26,6 +26,6 @@ app.use(passport.session());
 app.use("/api/auth", userRoutes)
 
 
-app.listen(process.env.PORT, () => {
+const server = app.listen(process.env.PORT, () => {
     console.log( `Server started on port ${process.env.PORT}`)
 })

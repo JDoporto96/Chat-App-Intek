@@ -50,6 +50,7 @@ metadata:
 spec:
   selector:
     app: auth-db
+  type: NodePort
   ports:
   - protocol: TCP
     port: 27017

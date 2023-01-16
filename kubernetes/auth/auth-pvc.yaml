@@ -3,7 +3,6 @@ kind: PersistentVolumeClaim
 metadata:
   name: auth-db-pvc
 spec:
-  storageClassName: gp2
   accessModes:
    - ReadWriteOnce
   resources:

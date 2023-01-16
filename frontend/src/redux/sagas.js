@@ -21,7 +21,6 @@ function* logIn(action){
         }
     }catch(err){
         yield put (setLoginError("Error on server"))
-        console.log(err)
     }
 
 

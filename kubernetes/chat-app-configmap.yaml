@@ -3,6 +3,9 @@ kind: ConfigMap
 metadata:
     name: chat-app-configmap
 data:
-    AUTH_URL: auth-micro-service
-    PROFILES_URL: conv-micro-service
-    CONVERSATIONS_URL: profiles-micro-service
+    AUTH_URL: http://auth-micro-service:5000
+    PROFILES_URL: http://profiles-micro-service:5001
+    CONVERSATIONS_URL: http://conv-micro-service:5002
+    AUTH_PORT: "5000"
+    PROFILES_PORT: "5001"
+    CONV_PORT: "5002"

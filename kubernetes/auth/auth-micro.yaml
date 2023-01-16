@@ -20,6 +20,11 @@ spec:
         ports:
         - containerPort: 5000
         env:
+        - name: PORT
+          valueFrom:
+            configMapKeyRef:
+              name: chat-app-configmap
+              key: AUTH_PORT
         - name: ME_CONFIG_MONGODB_ADMINUSERNAME
           valueFrom:
             secretKeyRef:
@@ -45,6 +50,7 @@ metadata:
 spec:
   selector:
     app: auth-micro
+  type: NodePort
   ports:
   - protocol: TCP
     port: 5000
