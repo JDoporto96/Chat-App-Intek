@@ -65,7 +65,6 @@ export default function ContactRequests() {
     const handleReject = async (e) => {
         e.preventDefault();
         const input ={
-            receiverId: currentUser.currentUser._id,
             senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:false
         }

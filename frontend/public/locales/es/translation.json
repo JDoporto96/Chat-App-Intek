@@ -1,6 +1,6 @@
 {
     "Username should be longer than 3 characters":"El nombre de usuario debe contener al menos 3 caracteres",
-    "You need to provide an email":"El correo electrónico es necesario",
+    "Invalid email address":"El correo electrónico no es válido",
     "Password must contain at least 6 characters":"La contraseña debe contener al menos 6 caracteres",
     "Passwords should coincide":"Las contraseñas deben coincidir",
     "Register":"Registrarse",

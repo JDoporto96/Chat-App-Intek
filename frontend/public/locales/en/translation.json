@@ -1,6 +1,6 @@
 {
     "Username should be longer than 3 characters":"Username should be longer than 3 characters",
-    "You need to provide an email":"You need to provide an email",
+    "Invalid email address":"Invalid email address",
     "Password must contain at least 6 characters":"Password must contain at least 6 characters",
     "Passwords should coincide":"Passwords should coincide",
     "Register":"Register",

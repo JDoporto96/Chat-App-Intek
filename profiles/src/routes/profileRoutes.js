@@ -137,9 +137,22 @@ router.post('/profiles/:id/sendcontactrequest', async(req,res)=>{
         if(!profile){
             logger.error("Unable to find sender");
             return res.json({msg:"You are not in db", status:false});
-        }else if(profile.contacts.find(contact => contact._id === req.body._id)){
-            logger.error("Contacts already in list");
-            return res.json({msg:"Contact already in your contact's list", status:false});
+        }
+        let checkReq = profile.contacts.find(user => user._id === contact._id);
+        if(checkReq){
+
+        
+            if(checkReq.request.status == 'Accepted'){
+                
+                logger.error("Contacts already in list");
+                return res.json({msg:"Contact already in your contact's list", status:false});
+
+            }else if(checkReq.request.status == 'Pending'){
+
+                logger.error("Request is pending");
+                return res.json({msg:"You have a pending request with this user", status:false});
+
+            }
         }
         profile.contacts.push({_id:contact._id, username:contact.username, request:{from:profile._id,status: "Pending"}});
         await profile.save();
@@ -169,23 +182,29 @@ router.post('/profiles/:id/respondcontactrequest', async(req,res)=>{
         
         const request = {_id:contact._id, username:contact.username, request:{from:contact._id,status: "Pending"}}
         if(req.body.accepted){
-            request.request.status = "Accepted"
+            request.request.status = "Accepted";
+            profile.contacts = profile.contacts.filter(contact => contact._id !== req.body._id);
+            profile.contacts.push(request);
+            await profile.save();
+
+            request._id = profile._id;
+            request.username = profile.username;
+            contact.contacts = contact.contacts.filter(contact => contact._id !== profile._id);
+            contact.contacts.push(request);
+            await contact.save();
+
+            logger.info(`Requests from ${profile._id} responded `)
+            res.send({msg:"Request accepted sucessfully", status:true})
+
         }else{
-            request.request.status = "Rejected"
+            profile.contacts = profile.contacts.filter(contact => contact._id !== req.body._id);
+            await profile.save();
+            contact.contacts = contact.contacts.filter(contact => contact._id !== profile._id);
+            await contact.save();
+
+            logger.info(`Requests from ${profile._id} responded `)
+            res.send({msg:"Request rejected sucessfully", status:true})
         }
-
-        profile.contacts = profile.contacts.filter(contact => contact._id !== req.body._id);
-        profile.contacts.push(request);
-        await profile.save();
-
-        request._id = profile._id;
-        request.username = profile.username;
-        contact.contacts = contact.contacts.filter(contact => contact._id !== profile._id);
-        contact.contacts.push(request);
-        await contact.save();
-        
-        logger.info(`Requests from ${profile._id} responded `)
-        res.send({msg:"Request accepted sucessfully", status:true})
 
     }catch(e){
         res.status(500).send(e)

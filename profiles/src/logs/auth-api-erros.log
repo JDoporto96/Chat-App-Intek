@@ -31,3 +31,22 @@
 [2022-11-14T18:28:42.418Z] error: Unable to find receiver
 [2022-11-14T22:24:05.967Z] error: Unable to find receiver
 [2022-11-15T18:54:44.139Z] error: Unable to find receiver
+[2023-01-19T17:49:39.293Z] error: Unable to find receiver
+[2023-01-19T17:49:46.658Z] error: Contacts already in list
+[2023-01-19T18:03:44.587Z] error: Request is pending
+[2023-01-19T18:04:02.494Z] error: Request is pending
+[2023-01-19T18:04:31.311Z] error: Request is pending
+[2023-01-19T18:04:40.572Z] error: Request is pending
+[2023-01-19T18:04:47.811Z] error: Contacts already in list
+[2023-01-19T18:20:30.762Z] error: Contacts already in list
+[2023-01-19T18:30:54.252Z] error: Cannot read properties of undefined (reading 'request')
+[2023-01-19T18:30:58.144Z] error: Cannot read properties of undefined (reading 'request')
+[2023-01-19T18:31:08.040Z] error: Cannot read properties of undefined (reading 'request')
+[2023-01-19T18:31:28.802Z] error: Cannot read properties of undefined (reading 'request')
+[2023-01-19T18:31:39.477Z] error: Cannot read properties of undefined (reading 'request')
+[2023-01-19T18:33:25.573Z] error: Request is pending
+[2023-01-19T18:33:38.575Z] error: Request is pending
+[2023-01-19T18:34:10.792Z] error: Request is pending
+[2023-01-19T18:34:27.233Z] error: Unable to find receiver
+[2023-01-19T18:34:30.674Z] error: Unable to find receiver
+[2023-01-19T18:34:35.882Z] error: Contacts already in list

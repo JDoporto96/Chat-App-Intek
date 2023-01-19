@@ -8,7 +8,7 @@ const profileSchema = new mongoose.Schema({
         required: true,
         unique: true,
         trim: true,
-        minlength: 4,
+        minlength: 3,
         max: 20  
     }, 
     profilePicture:{

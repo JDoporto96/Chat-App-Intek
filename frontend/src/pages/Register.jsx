@@ -17,6 +17,7 @@ import Bar from '../components/bar/Bar';
 import { useMutation} from '@apollo/client'
 import CREATE_NEW_USER from '../graphql/mutations/createUser';
 import { useTranslation, Trans } from "react-i18next";
+import validator from 'validator';
 
 
 
@@ -52,9 +53,9 @@ export default function Register() {
                 toastOptions
             );
             return false;
-        }else if(email ===""){
+        }else if(email ==="" || !validator.isEmail(email)){
             toast.error(
-                t("You need to provide an email"),
+                t("Invalid email address"),
                 toastOptions
             );
             return false;
