@@ -11,6 +11,7 @@
     "Already have an account? Sign in": "¿Ya tienes una cuenta? Ingresa",
     "Email and password are required": "Correo y contraseña requeridos",
     "Log in": "Ingresar",
+    "Log out": "Cerrar sesión",
     "Don't have an account? Sign Up":"¿No tienes una cuenta? Registrate",
     "Contacts":"Contactos",
     "Groups":"Grupos",
@@ -42,7 +43,26 @@
     "Are you sure you want to leave the group?":"¿Estás seguro de querer abandonar el grupo?",
     "Remove admins":"Eliminar admins",
     "Remove members":"Eliminar miembros",
-    "Group's settings":"Administrar grupo"
+    "Group's settings":"Administrar grupo",
+    "Email already used": "El correo ya esta registrado",
+    "Username already used":"El usuario ya esta registrado",
+    "Register successfull": "Registro exitoso",
+    "Invalid updates": "Actualizaciones no válidas",
+    "Successful login": "Inicio de sesión exitoso",
+    "User created successfully": "El usuario ha sido creado exitosamente",
+    "Error on server": "Error en el servidor",
+    "Invalid credentials": "Los datos de accesso no son válidos",
+    "User not found": "No se encontró al usuario",
+    "Contact already in your contact's list":"El usuario ya se encuentra en su lista de contactos",
+    "You have a pending request with this user":"Solicitud pendiente con este usuario",
+    "Request sent sucessfully": "Solicitud enviada exitosamente",
+    "Request accepted sucessfully": "La solicitud ha sido aceptada exitosamente",
+    "Request rejected sucessfully": "La solicitud ha sido rechazada exitosamente",
+    "Group removed successfully": "El grupo ha sido eliminado exitosamente",
+    "Group created successfully":"El grupo se ha creado exitosamente",
+    "Group updated successfully":"El grupo se ha actualizado exitosamente"
+
+
 
 
 }

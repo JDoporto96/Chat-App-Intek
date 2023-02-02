@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, { useState} from "react";
 import ChatContainer from "./ChatContainer";
 import Contacts from "./Contacts";
 import Welcome from "./Welcome";
@@ -9,34 +9,61 @@ import AddContact from "./Buttons/AddContact";
 import AddGroup from "./Buttons/AddGroup";
 import ContactRequests from "./Buttons/ContactRequests";
 import ConversationsPanel from "./ConversationsPanel";
-import { useLazyQuery } from "@apollo/client";
-import GET_USER_CONV from "../../graphql/queries/getUserConversations";
 import { Trans } from "react-i18next";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import {toast, ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useSubscription } from "@apollo/client";
+import UPDATE_GROUP_SUB from "../../graphql/subscription/updateGroup";
 
 
 export default function Chat() {
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
-  });
 
-  const {contacts} = useSelector((state) => {
-    return state.contacts
-  });
-  const [conversations, setConversations]= useState([]);
   const [currentChat, setCurrentChat] = useState(undefined);
-  const [getUserConversations, ] = useLazyQuery(GET_USER_CONV);
+  
+  const {infoMessage,currentUser} = useSelector((state) => {
+    return state
+  });
+  const dispatch = useDispatch();
+  const toastOptions={
+    position:"bottom-right",
+    autoClose:5000,
+    pauseOnHover:true,
+    draggable:true,
+  };
+  
+  React.useEffect(()=>{
+    if(infoMessage.error){
+      toast.error(infoMessage.error,toastOptions)
+    }
 
-  useEffect(()=>{
-    async function getConversations(){
-        const {data} = await getUserConversations({variables:{userId:currentUser._id}})
-        setConversations(data.getUserConversations)
+    if(infoMessage.info){
+        toast.success(infoMessage.info,toastOptions)
         
     }
-    getConversations();
-    
-  },[currentUser])
 
+    dispatch({type:'RESET_MSG'})
+      
+  },[infoMessage])
+
+
+  
+
+useSubscription(UPDATE_GROUP_SUB, {
+      onData:({data}) =>{
+        if(currentChat !== undefined && data.data.updateGroup._id === currentChat._id  ){
+          if(data.data.updateGroup.members.includes(currentUser.user._id)){
+            setCurrentChat(data.data.updateGroup)
+          }else{
+            setCurrentChat(undefined)
+          }
+          
+        }
+
+        dispatch({type:'GET_USER_CONVS'})
+
+      }
+    })
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);
@@ -86,7 +113,8 @@ export default function Chat() {
                       
                   </Box>
                     
-                    <Contacts changeChat={handleChatChange} conversations={conversations} />
+                    <Contacts changeChat={handleChatChange} 
+                    />
                     
                 </Box>
 
@@ -118,7 +146,7 @@ export default function Chat() {
                       </Grid>
 
                       <Grid xs ={2} item>
-                      <AddGroup contacts={contacts}/>
+                      <AddGroup />
                       </Grid>
                     </Grid>
 
@@ -144,11 +172,11 @@ export default function Chat() {
                 height:"85vh"
                 }}
                 >
-                {currentChat === undefined ? (
+                {currentChat === undefined ? 
                   <Welcome />
-                  ) : (
-                  <ChatContainer contacts={contacts} currentChat={currentChat} />
-                )}
+                  : 
+                  <ChatContainer currentChat={currentChat} changeChat={handleChatChange}s />
+                }
                 </Box>
               </Paper>
             </Container>
@@ -157,7 +185,8 @@ export default function Chat() {
             
             <Container>
               <Paper elevation={5}>
-                    <ConversationsPanel conversations={conversations} changeChat={handleChatChange}/>
+                    <ConversationsPanel 
+                    changeChat={handleChatChange}/>
 
               </Paper>
               </Container>
@@ -166,7 +195,7 @@ export default function Chat() {
 
         </Grid>
       </Container>
-      
+      <ToastContainer/>
     </>
   );
 }

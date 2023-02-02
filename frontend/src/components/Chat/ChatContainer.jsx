@@ -9,9 +9,9 @@ import Messages from "../Messages";
 import { useSelector } from "react-redux";
 
 
-export default function ChatContainer({ contacts, currentChat}) {
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
+export default function ChatContainer({currentChat, changeChat}) {
+  const {currentUser, contacts} = useSelector((state) => {
+    return state
   });
 
   const [chatName, setChatName]=useState("");
@@ -23,8 +23,8 @@ export default function ChatContainer({ contacts, currentChat}) {
     if(currentChat.name){
       setChatName(currentChat.name)
     }else{
-      const contactId=currentChat.members.find(m => m!== currentUser._id)
-      const contactName = contacts.find(contact => contact._id===contactId).username
+      const contactId=currentChat.members.find(m => m!== currentUser.user._id)
+      const contactName = contacts.contactList.find(contact => contact._id===contactId).username
       setChatName(contactName)
     }
   },[currentChat])
@@ -62,7 +62,7 @@ export default function ChatContainer({ contacts, currentChat}) {
           
 
             {currentChat.name?(
-                <GroupSetting currentChat={currentChat}/>
+                <GroupSetting currentChat={currentChat} changeChat={changeChat}/>
               ) : <></> 
             }
             
@@ -77,7 +77,7 @@ export default function ChatContainer({ contacts, currentChat}) {
         sx={{
           height: "70vh"
           }} item>
-          <Messages contacts={contacts} currentChat={currentChat}/>
+          <Messages contacts={contacts.contactList} currentChat={currentChat}/>
           <ChatInput handleSendMsg={handleSendMsg} />   
         </Grid>
         

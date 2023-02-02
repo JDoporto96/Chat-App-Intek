@@ -90,8 +90,9 @@ router.get('/profiles/:id/contacts', async(req,res)=>{
         
         }
         const contacts = profile.contacts.filter(contact=>contact.request.status === "Accepted");
-        logger.info(`Fetcing contacts from id: ${profile._id}`)
-        res.json(contacts.sort((a,b)=>(a.username > b.username)?1:-1));
+        // logger.info(`Fetcing contacts from id: ${profile._id}`)
+        console.log(contacts)
+        res.json(contacts.sort((a,b)=>(a.username.toLowerCase() > b.username.toLowerCase())?1:-1));
 
     }catch(e){
         logger.error(err);
@@ -160,7 +161,7 @@ router.post('/profiles/:id/sendcontactrequest', async(req,res)=>{
         contact.contacts.push({_id:profile._id, username:profile.username, request:{from:profile._id,status: "Pending"}});
         await contact.save();
         logger.info(`Requests from ${profile._id} sent to ${contact._id} `)
-        res.json({msg:"Request send sucessfully", status:true})
+        res.json({msg:"Request sent sucessfully", status:true})
     }catch(e){
         logger.error(e);
         res.status(500).json(e)

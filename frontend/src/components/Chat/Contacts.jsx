@@ -2,41 +2,51 @@ import React from "react";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Stack } from "@mui/material";
-import { useMutation} from "@apollo/client";
-import CREATE_CONV from "../../graphql/mutations/createConversation";
-import GET_USER_CONV from "../../graphql/queries/getUserConversations";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useSubscription } from "@apollo/client";
+import CONV_SUBSCRIPTION from "../../graphql/subscription/newConversation";
 
-export default function Contacts({changeChat,conversations }) {
+export default function Contacts({changeChat }) {
   
-  const {contacts} = useSelector((state) => {
-    return state.contacts
+  const {contacts,conversations,currentUser} = useSelector((state) => {
+    return state
   });
- 
-  const [createChat, ] = useMutation(CREATE_CONV,
-    {refetchQueries:[{query:GET_USER_CONV}],});
+  const userConvs = conversations.conversations
+  const dispatch = useDispatch();
+
+  useSubscription(CONV_SUBSCRIPTION, {
+    onData:({data}) =>{
+      if (data.data.newConversation.members.includes(currentUser.user._id)){
+        dispatch({type:'GET_USER_CONVS'})
+      }
+    }
+  })
+  
 
   const changeCurrentChat = async(contact) => {
-    const conv = conversations.find(({members})=> members.includes(contact._id)&&members.length===2)
+    const conv = userConvs.find(({members})=> members.includes(contact._id)&&members.length===2)
     if(!conv){
-      const {data} = await createChat({variables:{receiverId:contact._id}});
-      changeChat(data.createConversation.conversation)
+      dispatch({type: 'CREATE_CONVERSATION', payload:{receiverId:contact._id}})
+
     }else{
       changeChat(conv)
     }
   };
-  return (
+
+
+  if(contacts.fetched){return (
     <React.Fragment>
       <Stack spacing={.5}
       sx={{
         width:"100%",
         overflow:"auto"
       }}>
-      {contacts.map((contact)=>{
+      {contacts.contactList.map((contact)=>{
         return(
 
           <ListItemButton key={contact._id}
-          onClick={()=>changeCurrentChat(contact)}>
+          onClick={()=>changeCurrentChat(contact)}
+          >
             <ListItemText
             
             >
@@ -51,5 +61,5 @@ export default function Contacts({changeChat,conversations }) {
   
 
             
-  );
+  );}
 }

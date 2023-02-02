@@ -7,23 +7,22 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useMutation } from '@apollo/client';
-import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
 function RemoveMembersForm({currentChat}) {
   const currentUser = useSelector((state) => {
-    return state.currentUser
+    return state.currentUser.user
   });
 
   const contacts = useSelector((state) => {
-    return state.contacts
+    return state.contacts.contactList
   });
-    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
+
+  const dispatch = useDispatch();
+
 
     
     const members = currentChat.members.map(member =>{
@@ -66,7 +65,7 @@ function RemoveMembersForm({currentChat}) {
           conversationId:currentChat._id,
           removedMembers:eliminatedMembers
         }
-        updateGroup({variables:{input}})
+        dispatch({type:'UPDATE_GROUP', payload: {input}})
         setPersonName([])
         
       }

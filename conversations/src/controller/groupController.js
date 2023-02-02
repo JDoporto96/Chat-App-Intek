@@ -11,7 +11,7 @@ module.exports.createGroupConversation = async (req,res,next)=>{
             members
         })
         if (group){
-            logger.info(`New group created with id: ${group._id}`) 
+            logger.info(`New group conversation created with id: ${group._id}`) 
             return res.json(group);
         }
         else return res.json({ msg: "Failed to create group and add it to the database", status:false});
@@ -70,7 +70,7 @@ module.exports.showMyGroups = async(req,res,next)=>{
     try{
         const userId = req.params.userId;
         let groups = await Conversations.find();
-        const projectedGroups = groups.filter(group=>group.members.includes(userId)&& group.members.length >2).sort((a,b)=>(a.name > b.name)?1:-1);
+        const projectedGroups = groups.filter(group=>group.members.includes(userId)&& group.admins.length >=1).sort((a,b)=>(a.name.toLowerCase() > b.name.toLowerCase())?1:-1);
         if(!projectedGroups){
             return res.json({msg:"Haven't joined any group "})
         }
@@ -90,7 +90,7 @@ module.exports.deleteGroup =async (req,res,next)=>{
         }
         await group.remove();
         logger.info(`Group with id: ${group._id} has been deleted`)
-        res.send({msg:"Group removed successfully", group});
+        res.send({msg:"Group removed successfully", group, status:true});
     }catch(err){
         next(err)
     }

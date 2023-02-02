@@ -8,10 +8,10 @@ import { useSelector } from 'react-redux';
 
 
 
-function GroupSetting({ currentChat}) {
+function GroupSetting({ currentChat, changeChat}) {
 
-    const {currentUser} = useSelector((state) => {
-        return state.currentUser
+    const currentUser = useSelector((state) => {
+        return state.currentUser.user
       });
 
     const authorized = currentChat.admins.includes(currentUser._id);
@@ -59,7 +59,7 @@ function GroupSetting({ currentChat}) {
                     onClose={handleCloseMenu}
                     >
 
-                    { authorized? <AdminMenu currentChat={currentChat}/> : <MemberMenu currentChat={currentChat}/>}
+                    { authorized? <AdminMenu currentChat={currentChat} changeChat={changeChat}/> : <MemberMenu currentChat={currentChat} changeChat={changeChat}/>}
 
                     </Menu>
     </>

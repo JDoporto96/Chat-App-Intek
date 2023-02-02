@@ -11,6 +11,7 @@
     "Already have an account? Sign in": "Already have an account? Sign in",
     "Email and password are required":"Email and password are required",
     "Log in": "Log in",
+    "Log out":"Log out",
     "Don't have an account? Sign Up": "Don't have an account? Sign Up",
     "Contacts":"Contacts",
     "Groups":"Groups",
@@ -42,7 +43,31 @@
     "Are you sure you want to leave the group?":"Are you sure you want to leave the group?",
     "Remove admins":"Remove admins",
     "Remove members":"Remove members",
-    "Group's settings":"Group's settings"
+    "Group's settings":"Group's settings",
+    "Email already used":"Email already used",
+    "Username already used": "Username already used",
+    "Register successfull":  "Register successfull",
+    "Invalid updates":  "Invalid updates",
+    "Successful login":"Successful login",
+    "User created successfully":"User created successfully",
+    "Error on server":"Error on server",
+    "Invalid credentials":"Invalid credentials",
+    "User not found":"User not found",
+    "Contact already in your contact's list":"Contact already in your contact's list",
+    "You have a pending request with this user":"You have a pending request with this user",
+    "Request sent sucessfully":"Request sent sucessfully",
+    "Request accepted sucessfully":"Request accepted sucessfully",
+    "Request rejected sucessfully":"Request rejected sucessfully",
+    "Group removed successfully":"Group removed successfully",
+    "Group created successfully":"Group created successfully",
+    "Group updated successfully":"Group updated successfully"
+
+
+
+
+
+
+
 
 
 

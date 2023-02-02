@@ -3,10 +3,14 @@ import { gql } from "@apollo/client";
 const UPDATE_GROUP = gql`
 mutation Mutation($input: UpdateGroupInput) {
   updateGroup(input: $input) {
-    _id
-    admins
-    members
-    name
+    conversation {
+      _id
+      name
+      members
+    }
+    message
+    success
+    error
   }
 }
 `;

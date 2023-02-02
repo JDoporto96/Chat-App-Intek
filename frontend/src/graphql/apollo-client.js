@@ -16,11 +16,18 @@ const authLink = setContext((_, { headers }) => {
   });
 
 const httpLink = new HttpLink({
-    uri: 'http://'+window.location.host+'/graphql'
+  // Use 'http://'+window.location.host+'/graphql'
+    // uri: 'http://localhost:4000/graphql'
+    uri: 'http://'+ window.location.host+ '/graphql'
 })
 
 const wsLink = new GraphQLWsLink(createClient({
+  // Use 'ws://'+window.location.host+'/subscription'
+    // url: 'ws://localhost:4000/graphql',
     url: 'ws://'+window.location.host+'/subscription',
+    options: {
+      reconnect: true,
+    }
   }));
 
 const splitLink = split(({query})=>{

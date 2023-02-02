@@ -1,10 +1,10 @@
 import React from 'react'
 import LeaveGroup from './LeaveGroup'
 
-function MemberMenu({currentChat}) {
+function MemberMenu({currentChat, changeChat}) {
   return (
     <>
-        <LeaveGroup currentChat={currentChat}/>
+        <LeaveGroup currentChat={currentChat} changeChat={changeChat}/>
     </>
     
   )

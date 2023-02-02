@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { createGroupRoute, newConversationRoute ,profilesAPIRoute,
     registerRoute,loginRoute,sendMessageRoute,
-    updateGroupRoute} from '../../utils/APIRoutes.js';
+    updateGroupRoute,
+    deleteGroupRoute} from '../../utils/APIRoutes.js';
 import { PubSub } from 'graphql-subscriptions';
 import logger from '../../utils/logger.js';
 
@@ -131,7 +132,7 @@ const mutationResolvers={
                 })
                 pubsub.publish('CONVERSATION_CREATED',{newConversation: response.data})
                 logger.info(`New group conversation created`)
-                return{success:true, conversation: response.data}
+                return{success:true, conversation: response.data, message:'Group created successfully'}
             }catch(err){
                 return {success: false, error:err}
             }
@@ -156,7 +157,26 @@ const mutationResolvers={
                 }
                 logger.info(`Group conversation has been updated`)
                 pubsub.publish('GROUP_UPDATED',{updateGroup: response.data.group})
-                return response.data.group
+                return{success:true, conversation: response.data.group, message:'Group updated successfully'}
+
+            }catch(err){
+                return {success: false, err: err}
+            }
+            
+        },
+        deleteGroup: async(_,{conversationId}, context) => {
+            const {currentUser} = context;
+            if(!currentUser){
+                return{success: false, error: "Please authenticate"}
+            }
+            try{
+                const response = await axios.delete(deleteGroupRoute+`/${conversationId}`);
+                if(!response.data.status){
+                    return{success:false, error:"Error deleting group"}
+                }
+                logger.info('Deleting group with id: '+ conversationId)
+                pubsub.publish('GROUP_UPDATED',{updateGroup: response.data.group})
+                return{success:true, message:response.data.msg}
 
             }catch(err){
                 return {success: false, err: err}

@@ -10,24 +10,32 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useMutation } from '@apollo/client';
-import CREATE_GROUP_CONV from '../../../graphql/mutations/createGroup';
-import { useTranslation, Trans } from "react-i18next";
-import GET_USER_CONV from '../../../graphql/queries/getUserConversations';
-import GET_USER_GROUPS from "../../../graphql/queries/getGroups";
-import { useSelector } from 'react-redux';
 
-export default function AddGroup({contacts}) {
-  const {currentUser }= useSelector((state) => {
-    return state.currentUser
+import { useTranslation, Trans } from "react-i18next";
+
+import { useDispatch, useSelector } from 'react-redux';
+import { useSubscription } from '@apollo/client';
+import CONV_SUBSCRIPTION from '../../../graphql/subscription/newConversation';
+
+export default function AddGroup() {
+  const {currentUser,contacts }= useSelector((state) => {
+    return state
   });
+  const dispatch = useDispatch(); 
+  
+  useSubscription(CONV_SUBSCRIPTION, {
+    onData:({data}) =>{
+      if (data.data.newConversation.members.includes(currentUser.user._id)){
+        dispatch({type:'GET_USER_CONVS'})
+      }
+    }
+  })
+
 
   const[groupname,setGroupname]=useState("");
   const[members,setMembers]=useState([]);
   const [personName, setPersonName] = React.useState([]);
-  const [createGroup, ] = useMutation(CREATE_GROUP_CONV,
-    {refetchQueries:[{query:GET_USER_CONV}, {query:GET_USER_GROUPS}],
-  })
+
   const { t } = useTranslation();
 
   const handleChange=(e)=>{
@@ -42,10 +50,10 @@ export default function AddGroup({contacts}) {
 
   useEffect(()=>{
     const list = personName.map(name=>{
-      const member =contacts.find(contact=>contact.username===name)
+      const member =contacts.contactList.find(contact=>contact.username===name)
       return member._id
     })
-    list.push(currentUser._id);
+    list.push(currentUser.user._id);
     setMembers(list)
   },[personName])
 
@@ -57,7 +65,8 @@ export default function AddGroup({contacts}) {
       name:groupname,
       members
     }
-    await createGroup({variables:{input}})
+    dispatch({type: 'CREATE_GROUP', payload:{input}})
+    setPersonName([])
     setOpen(false)
   }
   
@@ -117,7 +126,7 @@ export default function AddGroup({contacts}) {
             </Box>
           )}
         >
-          {contacts.map(contact => (
+          {contacts.contactList.map(contact => (
             <MenuItem
               key={contact._id}
               value={contact.username}

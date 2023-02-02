@@ -9,21 +9,23 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {Link, useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Bar from '../components/bar/Bar';
-import { useMutation} from '@apollo/client'
-import CREATE_NEW_USER from '../graphql/mutations/createUser';
 import { useTranslation, Trans } from "react-i18next";
 import validator from 'validator';
+import { useDispatch, useSelector } from 'react-redux';
 
 
 
 
 export default function Register() {
     const navigate= useNavigate();
+    const {infoMessage} = useSelector((state) => {
+      return state
+    });
     const [values,setValues] = useState({
         username:"",
         email:"",
@@ -31,7 +33,7 @@ export default function Register() {
         confirmPassword:""
     });
 
-    const [createUser, ]= useMutation(CREATE_NEW_USER)
+    const dispatch = useDispatch();
     const { t } = useTranslation();
 
     const toastOptions={
@@ -87,15 +89,25 @@ export default function Register() {
               email,
               password
             }
-            createUser({variables: {input}}).then(a=>{
-              if(a.data.createUser.error){
-                toast.error(a.data.createUser.error,toastOptions);
-              }else{
-                navigate("/login");
-              }
-            });  
+            dispatch({type:'REGISTER', payload: {input}})
+            
             }
     };
+  
+  useEffect(()=>{
+    if(infoMessage.error){
+      toast.error(infoMessage.error,toastOptions)
+      dispatch({type:'RESET_MSG'})
+    }
+    if(infoMessage.info){
+      toast.success(infoMessage.info,toastOptions);
+      dispatch({type:'RESET_MSG'});
+      setTimeout(()=>{navigate('/login')},1000)
+      
+    }
+    
+      
+  },[infoMessage, dispatch])
 
   return (
     <>

@@ -8,6 +8,7 @@ mutation Mutation($input: NewGroupInput) {
       name
       members
     }
+    message
     success
     error
   }

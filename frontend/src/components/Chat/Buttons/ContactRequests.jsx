@@ -3,31 +3,24 @@ import { useState } from 'react';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import { Button, IconButton, Modal, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
 import { Container } from '@mui/system';
-import {useMutation, useQuery } from '@apollo/client';
-import RESPOND_REQUEST from '../../../graphql/mutations/respondContactRequest';
+import { useQuery } from '@apollo/client';
 import GET_REQUEST from '../../../graphql/queries/getRequests';
 import { useTranslation, Trans } from "react-i18next";
 import NEW_REQUEST_SUBSCRIPTION from '../../../graphql/subscription/newRequest';
-import GET_CONTACTS from '../../../graphql/queries/getContacts';
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function ContactRequests() { 
-    const {currentUser} = useSelector((state) => {
-        return state.currentUser
-      });
     
     const[open, setOpen]= useState(false);
     const[requests,setRequests] = useState([]);
     const[badgeNumber, setBadgenumber]=useState(undefined);
-    const[ respondRequest, ]=useMutation(RESPOND_REQUEST, 
-        {refetchQueries:[{query:GET_CONTACTS}]});
     const { t } = useTranslation();
-    
     const {data, loading, subscribeToMore}=useQuery(GET_REQUEST)
+    const dispatch = useDispatch();
+
 
     useEffect(()=>{
         if(!loading){
-            // setBadgenumber(data.getRequests.length)
             setRequests(data.getRequests)
         }
       },[data])
@@ -57,8 +50,10 @@ export default function ContactRequests() {
         }
         const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
         setRequests(updateList);
-        respondRequest({variables:{input}})
-        setOpen(false)  
+
+        dispatch({type:'RESPOND_REQUEST', payload: {input}})
+        // dispatch({type: 'GET_CONTACTS'})
+         
         
     }
 
@@ -68,11 +63,13 @@ export default function ContactRequests() {
             senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:false
         }
-        respondRequest({variables:{input}})
+        dispatch({type:'RESPOND_REQUEST', payload: {input}})
         const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
         setRequests(updateList);
-        setOpen(false)  
+
+ 
     }
+
     
     return (
         <>

@@ -1,20 +1,33 @@
 import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
-import { useMutation } from '@apollo/client';
-import DELETE_GROUP_CONV from '../../../../graphql/mutations/deleteGroup';
 import { Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
-import GET_USER_GROUPS from '../../../../graphql/queries/getGroups';
+import { useDispatch, useSelector } from 'react-redux';
+// import { useSubscription } from '@apollo/client';
+// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
 
-function DeleteGroup({currentChat}) {
+
+function DeleteGroup({currentChat, changeChat}) {
     const[open, setOpen]=useState(false);
-    const[deleteGroup, ]= useMutation(DELETE_GROUP_CONV,{refetchQueries:[{query:GET_USER_CONV},{query:GET_USER_GROUPS}]});
-
+    const dispatch = useDispatch();
+    // const currentUser = useSelector((state) => {
+    //     return state.currentUser.user
+    //   });
 
     const handleDelete = async()=>{
-        deleteGroup({variables:{conversationId:currentChat._id}})
+        dispatch({type:'DELETE_GROUP', payload: {conversationId:currentChat._id}})
         setOpen(false)
+        changeChat(undefined);
     }
+
+    // useSubscription(UPDATE_GROUP_SUB, {
+    //     onData:({data}) =>{
+    //       if (data.data.updateGroup.members.includes(currentUser._id)){
+    //         dispatch({type:'GET_USER_CONVS'})
+    //       }
+          
+    //     }
+    //   })
+    
   return (
 
     <>

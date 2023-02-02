@@ -12,6 +12,7 @@ import MenuItem from '@mui/material/MenuItem';
 import ChatIcon from '@mui/icons-material/Chat';
 import { useApolloClient } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
+import { Trans } from 'react-i18next';
 
 const ResponsiveAppBar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -24,9 +25,10 @@ const ResponsiveAppBar = () => {
     
   const handleLogOut = async(e)=>{
         e.preventDefault();
+        localStorage.removeItem('chat-app-user-jwt');
         dispatch({type:'LOGOUT'})
         client.clearStore();
-        localStorage.removeItem('chat-app-user-jwt');
+        
         
     };
 
@@ -100,7 +102,10 @@ useEffect(()=>{
                             onClick={(e)=>{
                             handleLogOut(e);
                         }}>
-                        <Typography textAlign="center">Log Out</Typography>
+                        <Typography textAlign="center">
+                        <Trans i18nkey="Logout">Log out</Trans>
+
+                        </Typography>
                         </MenuItem>
                     </Menu>
                 </Box>

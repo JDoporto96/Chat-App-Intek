@@ -2,25 +2,31 @@ import React from "react";
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import { Stack } from "@mui/material";
-import { useQuery } from "@apollo/client";
-import GET_USER_GROUPS from "../../graphql/queries/getGroups";
+import { useDispatch, useSelector } from "react-redux";
 
 export default function Groups({changeChat}) {
 
-  const {loading,data} = useQuery(GET_USER_GROUPS);
+  const {conversations} = useSelector((state) => {
+    return state
+  });
+
+  const dispatch = useDispatch();
+
+  dispatch({type:'GET_USER_GROUPS'});
+
   const changeCurrentChat = (group) => {
     changeChat(group);
   };
 
-  if(!loading){
-    return (
+  
+  return (
       <React.Fragment>
         <Stack spacing={.5}
         sx={{
           width:"100%",
           overflow:"auto"
         }}>
-        {data.getUserGroups.map((group)=>{
+        {conversations.groups.map((group)=>{
           return(
   
             <ListItemButton key={group._id} onClick={()=>changeCurrentChat(group)}>
@@ -36,7 +42,6 @@ export default function Groups({changeChat}) {
         </Stack>
       </React.Fragment>        
     );
-  }
   
 }
   

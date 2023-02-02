@@ -6,7 +6,7 @@ import LeaveGroup from './LeaveGroup'
 import ManageMembers from './ManageMembers'
 import ManageAdmins from './ManageAdmins'
 
-function AdminMenu({currentChat}) {
+function AdminMenu({currentChat, changeChat}) {
   return (
     <>
       <ChangeGroupName currentChat={currentChat}/>
@@ -15,9 +15,9 @@ function AdminMenu({currentChat}) {
 
       <ManageMembers currentChat={currentChat}/> 
 
-      <LeaveGroup currentChat={currentChat}/>
+      <LeaveGroup currentChat={currentChat} changeChat={changeChat}/>
 
-      <DeleteGroup currentChat={currentChat}/>
+      <DeleteGroup currentChat={currentChat} changeChat={changeChat}/>
 
     </>
     

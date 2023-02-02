@@ -1,16 +1,28 @@
 import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, TextField } from '@mui/material'
-import { useMutation } from '@apollo/client';
-import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { useTranslation, Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
+import { useDispatch, useSelector } from 'react-redux';
+import { useSubscription } from '@apollo/client';
+import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
 
 function ChangeGroupName({currentChat}) {
     const[open, setOpen]=useState(false);
     const[newName, setNewName]=useState("");
-    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
+    const dispatch = useDispatch();
     const { t } = useTranslation();
+    // const currentUser = useSelector((state) => {
+    //     return state.currentUser.user
+    //   });
 
+    // useSubscription(UPDATE_GROUP_SUB, {
+    //     onData:({data}) =>{
+    //       if (data.data.updateGroup.members.includes(currentUser._id)){
+    //         console.log('changing name')
+    //         dispatch({type:'GET_USER_CONVS'})
+    //       }
+          
+    //     }
+    //   })
     
     const handleSubmit = async(e)=>{
         e.preventDefault();
@@ -18,7 +30,7 @@ function ChangeGroupName({currentChat}) {
             conversationId:currentChat._id,
             newName: newName
           }
-          updateGroup({variables:{input}})
+          dispatch({type:'UPDATE_GROUP', payload: {input}})
           setNewName("");
           setOpen(false);
     }

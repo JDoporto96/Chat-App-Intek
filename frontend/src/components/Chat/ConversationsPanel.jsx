@@ -1,24 +1,23 @@
-import { useQuery } from '@apollo/client';
+
 import { Box, Stack } from '@mui/material'
 import React from "react";
-import { useSelector } from 'react-redux';
-import GET_USER_CONV from '../../graphql/queries/getUserConversations';
+import {useSelector } from 'react-redux';
+
 import Conversation from './Conversation';
 
 
 function ConversationsPanel({changeChat}) {
     
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
+  const {currentUser, conversations} = useSelector((state) => {
+    return state
   });
 
-  
-    const {loading,data} = useQuery(GET_USER_CONV);
+
     const changeCurrentChat = (conversation) => {
       changeChat(conversation);
     };
-  if(!loading){
-    return (
+  
+  return (
       <Box
                   
       sx={{
@@ -34,9 +33,11 @@ function ConversationsPanel({changeChat}) {
           width:"100%"
         }}>
   
-          {data.getUserConversations.map(c=> ( 
-            <div key={c._id} onClick={()=>changeCurrentChat(c)}>
-              <Conversation conversation={c} currentUser={currentUser} />
+          {conversations.conversations.map(c=> ( 
+            <div key={c._id} 
+            onClick={()=>changeCurrentChat(c)}
+            >
+              <Conversation conversation={c} currentUser={currentUser.user} />
             </div>
               ))}
         
@@ -49,7 +50,7 @@ function ConversationsPanel({changeChat}) {
   
     )
   }
-  }
+  
   
 
 export default ConversationsPanel

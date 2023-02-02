@@ -37,6 +37,7 @@ type MessageActionResponse {
 
 type NewConversationActionResponse {
   conversation: Conversation
+  message: String
   success: Boolean!
   error: String
 }
@@ -55,6 +56,7 @@ input UpdateGroupInput{
   removedAdmins:[String]
 }
 
+
 input RespondRequestInput{
   senderId: String!
   accepted: Boolean!
@@ -66,7 +68,8 @@ type Mutation {
   logOut: ActionResponse!
   createConversation(receiverId: String!): NewConversationActionResponse!
   createGroup(input: NewGroupInput): NewConversationActionResponse!
-  updateGroup(input: UpdateGroupInput): Conversation!
+  updateGroup(input: UpdateGroupInput): NewConversationActionResponse!
+  deleteGroup(conversationId:String!): NewConversationActionResponse!
   sendMessage(input: newMessageInput):MessageActionResponse!
   sendContactRequest(receiverUsername:String!):ActionResponse!
   respondContactRequest(input: RespondRequestInput!):ActionResponse!

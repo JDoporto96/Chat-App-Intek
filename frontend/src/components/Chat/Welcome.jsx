@@ -6,14 +6,14 @@ import { Trans } from "react-i18next";
 import { useSelector } from "react-redux";
 
 export default function Welcome() {
-  const {currentUser} = useSelector((state) => {
+  const {user} = useSelector((state) => {
     return state.currentUser
   });
 
   const[userName,setUserName] = useState("");
   useEffect(()=>{
-    if(currentUser){
-      setUserName(currentUser.username)
+    if(user){
+      setUserName(user.username)
     }
   },[])
 

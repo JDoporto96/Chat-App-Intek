@@ -7,11 +7,10 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useMutation } from '@apollo/client';
-import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
+// import { useSubscription } from '@apollo/client';
 
 
 
@@ -19,11 +18,22 @@ function AddMembersForm({currentChat}) {
     const [personName, setPersonName] = React.useState([]);
     const[newMembers,setNewMembers]=useState([]);
     const contactsList = useSelector((state) => {
-      return state.contacts
+      return state.contacts.contactList
     });
+    // const currentUser = useSelector((state) => {
+    //   return state.currentUser
+    // });
     const contacts = contactsList.filter(contact=> !currentChat.members.includes(contact._id));
-    const [updateGroup, ]=useMutation(UPDATE_GROUP,
-      {refetchQueries:[{query:GET_USER_CONV}]});
+    const dispatch = useDispatch();
+
+    // useSubscription(UPDATE_GROUP_SUB, {
+    //   onData:({data}) =>{
+    //     if (data.data.updateGroup.members.includes(currentUser.user._id)){
+    //       dispatch({type:'GET_USER_CONVS'})
+    //     }
+        
+    //   }
+    // })
 
     const handleNamesChange=(e)=>{
         setPersonName(
@@ -45,17 +55,17 @@ function AddMembersForm({currentChat}) {
           conversationId:currentChat._id,
           newMembers:newMembers
         }
-        updateGroup({variables:{input}})
+        dispatch({type:'UPDATE_GROUP', payload: {input}})
         setPersonName([])
       }
 
   return (
     <>
-    <form 
-        autoComplete='off' 
-        onSubmit={handleSubmit} 
+    <form
+        autoComplete='off'
+        onSubmit={handleSubmit}
     >
-    
+
         <div>
         <FormControl sx={{ m: "normal"}} fullWidth>
             <InputLabel id="demo-multiple-chip-label">
@@ -81,7 +91,7 @@ function AddMembersForm({currentChat}) {
                 key={contact._id}
                 value={contact.username}
                 id={contact._id}
-                
+
                 >
                 {contact.username}
                 </MenuItem>
@@ -89,7 +99,7 @@ function AddMembersForm({currentChat}) {
             </Select>
         </FormControl>
         </div>
-        <Button 
+        <Button
                 type="submit"
                 variant="contained"
                 sx={{ mt: "1rem", mb: 2 }}

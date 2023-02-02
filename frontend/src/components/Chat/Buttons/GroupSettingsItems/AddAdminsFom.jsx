@@ -7,22 +7,22 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { useMutation } from '@apollo/client';
-import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import { Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+// import { useSubscription } from '@apollo/client';
+// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
 
 
 function AddAdminsFom({currentChat}) {
   const currentUser = useSelector((state) => {
-    return state.currentUser
+    return state.currentUser.user
   });
 
   const contacts = useSelector((state) => {
-    return state.contacts
+    return state.contacts.contactList
   });
-    const [updateGroup, ]=useMutation(UPDATE_GROUP,{refetchQueries:[{query:GET_USER_CONV}]});
+
+  const dispatch = useDispatch();
     const list = currentChat.members.filter(member => !currentChat.admins.includes(member))
     const membersList = list.map(member=>{
             const contact = contacts.find(contact=>(contact._id===member))
@@ -35,6 +35,16 @@ function AddAdminsFom({currentChat}) {
           }).filter(member=>member._id !== currentUser._id)
     const [personName, setPersonName] = React.useState([]);
     const[newAdmins,setNewAdmins]=useState([]);
+
+
+    // useSubscription(UPDATE_GROUP_SUB, {
+    //   onData:({data}) =>{
+    //     if (data.data.updateGroup.members.includes(currentUser._id)){
+    //       dispatch({type:'GET_USER_CONVS'})
+    //     }
+        
+    //   }
+    // })
 
     const handleNamesChange=(e)=>{
         setPersonName(
@@ -57,7 +67,9 @@ function AddAdminsFom({currentChat}) {
           conversationId:currentChat._id,
           newAdmins:newAdmins
         }
-        updateGroup({variables:{input}})
+        dispatch({type:'UPDATE_GROUP', payload: {input}})
+
+  
         setPersonName([])
         
       }

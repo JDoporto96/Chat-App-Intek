@@ -10,7 +10,7 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { Link, Navigate} from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import {ToastContainer,toast} from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Bar from '../components/bar/Bar';
@@ -18,22 +18,18 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { client } from '../graphql/apollo-client';
-import LOGIN from '../graphql/mutations/login';
-import { useMutation } from '@apollo/client';
+
+
 
 export default function Login() {
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
-  });
-
-  const {contacts} = useSelector((state) => {
-    return state.contacts
-  });
-
-  const {auth} = useSelector((state) => {
+ 
+  const {auth,infoMessage,contacts,currentUser,conversations} = useSelector((state) => {
     return state
   });
-  const [login, ]= useMutation(LOGIN)
+
+
+  const navigate= useNavigate();
+
   const dispatch = useDispatch();
   const [values,setValues] = useState({
     email:"",
@@ -80,37 +76,49 @@ export default function Login() {
           email,
           password
         }
-        login({variables:{input}}).then(a=>{
-          if(a.data.logIn.error){
-            toast.error(a.data.logIn.error,toastOptions)
-          }else{
-            localStorage.setItem('chat-app-user-jwt',a.data.logIn.token)
             dispatch({type:'LOGIN', payload: {input}})
-           
-          }
-          
-        })
-
       }
   };
 
   useEffect(()=>{
+    if(localStorage.getItem('chat-app-user-jwt')){
+     
+      dispatch({type: 'LOGGED', payload:{token:localStorage.getItem('chat-app-user-jwt')}})
+    }
+  })
+
+
+  useEffect(()=>{
+    if(infoMessage.error){
+      toast.error(infoMessage.error,toastOptions)
+    }
+
+    if(infoMessage.info){
+      toast.success(infoMessage.info,toastOptions)
+    }
+
+    dispatch({type:'RESET_MSG'})
+      
+  },[infoMessage, dispatch])
+
+
+  useEffect(()=>{
     if(auth.token){
+     
       dispatch({type: 'GET_CONTACTS'})
       dispatch({type: 'GET_CURRENT_USER'})
-      dispatch({type:'LOGGED'})
+      dispatch({type:'GET_USER_CONVS'})
     }
-  },[auth.token])
+  },[auth.token, dispatch])
 
-  if(localStorage.getItem('chat-app-user-jwt')){
-    dispatch({type: 'GET_CONTACTS'})
-      dispatch({type: 'GET_CURRENT_USER'})
-      dispatch({type:'LOGGED'})
-  }
+  useEffect(()=>{
+    if(auth.isLogged && currentUser.fetched && contacts.fetched && conversations.fetched){
+      setTimeout(()=>{navigate("/dashboard")},800)
+      
+    }
+  },[currentUser, contacts, auth, conversations])
 
-  if(auth.isLogged && currentUser && contacts){
-    return  <Navigate to="/dashboard"/>
-  }
+  
 
   return (
     <>

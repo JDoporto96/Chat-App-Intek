@@ -1,20 +1,29 @@
 import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
-import { useMutation } from '@apollo/client';
-import UPDATE_GROUP from '../../../../graphql/mutations/updateGroup';
 import {Trans } from "react-i18next";
-import GET_USER_CONV from '../../../../graphql/queries/getUserConversations';
-import GET_USER_GROUPS from '../../../../graphql/queries/getGroups';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+// import { useSubscription } from '@apollo/client';
+// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
 
 
-function LeaveGroup({currentChat}) {
+function LeaveGroup({currentChat, changeChat}) {
     const[open, setOpen]=useState(false);
     const currentUser = useSelector((state) => {
-        return state.currentUser
+        return state.currentUser.user
       });
     
-    const [updateGroup, ]=useMutation(UPDATE_GROUP,{query:GET_USER_CONV},{query:GET_USER_GROUPS});
+    const  dispatch = useDispatch();
+    
+    // useSubscription(UPDATE_GROUP_SUB, {
+    //     onData:({data}) =>{
+    //       if (data.data.updateGroup.members.includes(currentUser._id)){
+    //         console.log('sub receied')
+    //         dispatch({type:'GET_USER_CONVS'})
+    //       }
+          
+    //     }
+    //   })
+    
 
 
 
@@ -25,7 +34,7 @@ function LeaveGroup({currentChat}) {
                 conversationId:currentChat._id,
                 removedAdmins:[currentUser._id]
             }
-            updateGroup({variables:{input}})
+            dispatch({type:'UPDATE_GROUP', payload: {input}})
 
             if(currentChat.admins.length <=1){
                 const newAdmin = currentChat.members.find(member=>member!==currentUser._id);
@@ -33,7 +42,7 @@ function LeaveGroup({currentChat}) {
                     conversationId:currentChat._id,
                     newAdmins: [newAdmin]
                 }
-                updateGroup({variables:{input}})
+                dispatch({type:'UPDATE_GROUP', payload: {input}})
             }
         }
 
@@ -41,8 +50,9 @@ function LeaveGroup({currentChat}) {
             conversationId:currentChat._id,
             removedMembers:[currentUser._id]
         }   
-        updateGroup({variables:{input}})
+        dispatch({type:'UPDATE_GROUP', payload: {input}})
         setOpen(false)
+        changeChat(undefined);
     }
   return (
 

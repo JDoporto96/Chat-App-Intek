@@ -1,4 +1,4 @@
-import { useQuery } from '@apollo/client';
+import { useQuery, useSubscription } from '@apollo/client';
 import { List, ListItem,} from '@mui/material';
 import { Box} from '@mui/system';
 import React, { useRef, useState,useEffect } from 'react'
@@ -13,15 +13,15 @@ const createTimestamp = (date)=>{
 }
 
 function Messages({contacts, currentChat}) {
-  const {currentUser} = useSelector((state) => {
-    return state.currentUser
+  const currentUser = useSelector((state) => {
+    return state.currentUser.user
   });
 
     const[messages, setMessages]=useState([]);
     const conversationId=currentChat._id
     const scrollRef=useRef()
 
-    const {data, loading, subscribeToMore} = useQuery(GET_CONV, { variables: 
+    const {data, loading} = useQuery(GET_CONV, { variables: 
       {conversationId} })
     
 
@@ -31,19 +31,18 @@ function Messages({contacts, currentChat}) {
         }
     },[data,currentChat])
 
-    useEffect(()=>{
-        subscribeToMore({
-            document:MESSAGES_SUBSCRIPTION, 
-            variables: { conversationId },
-            updateQuery:(prev,{subscriptionData})=>{
-                if(!subscriptionData.data) return prev;
-                
-                const newMessage= subscriptionData.data.newMessage;
-                const updatedMessageList = Object.assign({},prev,{getConversation:[...prev.getConversation, newMessage]})      
-                return updatedMessageList   
+
+    useSubscription(MESSAGES_SUBSCRIPTION, {
+      variables:{conversationId},
+      onData:({data}) =>{
+        if(currentChat && currentChat._id === data.data.newMessage.conversationId){
+          const updatedMessageList = Object.assign([],messages)
+          updatedMessageList.push(data.data.newMessage);
+          setMessages(updatedMessageList)
         }
+        
+      }
     })
-    },[])
 
     useEffect(()=>{
         scrollRef.current?.scrollIntoView({behaviour:"smooth"})
