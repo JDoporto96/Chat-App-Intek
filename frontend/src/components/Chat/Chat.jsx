@@ -17,6 +17,8 @@ import { useSubscription } from "@apollo/client";
 import UPDATE_GROUP_SUB from "../../graphql/subscription/updateGroup";
 
 
+
+
 export default function Chat() {
 
   const [currentChat, setCurrentChat] = useState(undefined);
@@ -47,23 +49,28 @@ export default function Chat() {
   },[infoMessage])
 
 
-  
 
-useSubscription(UPDATE_GROUP_SUB, {
-      onData:({data}) =>{
-        if(currentChat !== undefined && data.data.updateGroup._id === currentChat._id  ){
-          if(data.data.updateGroup.members.includes(currentUser.user._id)){
-            setCurrentChat(data.data.updateGroup)
-          }else{
-            setCurrentChat(undefined)
-          }
-          
+  useSubscription(UPDATE_GROUP_SUB, {
+    onData:({data}) =>{
+      if(currentChat !== undefined && data.data.updateGroup._id === currentChat._id  ){
+        if(data.data.updateGroup.members.includes(currentUser.user._id)){
+          setCurrentChat(data.data.updateGroup)
+        }else{
+          setCurrentChat(undefined)
         }
-
-        dispatch({type:'GET_USER_CONVS'})
-
+        
       }
-    })
+
+      dispatch({type:'GET_USER_CONVS'})
+  
+    }
+  })
+
+ 
+
+      
+
+    
 
   const handleChatChange = (chat) => {
     setCurrentChat(chat);

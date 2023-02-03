@@ -247,6 +247,7 @@ const mutationResolvers={
                     return {success: false, error: response.data.msg}
                 }
                 logger.info(`Request to:${receiverId} has been responded`)
+                
                 pubsub.publish(`REQUEST_RESPONDED`, {requestResponded: {
                     to:receiverId,
                     from:senderId,

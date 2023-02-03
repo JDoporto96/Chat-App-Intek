@@ -6,7 +6,7 @@ const NEW_REQUEST_SUBSCRIPTION = gql`
       to
       senderUsername
     }
-}
+  }
 `;
   
   export default NEW_REQUEST_SUBSCRIPTION;

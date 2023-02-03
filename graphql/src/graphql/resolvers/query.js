@@ -36,7 +36,6 @@ const queryResolvers={
             try{
                 const response = await axios.get(`${profilesAPIRoute}/${_id}/contacts`)
                 const contacts = response.data
-                console.log(contacts)
                 logger.info(`Fetching contacts for current user: ${_id}`)
                 return contacts
             }catch(err){

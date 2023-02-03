@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSubscription } from "@apollo/client";
 import CONV_SUBSCRIPTION from "../../graphql/subscription/newConversation";
 
+
 export default function Contacts({changeChat }) {
   
   const {contacts,conversations,currentUser} = useSelector((state) => {
@@ -21,6 +22,8 @@ export default function Contacts({changeChat }) {
       }
     }
   })
+
+  
   
 
   const changeCurrentChat = async(contact) => {

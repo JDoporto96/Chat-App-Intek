@@ -22,7 +22,7 @@ function Messages({contacts, currentChat}) {
     const scrollRef=useRef()
 
     const {data, loading} = useQuery(GET_CONV, { variables: 
-      {conversationId} })
+      {conversationId}, fetchPolicy: 'no-cache'})
     
 
     useEffect(()=>{

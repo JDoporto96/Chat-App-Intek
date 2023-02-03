@@ -305,7 +305,7 @@ export function* watchGetCurrentUser(){
 
 function* getContacts(action){
     try{
-        const res = yield call(client.query, {query:GET_CONTACTS});
+        const res = yield call(client.query, {query:GET_CONTACTS, fetchPolicy: 'no-cache'});
         const contacts = res.data.getContacts;
         yield put(setContacts(contacts))
         yield put(setContactsFetched());

@@ -8,6 +8,7 @@ import { useDispatch} from 'react-redux';
 import "react-toastify/dist/ReactToastify.css";
 
 
+
 export default function AddContact() { 
     const[open, setOpen]= useState(false);
     const[contact,setContact] = useState("");
@@ -25,7 +26,6 @@ export default function AddContact() {
         dispatch({type: 'SEND_REQUEST', payload:{receiverUsername}})
         setOpen(false)
     }
-
 
 
     return (

@@ -3,19 +3,23 @@ import { useState } from 'react';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import { Button, IconButton, Modal, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
 import { Container } from '@mui/system';
-import { useQuery } from '@apollo/client';
+import { useQuery, useSubscription} from '@apollo/client';
 import GET_REQUEST from '../../../graphql/queries/getRequests';
 import { useTranslation, Trans } from "react-i18next";
 import NEW_REQUEST_SUBSCRIPTION from '../../../graphql/subscription/newRequest';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import REQUEST_RESPONSE_SUB from '../../../graphql/subscription/requestResponse';
+
 
 export default function ContactRequests() { 
-    
+    const currentUser = useSelector((state) => {
+        return state.currentUser.user
+      });
     const[open, setOpen]= useState(false);
     const[requests,setRequests] = useState([]);
     const[badgeNumber, setBadgenumber]=useState(undefined);
     const { t } = useTranslation();
-    const {data, loading, subscribeToMore}=useQuery(GET_REQUEST)
+    const {data, loading}=useQuery(GET_REQUEST, {fetchPolicy: 'no-cache'})
     const dispatch = useDispatch();
 
 
@@ -29,18 +33,34 @@ export default function ContactRequests() {
         setBadgenumber(requests.length)
       },[requests])
 
-      useEffect(()=>{
-        subscribeToMore({
-            document:NEW_REQUEST_SUBSCRIPTION, 
-            updateQuery:(prev,{subscriptionData})=>{
-                if(!subscriptionData.data) return prev;
-                
-                const newRequest= subscriptionData.data.requestSend;
-                const updatedRequestList = Object.assign({},prev,{getRequests:[...prev.getRequests, newRequest]})      
-                return updatedRequestList 
+    useSubscription(NEW_REQUEST_SUBSCRIPTION,{
+        onData:({data}) =>{
+            
+            if(data.data.requestSend.to === currentUser.username){
+
+                const newRequest = {
+                    username:data.data.requestSend.senderUsername, 
+                    _id:data.data.requestSend.from
+                }
+    
+                const updatedRequestList = Object.assign([],requests)
+                updatedRequestList.push(newRequest);
+                setRequests(updatedRequestList)
+            } 
         }
-    })
-    },[])
+      })
+
+    useSubscription(REQUEST_RESPONSE_SUB,{
+        onData:({data}) =>{
+            if(currentUser._id === data.data.requestResponded.to || currentUser._id === data.data.requestResponded.from){
+                if(data.data.requestResponded.status ==="Accepted"){
+                    dispatch({type: 'GET_CONTACTS'})  
+                }
+            }
+        }
+      })
+
+    
 
     const handleAccept = async (e) => {
         e.preventDefault();
@@ -52,9 +72,7 @@ export default function ContactRequests() {
         setRequests(updateList);
 
         dispatch({type:'RESPOND_REQUEST', payload: {input}})
-        // dispatch({type: 'GET_CONTACTS'})
          
-        
     }
 
     const handleReject = async (e) => {
