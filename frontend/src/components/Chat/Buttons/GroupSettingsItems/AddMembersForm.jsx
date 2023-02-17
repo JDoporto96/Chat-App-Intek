@@ -9,8 +9,7 @@ import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
-// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
-// import { useSubscription } from '@apollo/client';
+
 
 
 
@@ -20,20 +19,11 @@ function AddMembersForm({currentChat}) {
     const contactsList = useSelector((state) => {
       return state.contacts.contactList
     });
-    // const currentUser = useSelector((state) => {
-    //   return state.currentUser
-    // });
+   
     const contacts = contactsList.filter(contact=> !currentChat.members.includes(contact._id));
     const dispatch = useDispatch();
 
-    // useSubscription(UPDATE_GROUP_SUB, {
-    //   onData:({data}) =>{
-    //     if (data.data.updateGroup.members.includes(currentUser.user._id)){
-    //       dispatch({type:'GET_USER_CONVS'})
-    //     }
-        
-    //   }
-    // })
+    
 
     const handleNamesChange=(e)=>{
         setPersonName(
@@ -51,11 +41,14 @@ function AddMembersForm({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        const input={
-          conversationId:currentChat._id,
-          newMembers:newMembers
+        if(newMembers.length>=1){
+          const input={
+            conversationId:currentChat._id,
+            newMembers
+          }
+          dispatch({type:'UPDATE_GROUP', payload: {input}})
         }
-        dispatch({type:'UPDATE_GROUP', payload: {input}})
+        
         setPersonName([])
       }
 

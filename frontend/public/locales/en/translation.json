@@ -60,7 +60,18 @@
     "Request rejected sucessfully":"Request rejected sucessfully",
     "Group removed successfully":"Group removed successfully",
     "Group created successfully":"Group created successfully",
-    "Group updated successfully":"Group updated successfully"
+    "Group updated successfully":"Group updated successfully",
+    "Username should be shorter than 15 characters":"Username should be shorter than 15 characters",
+    "Password should be shorter than 20 characters":"Password should be shorter than 20 characters",
+    "Email is too long":"Email is too long",
+    "Invalid username":"Invalid username",
+    "Cannot send request to yourself":"Cannot send request to yourself",
+    "Group's name can't be empty":"Group's name can't be empty",
+    "Do you want to remove this user from your contacts?":"Do you want to remove this user from your contacts?",
+    "Remove friend":"Remove friend",
+    "You've lost a friend":"You've lost a friend",
+    "Hi": "Hi",
+    "Language": "Language"
 
 
 

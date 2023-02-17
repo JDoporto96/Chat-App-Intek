@@ -3,21 +3,36 @@ const passport = require('passport');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 const logger = require('../utils/logger');
+const validator = require('validator');
 
 
 
 router.post('/register',
 async(req,res,next)=>{
-  const {username, email} = req.body;
+  const {username, email, password} = req.body;
   try{ 
     const usernameCheck = await User.findOne({username});
     if(usernameCheck){
       return res.json({msg: "Username already used", status: false});
     }
+
+    const usernameLength = username.replaceAll(' ', '').length;
+    if(usernameLength<3){
+      return res.json({msg: "Invalid username", status: false});
+    }
+
     const emailCheck = await User.findOne({email});
     if(emailCheck){
       return res.json({msg: "Email already used", status: false});
     }
+
+    if(!validator.isEmail(email)){
+      return res.json({msg: "Invalid email", status: false});
+    }
+
+    if(password.toLowerCase().includes('password')){
+      return res.json({msg: "Invalid password", status: false});}
+
     const newUser = new User(req.body);
     newUser.save()
     logger.info(`New user registered with id: ${newUser._id}`) 
@@ -29,7 +44,7 @@ async(req,res,next)=>{
       
   } catch (err) {
     logger.error(err);
-    return next(err);
+    console.log(err);
     
   }  
 })

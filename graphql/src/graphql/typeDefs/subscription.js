@@ -6,6 +6,9 @@ type requestRespondedResponse {
     to:ID!
     status:String
 }
+type friendDeletedResponse {
+  exfriends:[ID!]
+}
 
 type Subscription {
   newMessage(conversationId: ID!): Message!
@@ -13,6 +16,8 @@ type Subscription {
   updateGroup: Conversation!
   requestSend:Request!
   requestResponded:requestRespondedResponse!
+  conversationDeleted:Conversation!
+  friendDeleted:friendDeletedResponse!
 }
 `
 

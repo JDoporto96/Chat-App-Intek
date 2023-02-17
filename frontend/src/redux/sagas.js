@@ -15,9 +15,13 @@ import { setConversations, setConvsFetched, setGroups } from "./reducers/convers
 import GET_USER_GROUPS from "../graphql/queries/getGroups";
 import CREATE_GROUP_CONV from "../graphql/mutations/createGroup";
 import UPDATE_GROUP from "../graphql/mutations/updateGroup";
+import REMOVE_CONTACT from "../graphql/mutations/removeContact";
 import CREATE_CONV from "../graphql/mutations/createConversation";
 import DELETE_GROUP_CONV from "../graphql/mutations/deleteGroup";
 import {t} from 'i18next';
+import DELETE_CONV from "../graphql/mutations/deleteConv";
+import GET_REQUEST from "../graphql/queries/getRequests";
+import { setRequests, setRequestsFetched } from "./reducers/requests";
 
 function* register(action){
     try{
@@ -88,6 +92,30 @@ function* sendRequest(action){
 }
 export function* watchSendRequest(){
     yield takeEvery("SEND_REQUEST",sendRequest)
+}
+
+function* removeContact(action){
+    try{
+        const contactId = action.payload.contactId;
+        const res = yield call(client.mutate,{mutation: REMOVE_CONTACT,variables:{contactId}})
+        const error = res.data.removeContact.error;
+        if(error){
+            yield put (setError(t(error)))
+           
+        }else{
+            const message = res.data.removeContact.message;
+            yield put (setInfo(t(message)))
+            const res2 = yield call(client.query, {query:GET_CONTACTS, fetchPolicy: "no-cache"});
+            const contacts = res2.data.getContacts;
+         
+            yield put(setContacts(contacts))
+        }
+    }catch(err){
+        yield put (setError(t("Error on server")))
+    }
+}
+export function* watchRemoveContact(){
+    yield takeEvery("REMOVE_CONTACT",removeContact)
 }
 
 function* respondRequest(action){
@@ -248,6 +276,23 @@ export function* watchDeleteGroup(){
     yield takeEvery("DELETE_GROUP",deleteGroup)
 }
 
+function* deleteConv(action){
+    try{
+        const {conversationId} = action.payload;
+        const res = yield call(client.mutate,{mutation: DELETE_CONV,variables:{conversationId}});
+        const error = res.data.deleteConversation.error;
+        if(error){
+            yield put (setError(t(error)))
+           
+        }
+    }catch(err){
+        yield put (setError(t("Error on server")))
+    }
+}
+export function* watchDeleteConv(){
+    yield takeEvery("DELETE_CONV",deleteConv)
+}
+
 
 function* updateGroup(action){
     try{
@@ -346,6 +391,23 @@ export function* watchGetUserConversations(){
 }
 
 
+function* getRequests(action){
+    try{
+        const res = yield call(client.query, {query:GET_REQUEST, fetchPolicy: 'no-cache'});
+        const requests = res.data.getRequests;
+        yield put(setRequests(requests))
+        yield put(setRequestsFetched());
+
+    }catch(err){
+        yield put(setContacts(null))
+    }
+
+}
+
+export function* watchGetRequests(){
+    yield takeEvery('GET_REQUESTS', getRequests)
+}
+
 
 
 export default function* rootSaga() {
@@ -366,6 +428,9 @@ export default function* rootSaga() {
         watchUpdateGroup(),
         watchCreateConversation(),
         watchDeleteGroup(),
+        watchRemoveContact(),
+        watchDeleteConv(),
+        watchGetRequests(),
     ])
 }
 

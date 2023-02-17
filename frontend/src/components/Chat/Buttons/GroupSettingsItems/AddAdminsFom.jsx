@@ -9,8 +9,7 @@ import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
-// import { useSubscription } from '@apollo/client';
-// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
+
 
 
 function AddAdminsFom({currentChat}) {
@@ -37,14 +36,6 @@ function AddAdminsFom({currentChat}) {
     const[newAdmins,setNewAdmins]=useState([]);
 
 
-    // useSubscription(UPDATE_GROUP_SUB, {
-    //   onData:({data}) =>{
-    //     if (data.data.updateGroup.members.includes(currentUser._id)){
-    //       dispatch({type:'GET_USER_CONVS'})
-    //     }
-        
-    //   }
-    // })
 
     const handleNamesChange=(e)=>{
         setPersonName(
@@ -62,14 +53,14 @@ function AddAdminsFom({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-
-        const input={
-          conversationId:currentChat._id,
-          newAdmins:newAdmins
-        }
-        dispatch({type:'UPDATE_GROUP', payload: {input}})
-
+        if(newAdmins.length >=1){
+          const input={
+            conversationId:currentChat._id,
+            newAdmins
+          }
+          dispatch({type:'UPDATE_GROUP', payload: {input}})
   
+        }
         setPersonName([])
         
       }

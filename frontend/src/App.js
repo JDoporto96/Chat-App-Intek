@@ -10,16 +10,10 @@ import { Provider } from "react-redux";
 import configureAppStore from "./redux/store";
 import { ThemeProvider } from '@emotion/react';
 import theme from './theme/theme.js';
+import Test from './pages/Test.jsx';
 
 
 export default function App() {
-
-  const lngs = {
-    en: { nativeName: 'English' },
-    es: { nativeName: 'Español' }
-  };
-  
-  const { i18n } = useTranslation();
 
   
   return (
@@ -27,17 +21,12 @@ export default function App() {
     <Provider store={configureAppStore()}>
       <ThemeProvider theme ={theme}>
     <BrowserRouter>
-    <div>
-          {Object.keys(lngs).map((lng) => (
-            <button key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={() => i18n.changeLanguage(lng)}>
-              {lngs[lng].nativeName}
-            </button>
-          ))}
-        </div>
       <Routes>
         <Route path='/' element={<Login/>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+       
+       
         <Route path='/dashboard' element={<Dashboard/>} />
         
       </Routes>

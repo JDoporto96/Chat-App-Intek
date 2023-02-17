@@ -2,7 +2,8 @@ import axios from 'axios';
 import { createGroupRoute, newConversationRoute ,profilesAPIRoute,
     registerRoute,loginRoute,sendMessageRoute,
     updateGroupRoute,
-    deleteGroupRoute} from '../../utils/APIRoutes.js';
+    deleteGroupRoute,
+    deleteConversationsRoute} from '../../utils/APIRoutes.js';
 import { PubSub } from 'graphql-subscriptions';
 import logger from '../../utils/logger.js';
 
@@ -30,7 +31,7 @@ const mutationResolvers={
             try{
                 const profileServerResponse = await axios.post(profilesAPIRoute,{
                     _id:_id,
-                    username: input.username
+                    username
                 })
                 if(!profileServerResponse.data.status){
                     return {success: false, error: profileServerResponse.data.msg}
@@ -39,7 +40,7 @@ const mutationResolvers={
                 return {success: false}
             }
             logger.info(`New profile created with id: ${_id}`)
-            return {success: false, message:"User created successfully"}
+            return {success: true, message:"User created successfully"}
             
             
             
@@ -257,7 +258,49 @@ const mutationResolvers={
             }catch(err){
                 return {success: false}
             }
-        }
+        },
+        removeContact:async(_,{contactId}, context) => {
+            const {currentUser} = context;
+            if(!currentUser){
+                return{success: false, error: "Please authenticate"}
+            }
+            try{
+                const response = await axios.post(`${profilesAPIRoute}/${currentUser._id}/deletecontact`,{
+                    _id: contactId,
+                })
+                if(!response.status){
+                    return {success: false, error: response.data.msg}
+                }
+                logger.info(`Users ${currentUser._id} and ${contactId} have stopped being friends`)
+                pubsub.publish(`FRIEND_DELETED`, {friendDeleted: {
+                    exfriends:[currentUser._id, contactId]
+                }})
+                return{success: true, message:response.data.msg}
+            }catch(err){
+               
+                return {success: false}
+            }
+        },
+        deleteConversation:async(_,{conversationId}, context) => {
+            const {currentUser} = context;
+            if(!currentUser){
+                return{success: false, error: "Please authenticate"}
+            }
+            console.log(conversationId)
+            try{
+                const response = await axios.post(`${deleteConversationsRoute}`,{
+                    _id: conversationId,
+                })
+                if(!response.status){
+                    return {success: false, error: response.data.msg}
+                }
+                logger.info(`Deleting conversation with id ${conversationId}`)
+                pubsub.publish(`CONV_DELETED`, {conversationDeleted: response.data.conversation})
+                return{success: true, message:response.data.msg}
+            }catch(err){
+                return {success: false}
+            }
+        },
     },
     Subscription:{
         newMessage:{
@@ -284,7 +327,17 @@ const mutationResolvers={
             subscribe:()=>{
                 return pubsub.asyncIterator(['REQUEST_RESPONDED'])
             }
-        }
+        },
+        friendDeleted:{
+            subscribe: () => {
+              return pubsub.asyncIterator([`FRIEND_DELETED`]);
+            },
+        },
+        conversationDeleted:{
+            subscribe: () => {
+              return pubsub.asyncIterator([`CONV_DELETED`]);
+            },
+        },
         
       } 
 }

@@ -61,11 +61,14 @@ function RemoveMembersForm({currentChat}) {
 
     const handleSubmit= async (e)=>{
         e.preventDefault();
-        const input={
-          conversationId:currentChat._id,
-          removedMembers:eliminatedMembers
+        if(eliminatedMembers.length>=1){
+          const input={
+            conversationId:currentChat._id,
+            removedMembers:eliminatedMembers
+          }
+          dispatch({type:'UPDATE_GROUP', payload: {input}})
         }
-        dispatch({type:'UPDATE_GROUP', payload: {input}})
+        
         setPersonName([])
         
       }

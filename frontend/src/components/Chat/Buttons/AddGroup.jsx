@@ -16,6 +16,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { useSubscription } from '@apollo/client';
 import CONV_SUBSCRIPTION from '../../../graphql/subscription/newConversation';
+import { toast } from 'react-toastify';
 
 export default function AddGroup() {
   const {currentUser,contacts }= useSelector((state) => {
@@ -48,26 +49,46 @@ export default function AddGroup() {
     );
   };
 
+  const toastOptions={
+    position:"bottom-right",
+    autoClose:8000,
+    pauseOnHover:true,
+    draggable:true
+  };
   useEffect(()=>{
     const list = personName.map(name=>{
       const member =contacts.contactList.find(contact=>contact.username===name)
       return member._id
     })
-    list.push(currentUser.user._id);
     setMembers(list)
   },[personName])
 
-  
+  const handleValidation=(name)=>{
+    if(name.length<1){
+        toast.error(
+            t("Group's name can't be empty"),
+            toastOptions
+        );
+        return false
+    }
+    return true
+}
 
   const handleSubmit= async (e)=>{
     e.preventDefault();
-    const input ={
-      name:groupname,
-      members
+
+    const name = groupname.replaceAll(" ","");
+    if(handleValidation(name)){
+      const input ={
+        name: groupname,
+        members
+      }
+      dispatch({type: 'CREATE_GROUP', payload:{input}})
+      setPersonName([])
+      setOpen(false)
     }
-    dispatch({type: 'CREATE_GROUP', payload:{input}})
-    setPersonName([])
-    setOpen(false)
+    
+    
   }
   
 
@@ -83,8 +104,8 @@ export default function AddGroup() {
 
       <Modal open={open}>
             <Container sx={{
-            width:"30rem",
-            height:"30rem",
+            width:{xs:"90vw", sm:"30rem"},
+            height:"25rem",
             backgroundColor: "white",
             position: "aboslute",
             marginTop: "10rem"
@@ -102,6 +123,7 @@ export default function AddGroup() {
                 label={t("Group's name")}
                 name="groupname"
                 autoComplete="off"
+                inputProps={{ maxLength: 50 }}
                 autoFocus/>
 
 
@@ -144,7 +166,7 @@ export default function AddGroup() {
                 <Button 
                 type="submit"
                 variant="contained"
-                sx={{ mt: "1rem", mb: 2 }}
+                sx={{ mt: "1rem", mb: 2, maxWidth:{xs:"50%" } }}
                 >
                   <Trans i18nkey="CreateGroupBtn">Create Group</Trans> 
                 </Button>
@@ -155,7 +177,7 @@ export default function AddGroup() {
                   setMembers([])
                 }}
                 variant="contained"
-                sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
+                sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black",maxWidth:{xs:"40%"} }}
                 >
                   <Trans i18nkey="Back">Back</Trans> 
                 </Button>

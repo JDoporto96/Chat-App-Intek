@@ -212,17 +212,18 @@ router.post('/profiles/:id/respondcontactrequest', async(req,res)=>{
     }
 })
 
-router.delete('/profiles/:id/deletecontact', async(req,res)=>{
+router.post('/profiles/:id/deletecontact', async(req,res)=>{
     
     try{
+        
         const contact = await Profile.findOne({_id:req.body._id});
         if(!contact){
-            return res.status(404).send();
+            return res.send({msg:"User not found", status:false})
         }
 
         const profile = await Profile.findOne({_id:req.params.id});
         if(!profile){
-            return res.status(404).send();
+            return res.send({msg:"Invalid user request", status:false})
         }
 
         contact.contacts=contact.contacts.filter(item => item._id!==profile._id);
@@ -232,9 +233,9 @@ router.delete('/profiles/:id/deletecontact', async(req,res)=>{
         await profile.save();
 
 
-        res.send(profile.contacts)
+        return res.send({msg:"You've lost a friend", status:true})
     }catch(e){
-        res.status(500).send(e)
+        return res.status(500).send(e)
     }
 })
 

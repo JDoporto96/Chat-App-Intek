@@ -55,12 +55,25 @@ export default function Register() {
                 toastOptions
             );
             return false;
-        }else if(email ==="" || !validator.isEmail(email)){
+        }else if(username.length>15){
+          toast.error(
+            t("Username should be shorter than 15 characters"),
+            toastOptions
+        );
+        return false;
+        }
+        else if(email ==="" || !validator.isEmail(email)){
             toast.error(
                 t("Invalid email address"),
                 toastOptions
             );
             return false;
+        }else if(email.length>30){
+          toast.error(
+            t("Email is too long"),
+            toastOptions
+        );
+        return false;
         }
         else if(password.length<6){
             toast.error(
@@ -68,7 +81,13 @@ export default function Register() {
                 toastOptions
             );
             return false;
-
+        
+        }else if(password.length>20){
+          toast.error(
+            t("Password should be shorter than 20 characters"),
+            toastOptions
+        );
+        return false;
         }else if(password !== confirmPassword){
             toast.error(
                 t("Passwords should coincide"),

@@ -73,6 +73,8 @@ type Mutation {
   sendMessage(input: newMessageInput):MessageActionResponse!
   sendContactRequest(receiverUsername:String!):ActionResponse!
   respondContactRequest(input: RespondRequestInput!):ActionResponse!
+  removeContact(contactId: String!): ActionResponse!
+  deleteConversation(conversationId: String!):ActionResponse!
   
 }
 

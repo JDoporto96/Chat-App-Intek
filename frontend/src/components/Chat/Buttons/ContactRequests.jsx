@@ -3,62 +3,26 @@ import { useState } from 'react';
 import PersonTwoToneIcon from '@mui/icons-material/PersonTwoTone';
 import { Button, IconButton, Modal, Tooltip,Badge,Stack, Grid, Divider, Typography } from '@mui/material'
 import { Container } from '@mui/system';
-import { useQuery, useSubscription} from '@apollo/client';
-import GET_REQUEST from '../../../graphql/queries/getRequests';
 import { useTranslation, Trans } from "react-i18next";
-import NEW_REQUEST_SUBSCRIPTION from '../../../graphql/subscription/newRequest';
 import { useDispatch, useSelector } from 'react-redux';
-import REQUEST_RESPONSE_SUB from '../../../graphql/subscription/requestResponse';
+
 
 
 export default function ContactRequests() { 
-    const currentUser = useSelector((state) => {
-        return state.currentUser.user
-      });
     const[open, setOpen]= useState(false);
-    const[requests,setRequests] = useState([]);
     const[badgeNumber, setBadgenumber]=useState(undefined);
     const { t } = useTranslation();
-    const {data, loading}=useQuery(GET_REQUEST, {fetchPolicy: 'no-cache'})
+    
     const dispatch = useDispatch();
+    const {requests} = useSelector((state) => {
+        return state.requests
+      });
 
-
-    useEffect(()=>{
-        if(!loading){
-            setRequests(data.getRequests)
-        }
-      },[data])
+    
     
       useEffect(()=>{
         setBadgenumber(requests.length)
       },[requests])
-
-    useSubscription(NEW_REQUEST_SUBSCRIPTION,{
-        onData:({data}) =>{
-            
-            if(data.data.requestSend.to === currentUser.username){
-
-                const newRequest = {
-                    username:data.data.requestSend.senderUsername, 
-                    _id:data.data.requestSend.from
-                }
-    
-                const updatedRequestList = Object.assign([],requests)
-                updatedRequestList.push(newRequest);
-                setRequests(updatedRequestList)
-            } 
-        }
-      })
-
-    useSubscription(REQUEST_RESPONSE_SUB,{
-        onData:({data}) =>{
-            if(currentUser._id === data.data.requestResponded.to || currentUser._id === data.data.requestResponded.from){
-                if(data.data.requestResponded.status ==="Accepted"){
-                    dispatch({type: 'GET_CONTACTS'})  
-                }
-            }
-        }
-      })
 
     
 
@@ -68,10 +32,9 @@ export default function ContactRequests() {
             senderId:e.target.parentNode.parentNode.getAttribute("id"),
             accepted:true
         }
-        const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
-        setRequests(updateList);
-
+        
         dispatch({type:'RESPOND_REQUEST', payload: {input}})
+        dispatch({type: 'GET_REQUESTS'})
          
     }
 
@@ -82,9 +45,7 @@ export default function ContactRequests() {
             accepted:false
         }
         dispatch({type:'RESPOND_REQUEST', payload: {input}})
-        const updateList = requests.filter(req=>req._id!==e.target.parentNode.parentNode.getAttribute("id"))
-        setRequests(updateList);
-
+        dispatch({type: 'GET_REQUESTS'})
  
     }
 
@@ -101,7 +62,7 @@ export default function ContactRequests() {
 
         <Modal open={open}>
             <Container sx={{
-            width:"30rem",
+            width:{xs:"80vw", sm:"30rem"},
             height:"10rem",
             backgroundColor: "white",
             position: "aboslute",
@@ -110,7 +71,7 @@ export default function ContactRequests() {
             > 
                 <Button 
                     variant="contained"
-                    sx={{ mt: "1rem", mb: 2, left:"80%", backgroundColor:"whitesmoke", color:"black"}}
+                    sx={{ mt: "1rem", mb: 2, left:{xs:'65%', sm:"80%" }, backgroundColor:"whitesmoke", color:"black"}}
                     onClick={()=>setOpen(false)}
                 >
                     <Trans i18nkey="Close">Close</Trans> 
@@ -128,21 +89,27 @@ export default function ContactRequests() {
                         return(
                             <>
                         <Grid container key={request._id} id={request._id}>
-                            <Grid xs={6}item sx={{fontSize:"large"}}> {request.username}</Grid>
-                            <Grid xs={3} item>
+                            <Grid xs={3} sm={6}item sx={{fontSize:"large", }}> 
+                            <Typography  noWrap={true}>
+                            {request.username}
+                            </Typography>
+                           
+                            </Grid>
+                            <Grid xs={4} sm={3} item>
                                 <Button 
                                     variant="contained"
                                     onClick={handleAccept}
+                                    
                                     >
                                     <Trans i18nkey="Accept">Accept</Trans> 
                                 </Button>
                             </Grid>
-                            <Grid xs={3} item >
+                            <Grid xs={5} sm={3} item >
                                 <Button 
                                     
                                     variant="contained"
                                     onClick={handleReject}
-                                    sx={{ ml:"1rem",backgroundColor:"red" }}
+                                    sx={{ ml:"1rem",backgroundColor:"red"}}
                                     >
                                     <Trans i18nkey="Reject">Reject</Trans> 
                                 </Button>

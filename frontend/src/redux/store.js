@@ -5,6 +5,7 @@ import userReducer from './reducers/getCurrentUser';
 import contactsReducer from './reducers/getContacts';
 import infoMessageReducer from './reducers/message';
 import convsReducer from './reducers/conversations';
+import requestsReducer from './reducers/requests'
 import rootSaga from './sagas';
 
 const configureAppStore = () => {
@@ -19,6 +20,7 @@ const configureAppStore = () => {
             contacts:contactsReducer,
             infoMessage:infoMessageReducer,
             conversations:convsReducer,
+            requests:requestsReducer
         },
         middleware: (getDefaultMiddleware) => {
             const middleware = [

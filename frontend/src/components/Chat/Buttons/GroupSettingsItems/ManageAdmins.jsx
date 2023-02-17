@@ -14,8 +14,8 @@ function ManageAdmins({currentChat}) {
 
         <Modal open={open}>
         <Container sx={{
-        width:"25rem",
-        height:"30rem",
+        width:{xs:"90vw", sm:"30rem"},
+        height:"25rem",
         backgroundColor: "white",
         marginTop: "10rem"
         }}

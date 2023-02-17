@@ -1,7 +1,7 @@
 import React, { useState, useEffect} from "react";
 import ChatInput from "./ChatInput";
 import { Box } from "@mui/system";
-import { Grid, Typography} from "@mui/material";
+import { Divider, Grid, Typography} from "@mui/material";
 import GroupSetting from "./Buttons/GroupSetting";
 import { useMutation } from "@apollo/client";
 import SEND_MESSAGE from "../../graphql/mutations/sendMessage";
@@ -23,9 +23,10 @@ export default function ChatContainer({currentChat, changeChat}) {
     if(currentChat.name){
       setChatName(currentChat.name)
     }else{
-      const contactId=currentChat.members.find(m => m!== currentUser.user._id)
-      const contactName = contacts.contactList.find(contact => contact._id===contactId).username
-      setChatName(contactName)
+      const contactId = currentChat.members.find(m => m!== currentUser.user._id);
+      const contact = contacts.contactList.find(contact => contact._id===contactId)
+      const name = contact? contact.username: contactId
+      setChatName(name)
     }
   },[currentChat])
 
@@ -41,50 +42,46 @@ export default function ChatContainer({currentChat, changeChat}) {
   };
 
   return (
-    <React.Fragment>
+    <>
       <Box
       p={2}
       sx={{
         width:"100%",
-        backgroundColor: 'primary.light',
+        backgroundColor:"lightgrey",             
         display:"flex",
         flexDirection:"row"
       }}
       >
           
-            <Typography variant="h5" gutterBottom
+        <Typography variant="h5" gutterBottom
+            noWrap={true}
             sx={{
-              flexGrow:1
+              flexGrow:1,
+              
             }}
             >
               {chatName}
-            </Typography>
+        </Typography>
           
 
-            {currentChat.name?(
-                <GroupSetting currentChat={currentChat} changeChat={changeChat}/>
-              ) : <></> 
-            }
-            
-          
-          
-       
-        
+        {currentChat.name?(
+          <GroupSetting currentChat={currentChat} changeChat={changeChat}/>
+          ) : <></> 
+        }
       </Box>
 
       <Grid container spacing={4} alignItems="center">
         <Grid id="chat-window" xs={12}
-        sx={{
-          height: "70vh"
-          }} item>
+        item>
           <Messages contacts={contacts.contactList} currentChat={currentChat}/>
-          <ChatInput handleSendMsg={handleSendMsg} />   
+          <Divider/>
+          <ChatInput handleSendMsg={handleSendMsg} /> 
         </Grid>
         
       </Grid>
       
       
-    </React.Fragment>
+    </>
   );
 }
 

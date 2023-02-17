@@ -1,7 +1,6 @@
 import React from "react";
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
-import { Stack } from "@mui/material";
+import { Stack, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Groups({changeChat}) {
@@ -29,13 +28,15 @@ export default function Groups({changeChat}) {
         {conversations.groups.map((group)=>{
           return(
   
-            <ListItemButton key={group._id} onClick={()=>changeCurrentChat(group)}>
-              <ListItemText
-              
+            <ListItemButton key={group._id} onClick={()=>changeCurrentChat(group)}
+            
+            >
+              <Typography
+              noWrap={true}
               >
                 {group.name}
-  
-              </ListItemText>
+              </Typography>
+              
             </ListItemButton>
           )
         })}

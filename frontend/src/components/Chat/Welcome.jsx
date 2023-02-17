@@ -18,12 +18,16 @@ export default function Welcome() {
   },[])
 
   return (
-    <React.Fragment>
-      <Typography variant="h2">
+    <React.Fragment 
+    
+    >
+      <Typography variant="h2"
+      p={2}>
         
       <Trans i18nkey="Welcome">Welcome</Trans>, <span>{userName}!</span>
       </Typography>
-      <Typography variant="h4">
+      <Typography variant="h4"
+      p={2}>
       <Trans i18nkey="WelcomeMsg">Please select a chat to Start messaging.</Trans>
         
       </Typography>

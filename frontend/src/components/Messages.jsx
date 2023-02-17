@@ -26,10 +26,15 @@ function Messages({contacts, currentChat}) {
     
 
     useEffect(()=>{
+        if(loading){
+          setMessages([])
+        }
         if(!loading){
             setMessages(data.getConversation)
         }
     },[data,currentChat])
+
+
 
 
     useSubscription(MESSAGES_SUBSCRIPTION, {
@@ -52,9 +57,11 @@ return (
 <>
 <List id="chat-window-messages"
           sx={{
+            
             display: "flex",
             flexDirection: "column",
-            height: "65vh",
+            height:{xs:"65vh", lg:"75vh"},
+            
             overflow: "auto"
           }}>
             {
@@ -74,7 +81,7 @@ return (
                       <Box
                       sx={{
                         alignSelf:"flex-end",
-                        maxWidth: "30rem",
+                        maxWidth: "65%",
                         textAlign:"right",
                         
                       }}
@@ -100,7 +107,7 @@ return (
                       <Box
                       sx={{
                         
-                        maxWidth: "30rem",
+                        maxWidth: "65%",
                         
                       }}
                       >

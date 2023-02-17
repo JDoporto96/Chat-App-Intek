@@ -7,10 +7,10 @@ module.exports.newConversation = async(req,res,next)=>{
         members:[req.body.senderId, req.body.receiverId],
        })
        logger.info(`New conversation created with id: ${conversation._id}`) 
-       res.status(200).json(conversation)
+       return res.status(200).json(conversation)
 
     }catch(err){
-        res.status(500).json(err)
+        return res.status(500).json(err)
     }
 }
 
@@ -21,9 +21,23 @@ module.exports.getConversations = async(req,res,next)=>{
             $in: [req.params.userId]}
        })
        logger.info(`Fetching conversations from user: ${req.params.userId}`) 
-       res.status(200).json(conversation)
+       return res.status(200).json(conversation)
 
     }catch(err){
-        res.status(500).json(err)
+        return res.status(500).json(err)
     }
 }
+
+module.exports.deleteConversation = async(req,res,next)=>{
+    try{
+       const conversation = await Conversations.findOne({_id:req.body._id})
+
+       logger.info(`Deleting conversation with id: ${req.body._id}`) 
+       await conversation.remove();
+       return res.status(200).json({conversation:conversation, status:true,msg:"Conversation deleted"})
+
+    }catch(err){
+        return res.status(500).json({msg:err, status:false})
+    }
+}
+

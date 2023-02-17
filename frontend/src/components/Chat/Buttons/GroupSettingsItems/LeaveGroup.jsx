@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
 import {Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
-// import { useSubscription } from '@apollo/client';
-// import UPDATE_GROUP_SUB from '../../../../graphql/subscription/updateGroup';
 
 
 function LeaveGroup({currentChat, changeChat}) {
@@ -14,42 +12,34 @@ function LeaveGroup({currentChat, changeChat}) {
     
     const  dispatch = useDispatch();
     
-    // useSubscription(UPDATE_GROUP_SUB, {
-    //     onData:({data}) =>{
-    //       if (data.data.updateGroup.members.includes(currentUser._id)){
-    //         console.log('sub receied')
-    //         dispatch({type:'GET_USER_CONVS'})
-    //       }
-          
-    //     }
-    //   })
     
 
 
 
     const handleLeave = async()=>{
         let input;
-        if(currentChat.admins.includes(currentUser._id)){
+        if(currentChat.admins.includes(currentUser._id) && currentChat.admins.length <=1 ){
+            const newAdmin = currentChat.members.find(member=>member!==currentUser._id); 
             input={
                 conversationId:currentChat._id,
-                removedAdmins:[currentUser._id]
+                removedAdmins:[currentUser._id],
+                removedMembers:[currentUser._id],
+                newAdmins: [newAdmin]
             }
-            dispatch({type:'UPDATE_GROUP', payload: {input}})
-
-            if(currentChat.admins.length <=1){
-                const newAdmin = currentChat.members.find(member=>member!==currentUser._id);
-                input ={
-                    conversationId:currentChat._id,
-                    newAdmins: [newAdmin]
-                }
-                dispatch({type:'UPDATE_GROUP', payload: {input}})
+        }else if(currentChat.admins.includes(currentUser._id)){
+            input={
+                conversationId:currentChat._id,
+                removedAdmins:[currentUser._id],
+                removedMembers:[currentUser._id],
             }
+        }else{
+            input={
+                conversationId:currentChat._id,
+                removedMembers:[currentUser._id],
+                
+            }   
         }
 
-        input={
-            conversationId:currentChat._id,
-            removedMembers:[currentUser._id]
-        }   
         dispatch({type:'UPDATE_GROUP', payload: {input}})
         setOpen(false)
         changeChat(undefined);
@@ -65,7 +55,7 @@ function LeaveGroup({currentChat, changeChat}) {
 
         <Modal open={open}>
         <Container sx={{
-        width:"25rem",
+        width:{xs:"90vw", sm:"30rem"},
         height:"10rem",
         backgroundColor: "white",
         position: "aboslute",
@@ -86,13 +76,13 @@ function LeaveGroup({currentChat, changeChat}) {
                 onClick={()=>handleLeave()}
                 type="submit"
                 variant="contained"
-                sx={{ mt: "1rem", mb: 2 }}
+                sx={{ mt: "1rem", mb: 2,  maxWidth:{xs:"50%"}}}
                 ><Trans i18nkey="Accept">Accept</Trans></Button>
             
                 <Button 
                 onClick={()=>setOpen(false)}
                 variant="contained"
-                sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", }}
+                sx={{ mt: "1rem", mb: 2, ml:"1rem", backgroundColor:"white", color:"black", maxWidth:{xs:"40%"} }}
                 ><Trans i18nkey="Back">Back</Trans></Button>
        
             
