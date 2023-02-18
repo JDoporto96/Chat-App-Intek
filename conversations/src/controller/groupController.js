@@ -8,7 +8,8 @@ module.exports.createGroupConversation = async (req,res,next)=>{
         const group = await Conversations.create({
             name,
             admins: [creator],
-            members
+            members,
+            isGroup:true
         })
         if (group){
             logger.info(`New group conversation created with id: ${group._id}`) 

@@ -14,6 +14,9 @@ const mutationResolvers={
         createUser: async(_,{input}) => {
             let _id;
             const {username,password,email} = input;
+            if(password.trim()===null || !password){
+                return {success: false, error:"Password must contain at least 6 characters"}
+            }
             try{
                 const authServerResponse = await axios.post(registerRoute,{
                     username,
@@ -63,7 +66,7 @@ const mutationResolvers={
                 user = authServerResponse.data.user;
                 logger.info(`User logged in with id:${_id}`)
             }catch(err){
-                console.log(err)
+               
                 return {success:false, error:err}
             }
 
@@ -121,10 +124,24 @@ const mutationResolvers={
         },
         createGroup:async(_,{input},context) => {
             const {currentUser} = context;
+            const isFriend = (id)=>{
+                if(currentUser.contacts.find(c => c._id === id && c.request.status ==='Accepted')){
+                    return true
+                }
+                return false
+            }
             if(!currentUser){
                 return{success: false, error: "Please authenticate"}
             }
             const {name, members} = input;
+            if(!name || !members){
+                return{success: false, error: "Invalid group"}
+            }
+            
+            if(members.some(m=>!isFriend(m))){
+                return{success: false, error: "Invalid group members"}
+            }
+
             try{
                 const response = await axios.post(`${createGroupRoute}`,{
                     name, 
@@ -135,6 +152,7 @@ const mutationResolvers={
                 logger.info(`New group conversation created`)
                 return{success:true, conversation: response.data, message:'Group created successfully'}
             }catch(err){
+                console.log(err)
                 return {success: false, error:err}
             }
         },
@@ -144,6 +162,15 @@ const mutationResolvers={
                 return{success: false, error: "Please authenticate"}
             }
             const {conversationId,newName, newMembers, newAdmins, removedAdmins,removedMembers}=input;
+            const isFriend = (id)=>{
+                if(currentUser.contacts.find(c => c._id === id && c.request.status ==='Accepted')){
+                    return true
+                }
+                return false
+            }
+            if(newMembers.some(!isFriend)){
+                return{success: false, error: "Invalid group members"}
+            }
             try{
                 const response = await axios.patch(updateGroupRoute,{
                     conversationId,
@@ -190,6 +217,9 @@ const mutationResolvers={
                 return{success: false, error: "Please authenticate"}
             }
             const {conversationId, message} = input;
+            if(message.length > 1000){
+                throw new GrapgqlError({ "Error":"Message length is limited to 1000 characters"})
+             }
             try{
                 const response = await axios.post(`${sendMessageRoute}`,{
                     conversationId,
@@ -212,6 +242,9 @@ const mutationResolvers={
                 return{success: false, error: "Please authenticate"}
             }
             const senderId=currentUser._id;
+            if(receiverUsername === currentUser.username){
+                return {success: false, error: "Cannot send request to yourself"}
+            }
             const {receiverUsername }= input;
             try{
                 const response = await axios.post(`${profilesAPIRoute}/${senderId}/sendcontactrequest`,{

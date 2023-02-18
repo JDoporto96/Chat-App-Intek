@@ -13,7 +13,7 @@ import * as dotenv from "dotenv";
 import jwt from 'jsonwebtoken';
 import axios from "axios";
 import { profilesAPIRoute } from "./utils/APIRoutes.js";
-
+// import cors from 'cors'
 
 
 // Create the schema, which will be used separately by ApolloServer and

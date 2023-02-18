@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { profilesAPIRoute, getAllMessagesRoute,conversationsRoute,getMyGroupsRoute } from '../../utils/APIRoutes.js';
+import { profilesAPIRoute, getAllMessagesRoute,conversationsRoute,getMyGroupsRoute, conversationDataRoute } from '../../utils/APIRoutes.js';
 import logger from '../../utils/logger.js';
 
 const queryResolvers={
@@ -61,10 +61,15 @@ const queryResolvers={
         getConversation: async(_,input,context)=>{
             const {currentUser} = context;
             if(!currentUser){
-                return null
+                return{success: false, error: "Please authenticate"}
             }
             const {conversationId} = input;
+            
             try{
+                const conv = await axios.get(`${conversationDataRoute}/${conversationId}`);
+                if(!conv.data.members.includes(currentUser._id)){
+                    return []
+                }
                 const response = await axios.get(`${getAllMessagesRoute}/${conversationId}`)
                 const messages = response.data
                 logger.info(`Fetching conversation: ${conversationId}`)

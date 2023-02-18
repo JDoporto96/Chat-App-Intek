@@ -5,6 +5,7 @@ module.exports.newConversation = async(req,res,next)=>{
     try{
        const conversation = await Conversations.create({
         members:[req.body.senderId, req.body.receiverId],
+        isGroup:false
        })
        logger.info(`New conversation created with id: ${conversation._id}`) 
        return res.status(200).json(conversation)
@@ -21,6 +22,16 @@ module.exports.getConversations = async(req,res,next)=>{
             $in: [req.params.userId]}
        })
        logger.info(`Fetching conversations from user: ${req.params.userId}`) 
+       return res.status(200).json(conversation)
+
+    }catch(err){
+        return res.status(500).json(err)
+    }
+}
+module.exports.getSingleConversationData = async(req,res,next)=>{
+    try{
+       const conversation = await Conversations.findOne({_id:req.params.conversationId})
+       logger.info(`Fetching conversation with id: ${req.params.conversationId}`) 
        return res.status(200).json(conversation)
 
     }catch(err){

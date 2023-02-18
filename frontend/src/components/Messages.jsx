@@ -64,7 +64,7 @@ return (
             
             overflow: "auto"
           }}>
-            {
+           {
               messages.map(message=>{
                 return(
                   <ListItem
@@ -111,7 +111,7 @@ return (
                         
                       }}
                       >
-                        {currentChat.name ? 
+                        {currentChat.isGroup ? 
                         (contacts.find(contact =>contact._id === message.sender)?
                           contacts.find(contact =>contact._id === message.sender).username
                           :
@@ -136,7 +136,8 @@ return (
                   </ListItem>
                 )
               })
-            }       
+            }
+               
           </List>
   </>
 )

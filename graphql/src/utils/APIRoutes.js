@@ -28,6 +28,7 @@ export const updateGroupRoute = `${groupsHost}/updategroup`
 export const conversationsRoute = `${conversationsHost}`
 export const newConversationRoute = `${conversationsHost}/newconversation`
 export const deleteConversationsRoute = `${conversationsHost}/deleteconv`
+export const conversationDataRoute = `${conversationsHost}/conversationData`
 
 
 

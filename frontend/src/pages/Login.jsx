@@ -150,6 +150,7 @@ export default function Login() {
               name="email"
               autoComplete="email"
               autoFocus
+              inputProps={{ maxLength: 30 }}
             />
             <TextField
               margin="normal"
@@ -160,6 +161,7 @@ export default function Login() {
               type="password"
               id="password"
               autoComplete="current-password"
+              inputProps={{ maxLength: 30 }}
             />
 
             <Button

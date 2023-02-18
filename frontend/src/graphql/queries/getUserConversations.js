@@ -7,6 +7,7 @@ query Query{
         members
         name
         admins
+        isGroup
     }
   }
 `;

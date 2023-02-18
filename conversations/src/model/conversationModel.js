@@ -13,6 +13,10 @@ const ConversationSchema = mongoose.Schema(
             type:Array,
             required:true
         },
+        isGroup:{
+            type:Boolean,
+            required:true
+        }
     },
     {
         timestamps: true,

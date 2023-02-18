@@ -25,6 +25,7 @@ export default function ChatInput({ handleSendMsg }) {
               value={msg}
               label ={t("Type your message...")}
               variant="outlined"
+              inputProps={{ maxLength: 1000 }}
             />
         </Grid>
 

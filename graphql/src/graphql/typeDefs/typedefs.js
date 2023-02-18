@@ -19,6 +19,7 @@ type Conversation {
     name: String
     admins: [String]
     members: [String]!
+    isGroup: Boolean!
 }
 
 type Contact{

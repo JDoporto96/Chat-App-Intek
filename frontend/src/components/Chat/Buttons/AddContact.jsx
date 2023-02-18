@@ -30,6 +30,7 @@ export default function AddContact() {
       };
 
     const handleValidation=(username)=>{
+        
         if(username === currentUser.username){
             toast.error(
                 t("Cannot send request to yourself"),
@@ -42,7 +43,7 @@ export default function AddContact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const receiverUsername = contact;
+        const receiverUsername = contact.trim();
         if(handleValidation(receiverUsername)){
             dispatch({type: 'SEND_REQUEST', payload:{receiverUsername}})
             setOpen(false)

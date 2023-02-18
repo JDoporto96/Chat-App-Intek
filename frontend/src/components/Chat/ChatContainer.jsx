@@ -64,7 +64,7 @@ export default function ChatContainer({currentChat, changeChat}) {
         </Typography>
           
 
-        {currentChat.name?(
+        {currentChat.isGroup?(
           <GroupSetting currentChat={currentChat} changeChat={changeChat}/>
           ) : <></> 
         }
