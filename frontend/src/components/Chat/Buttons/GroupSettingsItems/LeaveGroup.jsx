@@ -24,19 +24,24 @@ function LeaveGroup({currentChat, changeChat}) {
                 conversationId:currentChat._id,
                 removedAdmins:[currentUser._id],
                 removedMembers:[currentUser._id],
-                newAdmins: [newAdmin]
+                newAdmins: [newAdmin],
+                isLeaving:true
+               
             }
         }else if(currentChat.admins.includes(currentUser._id)){
             input={
                 conversationId:currentChat._id,
                 removedAdmins:[currentUser._id],
                 removedMembers:[currentUser._id],
+                isLeaving:true
+               
             }
         }else{
             input={
                 conversationId:currentChat._id,
                 removedMembers:[currentUser._id],
-                
+                isLeaving:true
+                 
             }   
         }
 

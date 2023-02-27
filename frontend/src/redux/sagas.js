@@ -66,6 +66,7 @@ function* logIn(action){
         }
         
     }catch(err){
+        console.log(err)
         yield put (setError(t("Error on server")))
     }
 }

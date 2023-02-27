@@ -14,7 +14,16 @@ const mutationResolvers={
         createUser: async(_,{input}) => {
             let _id;
             const {username,password,email} = input;
-            if(password.trim()===null || !password){
+            if(username.length>15){
+                return {success: false, error:"Username should be shorter than 15 characters "}
+ 
+            }else if(username.length<3){
+                return {success: false, error:"Username should be longer than 3 characters"}
+            }
+            if(password.includes(" ")){
+                return {success: false, error:"Password can't contain whitespace(' ') characters"}
+            }
+            if(!password || password.length<6){
                 return {success: false, error:"Password must contain at least 6 characters"}
             }
             try{
@@ -152,7 +161,6 @@ const mutationResolvers={
                 logger.info(`New group conversation created`)
                 return{success:true, conversation: response.data, message:'Group created successfully'}
             }catch(err){
-                console.log(err)
                 return {success: false, error:err}
             }
         },
@@ -161,16 +169,17 @@ const mutationResolvers={
             if(!currentUser){
                 return{success: false, error: "Please authenticate"}
             }
-            const {conversationId,newName, newMembers, newAdmins, removedAdmins,removedMembers}=input;
+            const {conversationId,newName, newMembers, newAdmins, removedAdmins,removedMembers,isLeaving}=input;
             const isFriend = (id)=>{
                 if(currentUser.contacts.find(c => c._id === id && c.request.status ==='Accepted')){
                     return true
                 }
                 return false
             }
-            if(newMembers.some(!isFriend)){
+            if(newMembers && newMembers.some(m=>!isFriend(m))){
                 return{success: false, error: "Invalid group members"}
             }
+            
             try{
                 const response = await axios.patch(updateGroupRoute,{
                     conversationId,
@@ -178,10 +187,12 @@ const mutationResolvers={
                     newMembers, 
                     newAdmins, 
                     removedAdmins,
-                    removedMembers
+                    removedMembers,
+                    updater:currentUser._id,
+                    isLeaving
                 });
                 if(!response.data.status){
-                    return{success:false, error:"Error updating group"}
+                    return{success:false, error:response.data.msg}
                 }
                 logger.info(`Group conversation has been updated`)
                 pubsub.publish('GROUP_UPDATED',{updateGroup: response.data.group})
@@ -203,7 +214,7 @@ const mutationResolvers={
                     return{success:false, error:"Error deleting group"}
                 }
                 logger.info('Deleting group with id: '+ conversationId)
-                pubsub.publish('GROUP_UPDATED',{updateGroup: response.data.group})
+                pubsub.publish('CONV_DELETED',{conversationDeleted: response.data.group})
                 return{success:true, message:response.data.msg}
 
             }catch(err){
@@ -226,14 +237,14 @@ const mutationResolvers={
                     sender:currentUser._id,
                     message
                 })
-                if(!response.status){
+                if(!response.data.status){
                     return {success: false, error: response.data.msg}
                 }
-                pubsub.publish(`MESSAGE_SENT`, {newMessage: response.data} )
+                pubsub.publish(`MESSAGE_SENT`, {newMessage: response.data.savedMessage})
                 logger.info(`Message sent to conversation:${conversationId}`)
-                return{success: true, message: response.data}
+                return{success: true, message: response.data.savedMessage}
             }catch(err){
-                return {success: false}
+                return {success: false, error:err}
             }
         },
         sendContactRequest:async(_,input, context) => {
@@ -242,10 +253,10 @@ const mutationResolvers={
                 return{success: false, error: "Please authenticate"}
             }
             const senderId=currentUser._id;
+            const {receiverUsername }= input;
             if(receiverUsername === currentUser.username){
                 return {success: false, error: "Cannot send request to yourself"}
             }
-            const {receiverUsername }= input;
             try{
                 const response = await axios.post(`${profilesAPIRoute}/${senderId}/sendcontactrequest`,{
                     username: receiverUsername
@@ -270,8 +281,14 @@ const mutationResolvers={
             if(!currentUser){
                 return{success: false, error: "Please authenticate"}
             }
+
             const receiverId =currentUser._id
             const {senderId, accepted} = input;
+            const request = currentUser.contacts.find(r=>r._id === senderId && r.request.status==='Pending')
+           
+            if(!request){
+                return {success: false, error: 'Invalid friend request'}
+            }
             try{
                 const response = await axios.post(`${profilesAPIRoute}/${receiverId}/respondcontactrequest`,{
                     _id: senderId,
@@ -319,7 +336,6 @@ const mutationResolvers={
             if(!currentUser){
                 return{success: false, error: "Please authenticate"}
             }
-            console.log(conversationId)
             try{
                 const response = await axios.post(`${deleteConversationsRoute}`,{
                     _id: conversationId,
@@ -327,6 +343,7 @@ const mutationResolvers={
                 if(!response.status){
                     return {success: false, error: response.data.msg}
                 }
+                
                 logger.info(`Deleting conversation with id ${conversationId}`)
                 pubsub.publish(`CONV_DELETED`, {conversationDeleted: response.data.conversation})
                 return{success: true, message:response.data.msg}

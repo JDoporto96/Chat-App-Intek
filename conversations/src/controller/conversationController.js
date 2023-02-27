@@ -31,8 +31,11 @@ module.exports.getConversations = async(req,res,next)=>{
 module.exports.getSingleConversationData = async(req,res,next)=>{
     try{
        const conversation = await Conversations.findOne({_id:req.params.conversationId})
+       if(!conversation){
+        return res.json({status: false, msg:"Conversation does not exist" });
+       }
        logger.info(`Fetching conversation with id: ${req.params.conversationId}`) 
-       return res.status(200).json(conversation)
+       return res.status(200).json({status:true, conversation})
 
     }catch(err){
         return res.status(500).json(err)

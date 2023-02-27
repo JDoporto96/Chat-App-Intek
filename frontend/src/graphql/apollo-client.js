@@ -28,6 +28,9 @@ const wsLink = new GraphQLWsLink(createClient({
     options: {
       reconnect: true,
     }
+
+
+    
   }));
 
 const splitLink = split(({query})=>{

@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -20,25 +20,18 @@ function RemoveMembersForm({currentChat}) {
   const contacts = useSelector((state) => {
     return state.contacts.contactList
   });
-
+  const { t } = useTranslation();
   const dispatch = useDispatch();
 
 
-    
-    const members = currentChat.members.map(member =>{
+    const list = currentChat.members.filter(m=>m!==currentUser._id)
+    const members = list.map(member =>{
       const contact = contacts.find(contact => contact._id === member);
       if(contact){
         return contact
       }
-      if(member === currentUser._id){
-        return {
-          username:"me",
-          id:currentUser._id
-      
-        }
-      }
       return{
-        username:member,
+        username:t("Unknown user: ...")+ member.slice(-5),
         _id:member
       }
     })

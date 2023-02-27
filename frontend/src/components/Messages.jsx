@@ -1,10 +1,11 @@
-import { useQuery, useSubscription } from '@apollo/client';
+import { useLazyQuery, useQuery, useSubscription } from '@apollo/client';
 import { List, ListItem,} from '@mui/material';
 import { Box} from '@mui/system';
 import React, { useRef, useState,useEffect } from 'react'
 import GET_CONV from '../graphql/queries/getConversation';
 import MESSAGES_SUBSCRIPTION from '../graphql/subscription/newMessage';
 import { useSelector } from "react-redux";
+import { useTranslation } from 'react-i18next';
 
 const createTimestamp = (date)=>{
     const time = new Date(date)
@@ -16,24 +17,47 @@ function Messages({contacts, currentChat}) {
   const currentUser = useSelector((state) => {
     return state.currentUser.user
   });
-
+  const { t } = useTranslation();
     const[messages, setMessages]=useState([]);
+    const[doRefetch, setDoRefetch]=useState(false);
     const conversationId=currentChat._id
     const scrollRef=useRef()
 
-    const {data, loading} = useQuery(GET_CONV, { variables: 
+    const {data, loading,refetch} = useQuery(GET_CONV, { variables: 
       {conversationId}, fetchPolicy: 'no-cache'})
-    
 
+    
     useEffect(()=>{
-        if(loading){
+        setDoRefetch(false)
+    },[currentChat._id])
+
+    if(doRefetch){
+      refetch({conversationId})
+    }
+    useEffect(()=>{
+       if(loading){
           setMessages([])
         }
         if(!loading){
             setMessages(data.getConversation)
+            setDoRefetch(true)
         }
+      
+        
     },[data,currentChat])
 
+ 
+
+  //   useEffect(()=>{
+  //   //   setMessages([])
+  //   //  refetch({conversationId})
+  //   if(doRefetch){
+  //     console.log("Refetching")
+  //     setDoRefetch(false)
+  //   }
+    
+    
+  // },[currentChat])
 
 
 
@@ -52,8 +76,8 @@ function Messages({contacts, currentChat}) {
     useEffect(()=>{
         scrollRef.current?.scrollIntoView({behaviour:"smooth"})
       },[messages])
-  
-return (
+
+  return (
 <>
 <List id="chat-window-messages"
           sx={{
@@ -115,7 +139,7 @@ return (
                         (contacts.find(contact =>contact._id === message.sender)?
                           contacts.find(contact =>contact._id === message.sender).username
                           :
-                          message.sender
+                          t("Unknown user: ...")+ message.sender.slice(-5)
                         ) +":"
                         : ""}
                         <Box

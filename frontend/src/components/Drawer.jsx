@@ -76,6 +76,7 @@ export default function ResponsiveDrawer(props: Props) {
         onData:({data}) =>{
           if(currentChat !== undefined && data.data.updateGroup._id === currentChat._id  ){
             if(data.data.updateGroup.members.includes(currentUser.user._id)){
+              
               setCurrentChat(data.data.updateGroup)
             }else{
               setCurrentChat(undefined)

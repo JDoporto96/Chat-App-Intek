@@ -17,7 +17,7 @@
     "Groups":"Grupos",
     "Type your message...":"Escriba su mensaje...",
     "Welcome": "Bienvenido",
-    "Please select a chat to Start messaging.":"Seleciona un chat para comenzar a enviar mensajes",
+    "Please select a chat to Start messaging.":"Selecciona un chat para comenzar a enviar mensajes",
     "Add contact":"Añadir contacto",
     "Contact's username":"Nombre de usuario",
     "Send request": "Enviar solicitud",
@@ -71,7 +71,9 @@
     "Remove friend":"Eliminar contacto",
     "You've lost a friend": "Has perdido a un amigo",
     "Hi":"Hola",
-    "Language":"Idioma"
+    "Language":"Idioma",
+    "Unknown user: ...":"Usuario desconocido: ...",
+    "Password can't contain whitespace(' ') characters":"La contraseña no puede contener el caracter ' ' "
 
 
 

@@ -30,8 +30,8 @@ async(req,res,next)=>{
       return res.json({msg: "Invalid email", status: false});
     }
 
-    if(password.toLowerCase().includes('password')){
-      return res.json({msg: "Invalid password", status: false});}
+    if(password.toLowerCase().includes('password') || password.length<6){
+      return res.json({msg: "Invalid password. It must contain at least 6 characters", status: false});}
 
     const newUser = new User(req.body);
     newUser.save()
@@ -64,7 +64,7 @@ async (req, res, next) => {
             if (err) return next(err);
 
             const body = { _id: user._id, email: user.email, username:user.username};
-            const token = jwt.sign({ user: body }, process.env.ACCESS_TOKEN_SECRET,{expiresIn: "1d"});
+            const token = jwt.sign({ user: body }, process.env.ACCESS_TOKEN_SECRET);
             
             logger.info(`${user._id} logged in`) 
             return res.status(200)

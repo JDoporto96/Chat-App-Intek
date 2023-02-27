@@ -22,11 +22,23 @@ module.exports.createGroupConversation = async (req,res,next)=>{
 }
 
 module.exports.updateGroup = async (req,res,next)=>{
-    const {conversationId,newMembers,removedMembers,newAdmins,removedAdmins,newName} = req.body;
+    const {conversationId,newMembers,removedMembers,newAdmins,removedAdmins,newName,updater,isLeaving} = req.body;
     try{
         const group = await Conversations.findOne({_id:conversationId});
         if(!group){
             return res.json({msg: "Invalid group", status:false})
+        }
+        if(!group.isGroup){
+            return res.json({msg:'Not a group conversation. Invalid request', status:false})
+        }
+
+        if(!group.members.includes(updater)){
+            return res.json({msg:'You are not part of the group. Invalid request', status:false})
+        }
+
+
+        if(!isLeaving && !group.admins.includes(updater)){
+            return res.json({msg:'Only admins can manage the group settings. Invalid request', status:false})
         }
        
         if(newAdmins){
@@ -59,6 +71,8 @@ module.exports.updateGroup = async (req,res,next)=>{
             group.name = newName;
             await group.save();
         }
+
+
         logger.info(`Group with id: ${group._id} has been updated`) 
         res.json({status:true, group})
         
@@ -71,7 +85,7 @@ module.exports.showMyGroups = async(req,res,next)=>{
     try{
         const userId = req.params.userId;
         let groups = await Conversations.find();
-        const projectedGroups = groups.filter(group=>group.members.includes(userId)&& group.admins.length >=1).sort((a,b)=>(a.name.toLowerCase() > b.name.toLowerCase())?1:-1);
+        const projectedGroups = groups.filter(group=>group.members.includes(userId)&& group.isGroup >=1).sort((a,b)=>(a.name.toLowerCase() > b.name.toLowerCase())?1:-1);
         if(!projectedGroups){
             return res.json({msg:"Haven't joined any group "})
         }

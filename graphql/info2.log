@@ -35990,3 +35990,2030 @@
 [2023-02-17T23:50:08.344Z] info: Fetching contacts for current user: 63dc0df00a52da147f434424
 [2023-02-17T23:50:26.028Z] info: Fetching all group conversation for user: 63dc0df00a52da147f434424
 [2023-02-17T23:50:28.546Z] info: Fetching requests for current user: 63dc0df00a52da147f434424
+[2023-02-20T19:06:18.177Z] info: New user registered with id: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:06:19.994Z] info: New profile created with id: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:19.048Z] info: User logged in with id:63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:19.761Z] info: User with id:63f3c4a9aa274e60f2e5ef14 went Online
+[2023-02-20T19:07:20.230Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:20.797Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:24.499Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:24.714Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:26.128Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:26.131Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:26.145Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:07:26.268Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:09:26.189Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:09:26.209Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:09:26.233Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:09:26.751Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:09:26.755Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:14:25.242Z] info: Request sent to:aaa
+[2023-02-20T19:15:11.019Z] info: User logged in with id:63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:11.061Z] info: User with id:63d2ef9b0c7d97b7a059196b went Online
+[2023-02-20T19:15:11.173Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:11.500Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:11.592Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:11.970Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:13.412Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:13.414Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:13.514Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:13.761Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-20T19:15:29.692Z] info: User logged in with id:63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:29.701Z] info: User with id:63d2ef440c7d97b7a059195f went Online
+[2023-02-20T19:15:29.851Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:30.082Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:30.107Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:30.163Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:31.108Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:31.112Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:31.114Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:31.188Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:38.980Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:39.030Z] info: Request to:63d2ef440c7d97b7a059195f has been responded
+[2023-02-20T19:15:39.229Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:39.401Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:15:39.403Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:15:39.405Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:16:47.075Z] info: New conversation created
+[2023-02-20T19:16:47.103Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:16:47.519Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:16:48.149Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:50.844Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:51.273Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:51.950Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:52.208Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:52.258Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:52.879Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:53.129Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:53.208Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:53.825Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.047Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.067Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.225Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.434Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.665Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:54.841Z] info: Message sent to conversation:63f3c71e7e4b6c3c3136bb66
+[2023-02-20T19:16:57.164Z] info: New conversation created
+[2023-02-20T19:16:57.518Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:16:57.524Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:16:57.763Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:16:57.786Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:16:59.917Z] info: Fetching conversation: 63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:02.285Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:02.553Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:02.686Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:02.980Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:03.244Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:03.495Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:03.731Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:03.970Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:04.169Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:04.385Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:04.614Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:04.842Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:05.039Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:05.228Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:05.433Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:06.560Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:09.835Z] info: Fetching conversation: 63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:12.985Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:14.254Z] info: Message sent to conversation:63f3c7297e4b6c3c3136bb99
+[2023-02-20T19:17:31.130Z] info: User logged in with id:63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:31.137Z] info: User with id:63f3c4a9aa274e60f2e5ef14 went Online
+[2023-02-20T19:17:31.316Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:31.503Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:31.513Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:31.566Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:32.412Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:32.414Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:32.424Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:17:32.561Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:21:09.359Z] info: New group conversation created
+[2023-02-20T19:21:09.577Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:09.729Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:21:09.780Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:10.010Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:21:13.478Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-20T19:21:35.600Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:35.611Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:35.848Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:36.068Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:36.399Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:21:38.069Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-20T19:23:11.383Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:11.413Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:11.684Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:11.783Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:12.038Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:20.806Z] info: New group conversation created
+[2023-02-20T19:23:21.026Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:21.134Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:21.168Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:23:21.432Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:23:22.554Z] info: Fetching conversation: 63f3c8a86d88d4f05abb9922
+[2023-02-20T19:23:28.499Z] info: Group conversation has been updated
+[2023-02-20T19:23:28.552Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:23:28.738Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:28.860Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:23:28.942Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:24:14.663Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-20T19:24:21.658Z] info: Group conversation has been updated
+[2023-02-20T19:24:21.931Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:24:22.054Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-20T19:24:22.065Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-20T19:24:22.314Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:08:08.368Z] info: User logged in with id:63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:08.740Z] info: User with id:63d2ef440c7d97b7a059195f went Online
+[2023-02-22T18:08:08.807Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:09.122Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:09.266Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:09.673Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:10.741Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:11.080Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:11.083Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:11.217Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:13.533Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:08:29.530Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:29.554Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:29.562Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:29.938Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:08:30.203Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:11:20.389Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:11:27.113Z] info: Group conversation has been updated
+[2023-02-22T18:11:27.448Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:11:27.726Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:11:35.733Z] info: Group conversation has been updated
+[2023-02-22T18:11:36.060Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:11:36.333Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:13:06.788Z] info: User logged in with id:63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:06.797Z] info: User with id:63f3c4a9aa274e60f2e5ef14 went Online
+[2023-02-22T18:13:06.941Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:07.186Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:07.198Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:07.274Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:08.662Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:08.666Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:08.670Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:08.944Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:12.381Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:13:23.010Z] info: Group conversation has been updated
+[2023-02-22T18:13:23.283Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:13:23.360Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:23.378Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:13:23.646Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:53.055Z] info: Group conversation has been updated
+[2023-02-22T18:13:53.315Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:13:53.407Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:13:53.411Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:13:53.703Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:16:59.682Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:16:59.691Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:16:59.752Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:17:00.064Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:17:00.596Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:17:02.136Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:19:10.451Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:10.624Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:10.812Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:10.869Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:10.929Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:11.153Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:11.186Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:11.424Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:12.843Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:19:31.416Z] info: Group conversation has been updated
+[2023-02-22T18:19:31.675Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:31.768Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:31.864Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:32.035Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:43.588Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:43.594Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:43.608Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:44.307Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:44.323Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:46.537Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:19:58.326Z] info: Group conversation has been updated
+[2023-02-22T18:19:58.349Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:58.673Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:19:58.773Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:19:58.939Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:20:24.647Z] info: Group conversation has been updated
+[2023-02-22T18:20:24.877Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:24.990Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:20:25.104Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:25.259Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:20:39.504Z] info: Group conversation has been updated
+[2023-02-22T18:20:39.542Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:20:39.726Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:39.941Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:39.977Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:20:50.377Z] info: Fetching info for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:50.384Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:50.390Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:51.054Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:51.057Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:20:51.975Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:21:02.641Z] info: Group conversation has been updated
+[2023-02-22T18:21:02.662Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:02.692Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:21:03.115Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:21:03.387Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:30.970Z] info: Group conversation has been updated
+[2023-02-22T18:21:31.011Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:21:31.300Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:31.451Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:21:31.565Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:38.891Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-22T18:21:48.381Z] info: Group conversation has been updated
+[2023-02-22T18:21:48.710Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:48.726Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:21:48.983Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:21:48.996Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:22:03.914Z] info: Group conversation has been updated
+[2023-02-22T18:22:03.955Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:22:04.246Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:22:04.414Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:22:04.508Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:22:14.747Z] info: Group conversation has been updated
+[2023-02-22T18:22:14.787Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:22:15.086Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:22:15.241Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:22:15.360Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:30:42.894Z] info: Users 63f3c4a9aa274e60f2e5ef14 and 63d2ef440c7d97b7a059195f have stopped being friends
+[2023-02-22T18:30:42.928Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:30:43.302Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:43.418Z] info: Deleting conversation with id 63f3c7297e4b6c3c3136bb99
+[2023-02-22T18:30:43.558Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:43.776Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:43.784Z] info: Fetching all conversations for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:30:44.109Z] info: Fetching all group conversation for user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:30:47.179Z] info: Request sent to:aaa
+[2023-02-22T18:30:47.202Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:55.371Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:55.423Z] info: Request to:63d2ef440c7d97b7a059195f has been responded
+[2023-02-22T18:30:55.623Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:55.766Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:30:55.789Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:30:55.790Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:35:54.236Z] info: Users 63d2ef440c7d97b7a059195f and 63f3c4a9aa274e60f2e5ef14 have stopped being friends
+[2023-02-22T18:35:54.376Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:35:54.596Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:35:57.797Z] info: Request sent to:lunita
+[2023-02-22T18:35:57.825Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:36:04.578Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:36:04.587Z] info: Request to:63f3c4a9aa274e60f2e5ef14 has been responded
+[2023-02-22T18:36:04.828Z] info: Fetching requests for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-22T18:36:04.925Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:36:04.947Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-22T18:36:05.013Z] info: Fetching contacts for current user: 63f3c4a9aa274e60f2e5ef14
+[2023-02-23T18:15:45.913Z] info: User logged in with id:63d2ef440c7d97b7a059195f
+[2023-02-23T18:15:46.578Z] info: User with id:63d2ef440c7d97b7a059195f went Online
+[2023-02-23T18:15:46.673Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:15:46.984Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:15:47.261Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:15:47.409Z] info: User logged in with id:63d2ef440c7d97b7a059195f
+[2023-02-23T18:15:47.420Z] info: User with id:63d2ef440c7d97b7a059195f went Online
+[2023-02-23T18:16:08.022Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:08.045Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:08.054Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:08.436Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:09.841Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:09.843Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:09.846Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:10.011Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:33.996Z] info: User logged in with id:63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:34.005Z] info: User with id:63d2ef9b0c7d97b7a059196b went Online
+[2023-02-23T18:16:34.109Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:34.115Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:34.423Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:34.792Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:35.939Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:36.274Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:36.277Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:36.859Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:46.367Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-23T18:16:51.511Z] info: Request sent to:ccc
+[2023-02-23T18:16:51.549Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:54.628Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:54.668Z] info: Request to:63d2ef9b0c7d97b7a059196b has been responded
+[2023-02-23T18:16:54.691Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:54.877Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:16:55.002Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:16:55.087Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:17:10.287Z] info: New group conversation created
+[2023-02-23T18:17:10.311Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:17:10.661Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:17:10.796Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:17:10.927Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:17:13.308Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:17:16.576Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:17:29.731Z] info: Group conversation has been updated
+[2023-02-23T18:17:29.971Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:17:30.084Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:17:30.185Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:17:30.352Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:17:40.618Z] info: Users 63d2ef440c7d97b7a059195f and 63d2ef9b0c7d97b7a059196b have stopped being friends
+[2023-02-23T18:17:40.875Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:17:40.971Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:21:46.331Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:21:46.431Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:21:46.438Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:21:46.480Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:21:46.624Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:21:46.662Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:21:46.811Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:21:47.587Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:21:47.775Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:21:47.985Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:09.561Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:09.570Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:09.602Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:09.963Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:10.076Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:10.078Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:10.137Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:10.179Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:10.472Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:10.862Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:14.032Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:22:34.755Z] info: Request sent to:ccc
+[2023-02-23T18:22:35.096Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:37.857Z] info: Request to:63d2ef9b0c7d97b7a059196b has been responded
+[2023-02-23T18:22:37.884Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:38.143Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:38.197Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:38.199Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:40.239Z] info: New conversation created
+[2023-02-23T18:22:40.494Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:40.588Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:40.590Z] info: New conversation created
+[2023-02-23T18:22:40.637Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:40.839Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:22:40.959Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:41.380Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:22:42.433Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:22:47.367Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:22:50.477Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:22:56.279Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:05.228Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:07.507Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:10.053Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:13.416Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:23:17.169Z] info: Message sent to conversation:63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:23:17.554Z] info: Message sent to conversation:63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:23:18.600Z] info: Message sent to conversation:63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:23:20.896Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:23:26.979Z] info: Users 63d2ef9b0c7d97b7a059196b and 63d2ef440c7d97b7a059195f have stopped being friends
+[2023-02-23T18:23:27.212Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:23:27.335Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:23:27.378Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:27.382Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c4
+[2023-02-23T18:23:27.581Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:23:27.789Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:23:27.810Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-23T18:23:28.085Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-23T18:25:16.903Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T18:25:16.938Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-23T23:49:31.260Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-23T23:49:31.374Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:00:54.382Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:54.403Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:57.459Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:57.528Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:58.968Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:58.971Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:58.974Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:00:59.235Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:01:06.093Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:06.101Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:06.103Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:07.147Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:08.308Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:08.317Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:08.638Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:01:09.141Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:06.849Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:06.854Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:07.162Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:07.292Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:08.339Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:08.719Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:08.721Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:09.021Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:03:16.224Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:16.255Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:16.293Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:16.831Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:18.534Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:18.542Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:18.859Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:03:19.790Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:05:01.225Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:05:01.243Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:05:01.247Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:05:01.523Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:05:01.824Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:51.778Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:51.796Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:51.799Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:52.241Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:53.290Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:53.292Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:53.586Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:06:53.732Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:44.518Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:44.531Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:44.595Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:45.038Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:46.151Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:46.181Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:46.468Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:08:47.067Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:48.763Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:48.802Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:48.823Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:49.077Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:50.157Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:50.472Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:50.475Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:51.028Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:10:51.651Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:11:45.118Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:11:45.844Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:12:21.839Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:21.866Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:21.999Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:22.140Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:23.187Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:23.502Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:23.504Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:12:23.746Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:15.282Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:15.298Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:15.310Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:15.561Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:16.695Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:17.012Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:17.014Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:17.548Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:13:17.827Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:13:46.327Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:13:47.725Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:13:48.983Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:13:50.369Z] info: Fetching conversation: 63f3c8a86d88d4f05abb9922
+[2023-02-24T00:13:51.309Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:13:53.038Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T00:13:54.672Z] info: New conversation created
+[2023-02-24T00:13:56.572Z] info: New conversation created
+[2023-02-24T00:13:58.315Z] info: New conversation created
+[2023-02-24T00:14:03.802Z] info: New conversation created
+[2023-02-24T00:14:13.348Z] info: New conversation created
+[2023-02-24T00:14:14.322Z] info: New conversation created
+[2023-02-24T00:14:14.533Z] info: New conversation created
+[2023-02-24T00:14:14.576Z] info: New conversation created
+[2023-02-24T00:14:16.637Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:14:17.897Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:14:20.411Z] info: Message sent to conversation:63f3c8256d88d4f05abb9914
+[2023-02-24T00:14:23.746Z] info: Message sent to conversation:63f3c8256d88d4f05abb9914
+[2023-02-24T00:14:29.326Z] info: Message sent to conversation:63f3c8256d88d4f05abb9914
+[2023-02-24T00:14:31.501Z] info: New conversation created
+[2023-02-24T00:16:44.461Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:16:44.467Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:16:45.278Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:16:45.899Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:16:45.977Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:16:51.998Z] info: New conversation created
+[2023-02-24T00:16:53.372Z] info: New conversation created
+[2023-02-24T00:16:54.988Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:16:55.320Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:16:56.249Z] info: Fetching conversation: 63f3c8a86d88d4f05abb9922
+[2023-02-24T00:16:56.776Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:16:58.047Z] info: New conversation created
+[2023-02-24T00:16:58.594Z] info: New conversation created
+[2023-02-24T00:16:59.803Z] info: New conversation created
+[2023-02-24T00:17:06.776Z] info: Users 63d2ef440c7d97b7a059195f and 63f3c4a9aa274e60f2e5ef14 have stopped being friends
+[2023-02-24T00:17:07.269Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:12.135Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:12.141Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:12.456Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:12.498Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:23.501Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:23.505Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:23.810Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:23.917Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:25.010Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:25.327Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:25.330Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:25.780Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:27.822Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T00:17:39.274Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:39.301Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:39.312Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:40.122Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:40.333Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:45.938Z] info: Request sent to:ccc
+[2023-02-24T00:17:45.982Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:49.214Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:49.222Z] info: Request to:63d2ef9b0c7d97b7a059196b has been responded
+[2023-02-24T00:17:49.451Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:49.561Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:49.563Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:17:49.653Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:17:55.694Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T00:18:01.854Z] info: Message sent to conversation:63eff758a9fe871a5e6a8a70
+[2023-02-24T00:18:09.246Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:18:15.318Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:18:27.662Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:18:42.539Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:19:11.863Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T00:19:13.066Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:19:25.591Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:19:26.290Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T00:20:56.544Z] info: Message sent to conversation:63eff758a9fe871a5e6a8a70
+[2023-02-24T00:21:52.088Z] info: Message sent to conversation:63eff758a9fe871a5e6a8a70
+[2023-02-24T00:22:01.108Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:22:58.937Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:23:01.691Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:23:05.730Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:23:05.738Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:23:06.017Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:23:06.404Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:23:06.415Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:23:08.659Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:08.665Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:08.678Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:08.967Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:13.474Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:13.485Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:13.559Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:14.145Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:14.460Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:16.195Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T00:23:19.282Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:23:21.079Z] info: Message sent to conversation:63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:23:58.409Z] info: Users 63d2ef9b0c7d97b7a059196b and 63dc0df00a52da147f434424 have stopped being friends
+[2023-02-24T00:23:58.627Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:58.844Z] info: Deleting conversation with id 63eff754a9fe871a5e6a8a62
+[2023-02-24T00:23:58.846Z] info: Deleting conversation with id 63eff754a9fe871a5e6a8a62
+[2023-02-24T00:23:58.887Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:23:58.901Z] info: Deleting conversation with id 63eff754a9fe871a5e6a8a62
+[2023-02-24T00:23:59.776Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:01.767Z] info: Users 63d2ef9b0c7d97b7a059196b and 63ee84020438b119c9b6f7e1 have stopped being friends
+[2023-02-24T00:24:02.176Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:02.178Z] info: Deleting conversation with id 63eff757a9fe871a5e6a8a6a
+[2023-02-24T00:24:02.377Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:02.518Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:04.384Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:24:11.439Z] info: Group conversation has been updated
+[2023-02-24T00:24:11.581Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:11.770Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:24:11.788Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:24:12.054Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:24:20.140Z] info: Fetching conversation: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:24:22.808Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:25:20.171Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:25:45.600Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:27:37.783Z] info: Fetching conversation: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:27:38.554Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:27:41.031Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:29:07.334Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:29:07.611Z] info: Fetching conversation: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:29:08.221Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:29:10.428Z] info: Message sent to conversation:63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:29:25.961Z] info: Fetching conversation: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:29:26.235Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:31:06.224Z] info: Fetching conversation: 63f7ada6a5f3672fd3e7c8aa
+[2023-02-24T00:31:10.206Z] info: Group conversation has been updated
+[2023-02-24T00:31:10.446Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:10.542Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:10.569Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:10.861Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:11.610Z] info: Fetching conversation: 63f3c8256d88d4f05abb9914
+[2023-02-24T00:31:19.683Z] info: Group conversation has been updated
+[2023-02-24T00:31:19.945Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:20.028Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:20.040Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:20.308Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:21.685Z] info: Fetching conversation: 63f3c8a86d88d4f05abb9922
+[2023-02-24T00:31:29.830Z] info: Group conversation has been updated
+[2023-02-24T00:31:30.085Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:30.180Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:30.275Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:30.448Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:34.808Z] info: Fetching conversation: 63f3c8a86d88d4f05abb9922
+[2023-02-24T00:31:43.816Z] info: Group conversation has been updated
+[2023-02-24T00:31:44.070Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:44.178Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:44.241Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:31:44.435Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:31:50.144Z] info: Message sent to conversation:63f3c8a86d88d4f05abb9922
+[2023-02-24T00:31:52.297Z] info: Message sent to conversation:63f3c8a86d88d4f05abb9922
+[2023-02-24T00:32:04.864Z] info: Message sent to conversation:63f3c8a86d88d4f05abb9922
+[2023-02-24T00:32:07.570Z] info: Message sent to conversation:63f3c8a86d88d4f05abb9922
+[2023-02-24T00:32:09.868Z] info: Message sent to conversation:63f3c8a86d88d4f05abb9922
+[2023-02-24T00:32:57.160Z] info: Deleting group with id: 63f3c8a86d88d4f05abb9922
+[2023-02-24T00:33:06.575Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:06.591Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:06.602Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:06.942Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:07.094Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:08.979Z] info: Fetching conversation: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:33:19.159Z] info: Group conversation has been updated
+[2023-02-24T00:33:19.383Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:19.738Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:30.385Z] info: Deleting group with id: 63eff77ca9fe871a5e6a8a7a
+[2023-02-24T00:33:30.645Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:30.731Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:33:49.645Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:33:49.654Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:33:49.965Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:33:50.346Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:33:50.349Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:38:20.187Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T00:38:39.676Z] info: New group conversation created
+[2023-02-24T00:38:40.013Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:38:40.281Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:38:42.027Z] info: Fetching conversation: 63f8070f240bd39c9dd3fc13
+[2023-02-24T00:40:02.777Z] info: Deleting group with id: 63f8070f240bd39c9dd3fc13
+[2023-02-24T00:40:02.922Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:40:03.127Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:40:03.130Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:40:03.376Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:41:25.442Z] info: New group conversation created
+[2023-02-24T00:41:25.630Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:41:25.809Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:41:25.816Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:41:26.059Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:41:27.131Z] info: Fetching conversation: 63f807b5240bd39c9dd3fc20
+[2023-02-24T00:41:28.979Z] info: Fetching conversation: 63f807b5240bd39c9dd3fc20
+[2023-02-24T00:41:33.773Z] info: Deleting group with id: 63f807b5240bd39c9dd3fc20
+[2023-02-24T00:41:34.034Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:41:34.118Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:41:34.122Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:41:34.388Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:49:05.688Z] info: New group conversation created
+[2023-02-24T00:49:05.729Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:49:06.041Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:49:06.202Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:49:06.345Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:49:07.775Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T00:49:10.069Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T00:49:12.405Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:13.401Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:14.860Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:41.804Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:42.481Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:43.564Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:44.796Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:45.741Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:49:46.234Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:50:03.392Z] info: Group conversation has been updated
+[2023-02-24T00:50:03.620Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:50:03.743Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:50:03.772Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:50:03.996Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:50:20.267Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T00:50:20.820Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T00:50:22.421Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T00:50:28.020Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:50:28.950Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:50:30.136Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:50:35.408Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T00:50:36.282Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T00:50:48.394Z] info: Group conversation has been updated
+[2023-02-24T00:50:48.622Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:50:48.729Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:50:48.750Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:50:49.046Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:51:16.831Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T00:51:18.104Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T00:51:28.224Z] info: Group conversation has been updated
+[2023-02-24T00:51:28.472Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:51:28.565Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:51:28.581Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:51:28.833Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:51:35.323Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:36.979Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:38.163Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:38.441Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:39.465Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:40.265Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:41.222Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T00:51:49.630Z] info: Group conversation has been updated
+[2023-02-24T00:51:49.977Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:51:49.989Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T00:51:50.225Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T00:51:50.248Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:19:34.308Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:34.326Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:37.559Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:37.957Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:39.391Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:39.749Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:39.755Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:19:39.914Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:20:35.761Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:35.779Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:35.791Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:36.208Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:37.227Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:37.235Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:37.578Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:20:37.695Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:24:50.551Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:24:52.192Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:24:59.295Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T17:25:01.778Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T17:25:02.866Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T17:25:06.443Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T17:25:07.655Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T17:25:11.437Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:25:12.072Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:25:14.177Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:25:14.187Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:25:14.191Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:25:14.511Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:25:14.727Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:25:17.704Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:25:21.323Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T17:25:22.976Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T17:25:25.829Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:25:26.606Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:25:30.388Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T17:25:31.601Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T17:25:32.626Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:25:40.210Z] info: Message sent to conversation:63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:25:41.790Z] info: Message sent to conversation:63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:26:01.213Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:26:02.694Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:26:04.865Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:26:14.818Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:26:30.127Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:26:31.561Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:26:33.291Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:26:56.026Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:26:59.474Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:27:14.078Z] info: Group conversation has been updated
+[2023-02-24T17:27:14.244Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:27:14.472Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:27:14.622Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:27:14.717Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:27:29.683Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T17:27:31.839Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:43:17.391Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:17.412Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:17.415Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:18.148Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:18.308Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:18.314Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:18.328Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:18.446Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:20.411Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:20.735Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:51.253Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:51.340Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:51.529Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:51.710Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:52.420Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:52.429Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:52.701Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:43:52.771Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:53.296Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:43:53.677Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:49:28.083Z] info: User logged in with id:63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:30.029Z] info: User with id:63d2ef440c7d97b7a059195f went Online
+[2023-02-24T17:49:30.445Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:30.452Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:30.455Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:30.735Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:31.049Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:31.370Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:31.375Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:31.510Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:49:41.566Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:49:43.701Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:50:00.205Z] info: Group conversation has been updated
+[2023-02-24T17:50:00.440Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:50:00.564Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:50:00.665Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:50:00.830Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:50:11.141Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:12.037Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:12.666Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:12.935Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:13.293Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:14.091Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:50:20.417Z] info: Group conversation has been updated
+[2023-02-24T17:50:20.666Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:50:20.777Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:50:20.853Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:50:21.013Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:55:13.167Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T17:55:14.111Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T17:55:28.846Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T17:55:36.499Z] info: Group conversation has been updated
+[2023-02-24T17:55:36.850Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:55:36.868Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:55:37.167Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T17:55:37.182Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T17:55:50.702Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T17:55:52.129Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:03:11.844Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:03:14.104Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T18:03:19.039Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:03:20.186Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:03:52.089Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:03:52.780Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T18:03:52.920Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:03:52.935Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:03:52.947Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:03:52.961Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:03:53.005Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T18:03:53.010Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T18:04:29.594Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T18:04:29.605Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T18:04:29.708Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T18:04:29.711Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:04:29.715Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:04:29.719Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:04:32.890Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:04:33.036Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:04:36.094Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T18:04:37.559Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:04:44.798Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T18:04:47.081Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T18:04:53.297Z] info: Group conversation has been updated
+[2023-02-24T18:04:53.543Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:04:53.730Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:04:53.853Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:04:53.946Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:10:49.797Z] info: Group conversation has been updated
+[2023-02-24T18:10:50.053Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:10:50.152Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:10:50.466Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:10:50.836Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:11:02.346Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T18:11:03.718Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:11:05.933Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T18:11:07.580Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:13:05.672Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:05.826Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:06.115Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:06.265Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:06.266Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:06.883Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:21.115Z] info: Group conversation has been updated
+[2023-02-24T18:13:21.319Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:21.448Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:21.742Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:21.762Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:33.410Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T18:13:34.751Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:13:37.527Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T18:13:39.402Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:13:47.055Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T18:13:49.889Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T18:13:58.518Z] info: Group conversation has been updated
+[2023-02-24T18:13:58.759Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:58.868Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:13:58.914Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:13:59.169Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:14:57.814Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:14:58.102Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:14:58.263Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:14:58.351Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:14:58.379Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:14:59.217Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:15:01.230Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T18:15:01.867Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T18:15:03.416Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:15:11.438Z] info: Group conversation has been updated
+[2023-02-24T18:15:11.473Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:15:11.779Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:15:11.951Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:15:12.073Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:15:35.904Z] info: Group conversation has been updated
+[2023-02-24T18:15:36.107Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:15:36.273Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:15:36.433Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:15:36.538Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:10.807Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:10.811Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:11.109Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:11.312Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:12.339Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:12.637Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:12.693Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:12.723Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:25:22.480Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:22.482Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:22.494Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:23.037Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:24.264Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:24.267Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:24.537Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:25:24.645Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:30:05.243Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:05.253Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:05.653Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:05.854Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:07.788Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:30:33.277Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:33.293Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:33.297Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:33.942Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:33.944Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:38.757Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:30:54.387Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:54.440Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:54.613Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:54.925Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:58.396Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:58.468Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:58.471Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:59.156Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:30:59.163Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:31:56.330Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:31:56.525Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:31:56.645Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:31:56.652Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:32.104Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:32.317Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:32.452Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:32.572Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:35.288Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:35.291Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:35.626Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:35.925Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:32:35.950Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:35:22.821Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:35:22.938Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:35:23.151Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:35:23.350Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:36:43.879Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:36:44.013Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:36:44.205Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:36:44.317Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:08.893Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:08.925Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:09.149Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:09.571Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:09.574Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:49.903Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:50.081Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:50.525Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:50.612Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:55.325Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:55.336Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:55.638Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:56.220Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:37:56.225Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:41:04.208Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:41:04.483Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:41:04.525Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:41:04.736Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T18:41:05.289Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:00.108Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:00.432Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:00.583Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:00.608Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:51.434Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:51.633Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:51.822Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:52.173Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:42:53.860Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:43:38.379Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:43:38.381Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:43:39.567Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:43:40.024Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:43:40.045Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:43:41.814Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:44:26.691Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:44:26.902Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:44:26.998Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:44:27.165Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:44:28.820Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T18:46:14.193Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:46:14.206Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:46:14.565Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:46:14.716Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:46:15.074Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:02.006Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:02.306Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:02.486Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:02.487Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:22.628Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:22.857Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:22.941Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:47:23.073Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:22.894Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:23.214Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:23.400Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:23.411Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:43.657Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:43.840Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:43.935Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:48:44.172Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:49:13.973Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:49:14.310Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:49:14.472Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:49:14.477Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:32.152Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:32.180Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:32.467Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:32.688Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:32.985Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:57.975Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:58.126Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:58.270Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:54:58.536Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:21.261Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:21.570Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:21.740Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:21.772Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:49.988Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:50.247Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:50.301Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:55:50.445Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:56:26.038Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:56:26.232Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:56:26.499Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:56:26.502Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T18:56:29.607Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:01:11.638Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:01:11.799Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:01:16.111Z] info: Group conversation has been updated
+[2023-02-24T19:01:16.149Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:01:16.488Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:01:16.558Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:01:16.723Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:01:24.810Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:01:28.918Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:01:30.256Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:01:36.505Z] info: Group conversation has been updated
+[2023-02-24T19:01:36.848Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:01:36.881Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:01:37.193Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:01:37.207Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:02.561Z] info: Group conversation has been updated
+[2023-02-24T19:02:02.607Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:02.894Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:03.145Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:03.183Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:20.709Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:20.731Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:20.775Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:20.847Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:21.253Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:21.313Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:44.123Z] info: Group conversation has been updated
+[2023-02-24T19:02:44.419Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:44.480Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:44.564Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:02:44.731Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:02:52.486Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:02:53.717Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:03:41.545Z] info: Group conversation has been updated
+[2023-02-24T19:03:41.636Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:03:41.734Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:03:41.902Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:03:42.154Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:03:51.431Z] info: Group conversation has been updated
+[2023-02-24T19:03:51.519Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:03:51.758Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:03:51.898Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:03:52.099Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:03:59.213Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:04:45.638Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:04:45.859Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:04:52.205Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:04:54.327Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:04:56.523Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:04:57.928Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:04:58.699Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:05:06.634Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:05:06.790Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:05:46.209Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:05:46.246Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:05:54.118Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:05:54.963Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:05:56.170Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:06:06.278Z] info: Group conversation has been updated
+[2023-02-24T19:06:06.613Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:06:06.629Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:06:06.906Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:06:06.916Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:07:05.249Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:07:05.277Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:09:01.694Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:09:02.214Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:09:14.804Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:14.812Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:14.813Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:20.664Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:24.648Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:24.659Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:25.606Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:25.991Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:27.075Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:27.090Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:27.421Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:27.807Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:29.799Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:09:32.306Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:09:33.912Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:09:51.706Z] info: Group conversation has been updated
+[2023-02-24T19:09:51.972Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:09:52.054Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:09:52.271Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:09:52.336Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:10:52.807Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:10:53.230Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:11:22.076Z] info: Group conversation has been updated
+[2023-02-24T19:11:22.279Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:11:22.430Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:11:22.497Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:11:22.536Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:11:22.662Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:11:22.702Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:11:27.504Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:28.447Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:29.782Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:30.305Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:36.677Z] info: Group conversation has been updated
+[2023-02-24T19:11:36.861Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:11:37.026Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:11:37.059Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:11:37.135Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:11:37.195Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:11:37.287Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:11:56.020Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:56.400Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:57.365Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:57.652Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:11:58.211Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:12:09.543Z] info: Group conversation has been updated
+[2023-02-24T19:12:09.786Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:12:09.891Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:12:09.899Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:12:10.044Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:12:10.166Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:12:10.256Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:12:53.382Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:12:55.255Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:00.914Z] info: Group conversation has been updated
+[2023-02-24T19:13:01.184Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:13:01.274Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:13:01.280Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:01.399Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:01.521Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:13:01.526Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:13:10.184Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:10.466Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:11.218Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:13.996Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:14.752Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:15.798Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:16.144Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:32.300Z] info: Group conversation has been updated
+[2023-02-24T19:13:32.348Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:13:32.537Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:13:32.643Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:32.800Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:32.874Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:13:32.895Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:13:50.332Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:50.544Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:13:56.495Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:57.053Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:58.213Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:58.600Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:13:59.669Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:06.382Z] info: Group conversation has been updated
+[2023-02-24T19:14:06.642Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:14:06.741Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:14:06.745Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:06.819Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:14:06.871Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:14:06.992Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:21.857Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:22.099Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:22.561Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:23.400Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:23.666Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:24.043Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:24.794Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:25.054Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:31.088Z] info: Group conversation has been updated
+[2023-02-24T19:14:31.156Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:31.343Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:14:31.497Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:14:31.564Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:14:31.637Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:14:31.744Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:42.970Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:43.245Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:43.725Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:44.835Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:45.214Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:14:50.929Z] info: Group conversation has been updated
+[2023-02-24T19:14:51.155Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:14:51.367Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:51.588Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:14:51.604Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:14:51.644Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:15:13.621Z] info: Group conversation has been updated
+[2023-02-24T19:15:13.667Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:15:13.883Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:15:13.964Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:14.131Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:15:14.291Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:15:27.942Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:36.762Z] info: Group conversation has been updated
+[2023-02-24T19:15:37.023Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:15:37.114Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:15:37.168Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:37.473Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:15:37.518Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:15:37.618Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:41.233Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:41.953Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:15:43.654Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:15:55.221Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:15:56.644Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:16:08.546Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:16:10.257Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:17:23.890Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:17:25.877Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:18:57.221Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:18:57.413Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:12.250Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:12.294Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:33.421Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:33.477Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:41.898Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:19:44.011Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:19:46.320Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:19:49.219Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:19:49.229Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:19:49.235Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:19:49.632Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:19:49.752Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:19:51.357Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:13.149Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:13.491Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:20.040Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:20.048Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:20.052Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:20.572Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:20.711Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:22.792Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:25.830Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:20:27.550Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:34.943Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:35.137Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:20:41.936Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:41.941Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:41.952Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:42.488Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:42.592Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:20:44.330Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:21:43.456Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:21:43.463Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:17.987Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:18.051Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:24.684Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:24.692Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:24.721Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:25.099Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:25.217Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:27.352Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:51.882Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:51.968Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:22:56.181Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:56.190Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:56.249Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:56.674Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:22:57.058Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:23:00.792Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:23:05.246Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:25:39.808Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:25:43.980Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:28:22.082Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:22.217Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:22.226Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:22.360Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:31.409Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:28:31.429Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:28:31.449Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:28:32.081Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:28:32.092Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:28:34.898Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:34.906Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:35.193Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:35.632Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:35.741Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:28:45.317Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:28:56.893Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:29:31.700Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:29:36.233Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:36.239Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:36.541Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:36.567Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:56.552Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:56.560Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:56.565Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:57.417Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:29:57.512Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:30:00.070Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:30:02.859Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:30:05.734Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:30:07.017Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:31:02.367Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:31:16.491Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:31:21.929Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:31:21.938Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:31:21.944Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:31:22.418Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:31:22.637Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:31:26.319Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:31:43.934Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:31:51.769Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:32:04.024Z] info: Group conversation has been updated
+[2023-02-24T19:32:04.279Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:32:04.379Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:32:04.631Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:32:04.800Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:32:40.027Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:33:28.836Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:33:32.107Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:33:32.113Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:33:32.427Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:33:32.659Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:33:32.977Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:33:36.335Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:33:42.253Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:33:55.682Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:34:07.170Z] info: Group conversation has been updated
+[2023-02-24T19:34:07.408Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:34:07.534Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:34:07.788Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:34:07.891Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:21.732Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:36:30.188Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:36:34.278Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:34.285Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:34.557Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:35.157Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:35.161Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:36.734Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:36:50.951Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:36:55.609Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:55.616Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:55.623Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:56.094Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:56.260Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:36:59.011Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:37:10.319Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:37:33.712Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:37:36.126Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:37:36.134Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:37:36.143Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:37:36.674Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:37:36.796Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:37:46.806Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:37:50.644Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:39:58.970Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:40:03.928Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:40:03.935Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:40:03.942Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:40:04.333Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:40:04.618Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:40:06.552Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:40:09.338Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:41:50.288Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:42:15.159Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:42:22.517Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:42:22.526Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:42:22.536Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:42:23.053Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:42:23.216Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:42:24.791Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:42:26.972Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:43:05.864Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:43:09.708Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:09.714Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:10.016Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:10.461Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:10.466Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:25.914Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:43:29.729Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:43:43.222Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:43:47.882Z] info: Group conversation has been updated
+[2023-02-24T19:43:47.923Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:43:48.137Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:43:48.369Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:43:48.585Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:03.909Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:44:09.215Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:09.223Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:09.546Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:09.805Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:10.140Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:13.786Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:44:16.368Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:44:19.109Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:44:28.177Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:44:42.561Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:44:44.748Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:44:58.642Z] info: Group conversation has been updated
+[2023-02-24T19:44:58.975Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:44:58.992Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:44:59.258Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:44:59.402Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:10.768Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:45:33.796Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:45:36.496Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:36.506Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:36.525Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:36.848Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:36.985Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:45:38.565Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:45:40.394Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:46:38.054Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:46:39.158Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:46:39.169Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:46:39.483Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:46:39.723Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:46:39.988Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:46:45.593Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:46:47.663Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:46:49.663Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:46:51.605Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:46:57.078Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:46:58.700Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:47:06.070Z] info: Group conversation has been updated
+[2023-02-24T19:47:06.114Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:47:06.316Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:47:06.580Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:47:06.814Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:47:22.435Z] info: Group conversation has been updated
+[2023-02-24T19:47:22.479Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:47:22.711Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:47:22.893Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:47:23.086Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:47:35.098Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:47:38.315Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:47:40.867Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:47:49.881Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:47:51.647Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:48:04.386Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:48:23.116Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:48:37.250Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:48:44.702Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:50:29.405Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:50:32.793Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:50:35.030Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:50:36.976Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:50:46.439Z] info: Group conversation has been updated
+[2023-02-24T19:50:46.673Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:50:46.791Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:50:47.057Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:50:47.116Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:18.925Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:18.944Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:19.175Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:19.399Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:21.657Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:21.664Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:21.666Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:22.143Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:22.282Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:24.433Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:26.943Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:51:28.634Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:36.456Z] info: Group conversation has been updated
+[2023-02-24T19:51:36.504Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:51:36.698Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:36.802Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:36.978Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:37.089Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:51:37.167Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:45.858Z] info: Group conversation has been updated
+[2023-02-24T19:51:45.916Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:51:46.085Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:51:46.222Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:46.481Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:51:46.564Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:51:46.771Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:52:00.295Z] info: Group conversation has been updated
+[2023-02-24T19:52:00.352Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:52:00.555Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:52:00.635Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:52:00.792Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:52:00.907Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:52:00.969Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:52:15.964Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:19.438Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:22.251Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:24.224Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:24.724Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:27.135Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:28.114Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:29.289Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:29.788Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:52:41.624Z] info: Group conversation has been updated
+[2023-02-24T19:52:41.866Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:52:42.044Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:52:42.047Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:52:42.080Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:52:42.227Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:52:42.380Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:52:42.490Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:52:42.865Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:01.158Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:01.357Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:01.723Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:01.736Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:21.811Z] info: Fetching info for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:21.819Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:22.121Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:22.496Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:22.502Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:23.857Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:23.869Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:24.176Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:24.430Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:24.766Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:28.066Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:30.822Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:35.986Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:38.767Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:39.026Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:39.266Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:39.930Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:40.200Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:53:54.103Z] info: Group conversation has been updated
+[2023-02-24T19:53:54.150Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:54.317Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:54.512Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:54.591Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:54.708Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:53:54.724Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:53:54.858Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:53:55.088Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:54:33.990Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:54:34.053Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:54:41.682Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:54:46.515Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:54:48.318Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:54:49.565Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T19:54:51.006Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:05.858Z] info: Group conversation has been updated
+[2023-02-24T19:55:05.897Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:55:06.193Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:55:06.347Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:06.366Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:55:06.443Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:55:30.115Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:55:31.695Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:38.212Z] info: Group conversation has been updated
+[2023-02-24T19:55:38.250Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:55:38.544Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:55:38.730Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:38.742Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:55:38.807Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:55:50.949Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T19:55:50.960Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:51.541Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:55:59.896Z] info: Group conversation has been updated
+[2023-02-24T19:56:00.219Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:56:00.238Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:56:00.500Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:56:00.661Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:56:26.455Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:56:32.771Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:35.390Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:36.225Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:36.518Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:37.337Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:37.645Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:56:47.003Z] info: Group conversation has been updated
+[2023-02-24T19:56:47.267Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:56:47.343Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:56:47.378Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:56:47.523Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:56:47.602Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:56:47.616Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:57:07.551Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:08.083Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:09.604Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:09.826Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:10.652Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:11.793Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:57:18.925Z] info: Group conversation has been updated
+[2023-02-24T19:57:18.966Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:57:19.260Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:57:19.608Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:57:19.614Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:57:19.628Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:57:19.699Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:58:36.761Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:36.833Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:42.275Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:42.322Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:46.306Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:47.844Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T19:58:49.308Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T19:58:50.737Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:58:58.143Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:01.879Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:03.734Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:04.076Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:05.035Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:05.342Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T19:59:15.549Z] info: Group conversation has been updated
+[2023-02-24T19:59:15.791Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T19:59:15.899Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:59:15.908Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:59:16.106Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T19:59:16.165Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T19:59:16.298Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:00:37.906Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:00:38.043Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:00:43.584Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:00:45.213Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:00:46.710Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:00:53.438Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:00:54.719Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:00:54.972Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:00:55.195Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:00:55.772Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:00:56.039Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:04.894Z] info: Group conversation has been updated
+[2023-02-24T20:01:05.225Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:01:05.239Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:01:05.439Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:05.477Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:05.512Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:01:05.545Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:01:05.746Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:06.039Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:36.449Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:36.474Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:36.923Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:36.982Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:43.772Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:45.454Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:45.684Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:46.123Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:47.125Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:47.404Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:01:56.116Z] info: Group conversation has been updated
+[2023-02-24T20:01:56.151Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:01:56.364Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:01:56.478Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:56.708Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:01:56.757Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:56.933Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:01:57.023Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:01:57.179Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:02:59.389Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:02:59.429Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:02:59.615Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:02:59.690Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:25.624Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:25.886Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:26.929Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:27.396Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:29.028Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:29.398Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:44.858Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:45.088Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:45.209Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:45.271Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:49.424Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:03:49.776Z] info: Fetching conversation: 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:03:50.714Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:51.084Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:03:52.855Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:03:53.312Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:10.959Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:10.981Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:11.109Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:11.196Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:11.575Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:11.628Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:11.863Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:11.947Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.045Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.400Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.419Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:12.527Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.621Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.808Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:12.824Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:12.935Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.000Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:13.098Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.200Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.299Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:13.365Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.616Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.728Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:13.958Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:13.966Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:14.131Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:14.186Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:14.611Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:26.794Z] info: Group conversation has been updated
+[2023-02-24T20:04:26.831Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:04:27.054Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:04:27.142Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:27.331Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:27.463Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:04:27.571Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:04:27.777Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:27.910Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:40.528Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:40.891Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:40.994Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:41.276Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:41.307Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:41.415Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:41.559Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:41.566Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:41.794Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:41.981Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:42.012Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:42.103Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:42.283Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:42.819Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:42.834Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:42.937Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.073Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.301Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:43.357Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.529Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.604Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:43.620Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.829Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:43.984Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:44.266Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:44.285Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:44.403Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:44.443Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:44.619Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:45.521Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:45.529Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:45.581Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:46.043Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:46.084Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:46.124Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:46.400Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:46.798Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:46.811Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:04:46.863Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:47.016Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:47.288Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:47.401Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:53.872Z] info: Group conversation has been updated
+[2023-02-24T20:04:54.197Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:04:54.216Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:04:54.368Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:54.419Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:54.494Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:04:54.528Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:04:54.735Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:04:54.996Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:03.189Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:05:03.537Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:05:04.873Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:05.294Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:06.569Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:05:06.915Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:05:08.718Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:09.175Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.046Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:44.198Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.375Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.641Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.659Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:44.800Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.896Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:44.915Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:45.092Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:45.208Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:45.300Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:45.332Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:45.590Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:45.632Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:45.646Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:45.918Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:46.135Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:46.195Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:05:46.367Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:46.553Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:46.632Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:46.802Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:56.177Z] info: Group conversation has been updated
+[2023-02-24T20:05:56.215Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:05:56.499Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:05:56.659Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:56.747Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:56.884Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:05:56.988Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:05:57.193Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:05:57.351Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:06.280Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:06.297Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:06.388Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:06.553Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:06.802Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:06.846Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:06.976Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.089Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.273Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:07.283Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.322Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.388Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:07.493Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.661Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:07.786Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:08.184Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:08.254Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:08.296Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:08.462Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:08.717Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:08.947Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:06:09.049Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:09.217Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:09.402Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:09.464Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:14.219Z] info: Group conversation has been updated
+[2023-02-24T20:06:14.240Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:06:14.551Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:06:14.692Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:14.724Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:14.856Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:06:14.976Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:06:15.204Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:15.318Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:23.437Z] info: Group conversation has been updated
+[2023-02-24T20:06:23.758Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:06:23.789Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:06:23.921Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:23.968Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:24.079Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:06:24.216Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:06:24.607Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:24.687Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:28.371Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:06:28.732Z] info: Fetching conversation: 63f3c71e7e4b6c3c3136bb66
+[2023-02-24T20:06:29.629Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:30.060Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:49.687Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:49.820Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:50.311Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:50.350Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:06:59.771Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:07:00.011Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:13:31.880Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:13:32.075Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:13:51.725Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:13:51.746Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:13:52.036Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:13:52.241Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:13:52.571Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:13:55.374Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:13:55.695Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:14:24.342Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:14:24.353Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:14:24.584Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:14:24.803Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:14:25.100Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:14:26.326Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:14:26.613Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:15:42.666Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:15:42.682Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:15:42.686Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:15:43.170Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:15:43.289Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:15:44.503Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:15:44.751Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:17:33.215Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:17:33.256Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:17:33.305Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:17:33.315Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:17:33.627Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:17:33.684Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:17:33.898Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:17:34.078Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:17:36.101Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:17:36.333Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:18:41.012Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:18:41.034Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:18:41.039Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:18:41.453Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:18:41.764Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:18:43.462Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:18:43.701Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:19:18.950Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:19:18.962Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:19:19.176Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:19:19.514Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:19:19.842Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:19:21.303Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:19:21.565Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:19:46.371Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:19:46.585Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:20:53.518Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:20:53.550Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:20:53.555Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:20:54.047Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:20:54.375Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:20:56.570Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:20:56.855Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:21:31.684Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:21:32.180Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:32.678Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:32.889Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:36.150Z] info: Group conversation has been updated
+[2023-02-24T20:26:36.182Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:26:36.532Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:26:36.766Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:26:36.785Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:26:42.620Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:43.104Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:48.025Z] info: Group conversation has been updated
+[2023-02-24T20:26:48.260Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:26:48.380Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:26:48.434Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:48.636Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:26:48.840Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:26:49.353Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:52.218Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:26:52.701Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:22.857Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:27:22.870Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:27:22.893Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:27:22.910Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:27:23.154Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:27:23.315Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:27:23.374Z] info: Fetching requests for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:27:23.382Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:27:46.717Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:46.883Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:50.518Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:50.963Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:59.791Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:27:59.817Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:27:59.951Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:00.182Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:00.413Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:01.920Z] info: Message sent to conversation:63f809815fd1485553fa8410
+[2023-02-24T20:28:01.951Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:02.044Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:02.207Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:02.512Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:06.093Z] info: Group conversation has been updated
+[2023-02-24T20:28:06.128Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:28:06.352Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:28:06.468Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:28:06.649Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:06.722Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:28:06.878Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:14.479Z] info: Users 63d2ef440c7d97b7a059195f and 63d2ef9b0c7d97b7a059196b have stopped being friends
+[2023-02-24T20:28:14.587Z] info: Fetching contacts for current user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:28:14.885Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:28:15.016Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:28:15.056Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:28:15.064Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:28:15.130Z] info: Deleting conversation with id 63f7aef0a5f3672fd3e7c8c8
+[2023-02-24T20:28:15.140Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:28:15.195Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:28:15.387Z] info: Fetching all conversations for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:28:15.449Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:28:16.096Z] info: Fetching all group conversation for user: 63d2ef440c7d97b7a059195f
+[2023-02-24T20:28:16.119Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:38:29.389Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:38:29.459Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:38:29.503Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:38:29.615Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:38:48.224Z] info: Fetching info for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:38:48.232Z] info: Fetching contacts for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:38:48.541Z] info: Fetching all conversations for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:38:48.639Z] info: Fetching requests for current user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:38:48.979Z] info: Fetching all group conversation for user: 63d2ef9b0c7d97b7a059196b
+[2023-02-24T20:38:50.234Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:38:50.309Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:12.730Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:12.883Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:13.767Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:45:14.148Z] info: Fetching conversation: 63eff758a9fe871a5e6a8a70
+[2023-02-24T20:45:15.286Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:15.657Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:41.918Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:42.022Z] info: Fetching conversation: 63f809815fd1485553fa8410
+[2023-02-24T20:45:42.276Z] info: Fetching conversation: 63f01169a9fe871a5e6a8ac4
+[2023-02-24T20:45:42.487Z] info: Fetching conversation: 63f809815fd1485553fa8410

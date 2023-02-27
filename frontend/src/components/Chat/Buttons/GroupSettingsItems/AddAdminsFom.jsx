@@ -7,7 +7,7 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
-import { Trans } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 
 
@@ -20,7 +20,7 @@ function AddAdminsFom({currentChat}) {
   const contacts = useSelector((state) => {
     return state.contacts.contactList
   });
-
+  const { t } = useTranslation();
   const dispatch = useDispatch();
     const list = currentChat.members.filter(member => !currentChat.admins.includes(member))
     const membersList = list.map(member=>{
@@ -29,7 +29,7 @@ function AddAdminsFom({currentChat}) {
               return contact
             }
             return {
-                username:member,
+                username:t("Unknown user: ...")+ member.slice(-5),
                 _id:member}
           }).filter(member=>member._id !== currentUser._id)
     const [personName, setPersonName] = React.useState([]);

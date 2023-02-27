@@ -71,7 +71,9 @@
     "Remove friend":"Remove friend",
     "You've lost a friend":"You've lost a friend",
     "Hi": "Hi",
-    "Language": "Language"
+    "Language": "Language",
+    "Unknown user: ...":"Unknown user: ...",
+    "Password can't contain whitespace(' ') characters":"Password can't contain whitespace(' ') characters"
 
 
 

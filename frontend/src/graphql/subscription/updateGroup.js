@@ -8,6 +8,7 @@ subscription Subscription {
     members
     name
     admins
+    isGroup
   }
 }
 `;

@@ -23,7 +23,7 @@ const queryResolvers={
                 logger.info(`Fetching info for current user: ${_id}`)
                 return profile
             }catch(err){
-                return {success: false}
+                return {success: false, error:err}
             }
             
         },
@@ -39,8 +39,7 @@ const queryResolvers={
                 logger.info(`Fetching contacts for current user: ${_id}`)
                 return contacts
             }catch(err){
-                console.log(err)
-                return
+                return err
             }
         },
         getRequests: async(_,args,context)=>{
@@ -55,7 +54,7 @@ const queryResolvers={
                 logger.info(`Fetching requests for current user: ${_id}`)
                 return requests
             }catch(err){
-                return 
+                return err
             }
         },
         getConversation: async(_,input,context)=>{
@@ -67,15 +66,25 @@ const queryResolvers={
             
             try{
                 const conv = await axios.get(`${conversationDataRoute}/${conversationId}`);
-                if(!conv.data.members.includes(currentUser._id)){
-                    return []
+                if(!conv.data.status){
+                    return [{
+                        _id:"0001",
+                        sender: "AD-0001",
+                        message: conv.data.msg,
+                        createdAt: 'Error',
+                        conversationId
+                    }]
+                    
+                }
+                if(!conv.data.conversation.members.includes(currentUser._id)){
+                    return {success: false, error: "You are not part of the coversation"}
                 }
                 const response = await axios.get(`${getAllMessagesRoute}/${conversationId}`)
                 const messages = response.data
                 logger.info(`Fetching conversation: ${conversationId}`)
                 return messages
             }catch(err){
-                return 
+                return {success: false, error:err}
             }
         },
         getUserConversations: async(_,input,context)=>{
@@ -105,7 +114,7 @@ const queryResolvers={
                 logger.info(`Fetching all group conversation for user: ${userId}`)
                 return conversations
             }catch(err){
-                return 
+                return err
             }
         }
 

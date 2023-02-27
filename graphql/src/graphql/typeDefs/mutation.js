@@ -54,6 +54,7 @@ input UpdateGroupInput{
   removedMembers: [String]
   newAdmins: [String]
   removedAdmins:[String]
+  isLeaving:Boolean
 }
 
 
