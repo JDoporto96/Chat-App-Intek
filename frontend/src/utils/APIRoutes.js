@@ -27,8 +27,6 @@ export const renameGroupRoute = `${groupsHost}/updategroupname`
 export const conversationsRoute = `${conversationsHost}`
 export const newConversationRoute = `${conversationsHost}/newconversation`
 
-export const socketsHost = "http://localhost:5050"
-
 
 
 

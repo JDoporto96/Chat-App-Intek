@@ -23,10 +23,14 @@ const httpLink = new HttpLink({
 
 const wsLink = new GraphQLWsLink(createClient({
   // Use 'ws://'+window.location.host+'/subscription'
-    // url: 'ws://localhost:4000/graphql',
-    url: 'ws://'+window.location.host+'/subscription',
+    url: 'ws://localhost:4000/graphql',
+    // url: 'ws://'+window.location.host+'/subscription',
+    connectionParams: () => {return{
+      token: localStorage.getItem('chat-app-user-jwt')
+    }},
     options: {
       reconnect: true,
+      lazy:true,
     }
 
 

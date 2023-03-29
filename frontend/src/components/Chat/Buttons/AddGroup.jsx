@@ -17,6 +17,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useSubscription } from '@apollo/client';
 import CONV_SUBSCRIPTION from '../../../graphql/subscription/newConversation';
 import { toast } from 'react-toastify';
+import { CREATE_GROUP, GET_USER_CONVS } from '../../../utils/actions';
 
 export default function AddGroup() {
   const {currentUser,contacts }= useSelector((state) => {
@@ -27,7 +28,7 @@ export default function AddGroup() {
   useSubscription(CONV_SUBSCRIPTION, {
     onData:({data}) =>{
       if (data.data.newConversation.members.includes(currentUser.user._id)){
-        dispatch({type:'GET_USER_CONVS'})
+        dispatch(GET_USER_CONVS())
       }
     }
   })
@@ -83,7 +84,7 @@ export default function AddGroup() {
         name: groupname,
         members
       }
-      dispatch({type: 'CREATE_GROUP', payload:{input}})
+      dispatch(CREATE_GROUP({input}))
       setPersonName([])
       setOpen(false)
     }

@@ -51,7 +51,7 @@ metadata:
 spec:
   selector:
     app: conv-micro
-  type: NodePort
+  type: ClusterIP
   ports:
   - protocol: TCP
     port: 5002

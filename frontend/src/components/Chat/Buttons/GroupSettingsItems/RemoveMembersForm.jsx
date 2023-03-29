@@ -9,6 +9,7 @@ import Select from '@mui/material/Select';
 import Chip from '@mui/material/Chip';
 import { Trans, useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
+import { UPDATE_GROUP } from '../../../../utils/actions';
 
 
 
@@ -59,7 +60,7 @@ function RemoveMembersForm({currentChat}) {
             conversationId:currentChat._id,
             removedMembers:eliminatedMembers
           }
-          dispatch({type:'UPDATE_GROUP', payload: {input}})
+          dispatch(UPDATE_GROUP({input}))
         }
         
         setPersonName([])

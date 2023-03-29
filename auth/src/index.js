@@ -4,6 +4,7 @@ const userRoutes = require('./routes/users');
 const morgan = require('morgan');
 const session = require('express-session');
 const passport = require('passport');
+const logger = require("./utils/logger");
 
 //Init
 const app= express();
@@ -11,7 +12,7 @@ require('./config/db');
 require('./config/passport')(passport);
 
 //middlewares
-app.use(morgan('dev'));
+// app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 app.use(session({
@@ -27,5 +28,5 @@ app.use("/api/auth", userRoutes)
 
 
 const server = app.listen(process.env.PORT, () => {
-    console.log( `Server started on port ${process.env.PORT}`)
+    logger.info( `Server started on port ${process.env.PORT}`)
 })

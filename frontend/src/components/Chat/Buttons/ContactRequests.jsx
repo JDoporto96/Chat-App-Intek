@@ -5,6 +5,7 @@ import { Button, IconButton, Modal, Tooltip,Badge,Stack, Grid, Divider, Typograp
 import { Container } from '@mui/system';
 import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
+import { GET_REQUESTS, RESPOND_REQUEST } from '../../../utils/actions';
 
 
 
@@ -29,23 +30,23 @@ export default function ContactRequests() {
     const handleAccept = async (e) => {
         e.preventDefault();
         const input ={
-            senderId:e.target.parentNode.parentNode.getAttribute("id"),
+            senderId:e.target.value,
             accepted:true
         }
         
-        dispatch({type:'RESPOND_REQUEST', payload: {input}})
-        dispatch({type: 'GET_REQUESTS'})
+        dispatch(RESPOND_REQUEST({input}));
+        dispatch(GET_REQUESTS())
          
     }
 
     const handleReject = async (e) => {
         e.preventDefault();
         const input ={
-            senderId:e.target.parentNode.parentNode.getAttribute("id"),
+            senderId:e.target.value,
             accepted:false
         }
-        dispatch({type:'RESPOND_REQUEST', payload: {input}})
-        dispatch({type: 'GET_REQUESTS'})
+        dispatch(RESPOND_REQUEST({input}));
+        dispatch(GET_REQUESTS())
  
     }
 
@@ -99,7 +100,7 @@ export default function ContactRequests() {
                                 <Button 
                                     variant="contained"
                                     onClick={handleAccept}
-                                    
+                                    value = {request._id}
                                     >
                                     <Trans i18nkey="Accept">Accept</Trans> 
                                 </Button>
@@ -109,6 +110,7 @@ export default function ContactRequests() {
                                     
                                     variant="contained"
                                     onClick={handleReject}
+                                    value = {request._id}
                                     sx={{ ml:"1rem",backgroundColor:"red"}}
                                     >
                                     <Trans i18nkey="Reject">Reject</Trans> 

@@ -51,7 +51,7 @@ metadata:
 spec:
   selector:
     app: profiles-micro
-  type: NodePort
+  type: ClusterIP
   ports:
   - protocol: TCP
     port: 5001

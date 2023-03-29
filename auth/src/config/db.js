@@ -1,11 +1,12 @@
 const mongoose = require('mongoose');
+const logger = require('../utils/logger');
 
 mongoose.connect(process.env.CREDENTIALS_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(()=> {
-    console.log("DB1 connection succesfull");
+    logger.info("DB1 connection succesfull");
 }).catch((err)=>{
-    console.log(err.message);
+    logger.error(err.message);
 });

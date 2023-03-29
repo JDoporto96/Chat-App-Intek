@@ -9,12 +9,12 @@ module.exports = createLogger({
         new transports.File({
             maxsize: 5120000,
             maxfiles: 5,
-            filename: `${__dirname}/../logs/auth-api.log`
+            filename: `${__dirname}/../../logs/auth-api.log`
         }),
         new transports.File({ 
             maxsize: 5120000,
             maxfiles: 5,
-            filename: `${__dirname}/../logs/auth-api-erros.log`, 
+            filename: `${__dirname}/../../logs/auth-api-erros.log`, 
             level: 'error' }),
     ]
 })

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Navigate} from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
 import ResponsiveDrawer from '../components/Drawer';
+import { LOGGED, RESET_MSG, USER_LOGIN } from '../utils/actions';
 
 function DashboardContent() {
   const {infoMessage} = useSelector((state) => {
@@ -28,7 +29,7 @@ function DashboardContent() {
         
     }
 
-    dispatch({type:'RESET_MSG'})
+    dispatch(RESET_MSG())
       
   },[infoMessage])
   return (
@@ -55,9 +56,7 @@ export default function Dashboard() {
   React.useEffect(()=>{
     if(auth.token){
      
-      dispatch({type: 'GET_CONTACTS'})
-      dispatch({type: 'GET_CURRENT_USER'})
-      dispatch({type:'GET_USER_CONVS'})
+      dispatch(USER_LOGIN())
     }
   },[auth.token, dispatch])
 
@@ -68,7 +67,7 @@ export default function Dashboard() {
       return <DashboardContent />;
     }
 
-    dispatch({type: 'LOGGED', payload:{token:localStorage.getItem('chat-app-user-jwt')}})
+    dispatch(LOGGED({token:localStorage.getItem('chat-app-user-jwt')}))
 
   }else{
     return <Navigate to="/login"/>

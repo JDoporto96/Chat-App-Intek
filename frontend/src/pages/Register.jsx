@@ -17,8 +17,7 @@ import Bar from '../components/bar/Bar';
 import { useTranslation, Trans } from "react-i18next";
 import validator from 'validator';
 import { useDispatch, useSelector } from 'react-redux';
-
-
+import { REGISTER, RESET_MSG } from '../utils/actions';
 
 
 export default function Register() {
@@ -108,7 +107,7 @@ export default function Register() {
               email,
               password
             }
-            dispatch({type:'REGISTER', payload: {input}})
+            dispatch(REGISTER({input}))
             
             }
     };
@@ -116,11 +115,11 @@ export default function Register() {
   useEffect(()=>{
     if(infoMessage.error){
       toast.error(infoMessage.error,toastOptions)
-      dispatch({type:'RESET_MSG'})
+      dispatch(RESET_MSG())
     }
     if(infoMessage.info){
       toast.success(infoMessage.info,toastOptions);
-      dispatch({type:'RESET_MSG'});
+      dispatch(RESET_MSG())
       setTimeout(()=>{navigate('/login')},1000)
       
     }

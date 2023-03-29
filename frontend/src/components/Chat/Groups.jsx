@@ -2,6 +2,7 @@ import React from "react";
 import ListItemButton from '@mui/material/ListItemButton';
 import { Stack, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
+import { GET_USER_GROUPS } from "../../utils/actions";
 
 export default function Groups({changeChat}) {
 
@@ -11,7 +12,7 @@ export default function Groups({changeChat}) {
 
   const dispatch = useDispatch();
 
-  dispatch({type:'GET_USER_GROUPS'});
+  dispatch(GET_USER_GROUPS());
 
   const changeCurrentChat = (group) => {
     changeChat(group);

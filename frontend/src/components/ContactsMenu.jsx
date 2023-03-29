@@ -8,6 +8,7 @@ import {useSubscription } from '@apollo/client'
 import { useDispatch, useSelector } from 'react-redux'
 import NEW_REQUEST_SUBSCRIPTION from '../graphql/subscription/newRequest'
 import REQUEST_RESPONSE_SUB from '../graphql/subscription/requestResponse'
+import { GET_CONTACTS, GET_REQUESTS } from '../utils/actions'
 
 function ContactsMenu({handleChatChange}) {
   const currentUser = useSelector((state) => {
@@ -22,7 +23,7 @@ function ContactsMenu({handleChatChange}) {
     onData:({data}) =>{
         
         if(data.data.requestSend.to === currentUser.username){
-          dispatch({type: 'GET_REQUESTS'}) 
+          dispatch(GET_REQUESTS()) 
             
         } 
     }
@@ -32,8 +33,8 @@ function ContactsMenu({handleChatChange}) {
     onData:({data}) =>{
         if(currentUser._id === data.data.requestResponded.to || currentUser._id === data.data.requestResponded.from){
             if(data.data.requestResponded.status ==="Accepted"){
-              dispatch({type: 'GET_REQUESTS'}) 
-                dispatch({type: 'GET_CONTACTS'})  
+              dispatch(GET_REQUESTS()) 
+                dispatch(GET_CONTACTS())  
             }
         }
     }

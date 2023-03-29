@@ -7,6 +7,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector} from 'react-redux';
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from 'react-toastify';
+import { SEND_REQUEST } from '../../../utils/actions';
 
 
 
@@ -45,7 +46,7 @@ export default function AddContact() {
         e.preventDefault();
         const receiverUsername = contact.trim();
         if(handleValidation(receiverUsername)){
-            dispatch({type: 'SEND_REQUEST', payload:{receiverUsername}})
+            dispatch(SEND_REQUEST({receiverUsername}))
             setOpen(false)
         }
         

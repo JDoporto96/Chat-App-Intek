@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
 import { Trans } from "react-i18next";
 import { useDispatch, } from 'react-redux';
+import { DELETE_GROUP } from '../../../../utils/actions';
 
 
 
@@ -11,7 +12,7 @@ function DeleteGroup({currentChat, changeChat}) {
    
 
     const handleDelete = async()=>{
-        dispatch({type:'DELETE_GROUP', payload: {conversationId:currentChat._id}})
+        dispatch(DELETE_GROUP({conversationId:currentChat._id}))
         setOpen(false)
         changeChat(undefined);
     }

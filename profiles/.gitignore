@@ -1,4 +1,4 @@
 node_modules
 *.env
 request.rest
-src/logs
+logs/

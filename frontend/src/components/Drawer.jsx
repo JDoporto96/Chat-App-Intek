@@ -22,6 +22,7 @@ import Welcome from './Chat/Welcome';
 import UPDATE_GROUP_SUB from '../graphql/subscription/updateGroup';
 import CONV_DELETED_SUB from '../graphql/subscription/convDeleted';
 import Language from './Language';
+import { GET_REQUESTS, GET_USER_CONVS, LOGOUT } from '../utils/actions';
 
 
 const drawerWidth = 240;
@@ -49,7 +50,7 @@ export default function ResponsiveDrawer(props: Props) {
     const handleLogOut = async(e)=>{
           e.preventDefault();
           localStorage.removeItem('chat-app-user-jwt');
-          dispatch({type:'LOGOUT'})
+          dispatch(LOGOUT())
           client.clearStore();
           
           
@@ -68,7 +69,7 @@ export default function ResponsiveDrawer(props: Props) {
       setAnchorElUser(null);
     };
     React.useEffect(()=>{
-      dispatch({type: 'GET_REQUESTS'})
+      dispatch(GET_REQUESTS())
   
     },[])
     
@@ -84,7 +85,7 @@ export default function ResponsiveDrawer(props: Props) {
             
           }
     
-          dispatch({type:'GET_USER_CONVS'})
+          dispatch(GET_USER_CONVS())
       
         }
       })
@@ -95,7 +96,7 @@ export default function ResponsiveDrawer(props: Props) {
             if(currentChat !== undefined && data.data.conversationDeleted._id === currentChat._id ){
               setCurrentChat(undefined)
             }
-          dispatch({type:'GET_USER_CONVS'})
+            dispatch(GET_USER_CONVS())
     
           }
         }

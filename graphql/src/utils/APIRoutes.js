@@ -21,14 +21,14 @@ export const sendMessageRoute = `${messagesHost}/addmsg`
 export const getAllMessagesRoute = `${messagesHost}`
 
 export const getMyGroupsRoute = `${groupsHost}/mygroups`
-export const createGroupRoute = `${groupsHost}/creategroup`
-export const deleteGroupRoute = `${groupsHost}/deleteGroup`
-export const updateGroupRoute = `${groupsHost}/updategroup`
+export const createGroupRoute = `${groupsHost}/`
+export const deleteGroupRoute = `${groupsHost}`
+export const updateGroupRoute = `${groupsHost}`
 
-export const conversationsRoute = `${conversationsHost}`
-export const newConversationRoute = `${conversationsHost}/newconversation`
-export const deleteConversationsRoute = `${conversationsHost}/deleteconv`
-export const conversationDataRoute = `${conversationsHost}/conversationData`
+export const conversationsRoute = `${conversationsHost}/myconvs`
+export const newConversationRoute = `${conversationsHost}/`
+export const deleteConversationsRoute = `${conversationsHost}`
+export const conversationDataRoute = `${conversationsHost}`
 
 
 

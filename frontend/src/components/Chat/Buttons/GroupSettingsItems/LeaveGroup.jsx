@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { MenuItem, Typography,Modal, Container, Button, Grid } from '@mui/material'
 import {Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
+import { UPDATE_GROUP } from '../../../../utils/actions';
 
 
 function LeaveGroup({currentChat, changeChat}) {
@@ -12,10 +13,6 @@ function LeaveGroup({currentChat, changeChat}) {
     
     const  dispatch = useDispatch();
     
-    
-
-
-
     const handleLeave = async()=>{
         let input;
         if(currentChat.admins.includes(currentUser._id) && currentChat.admins.length <=1 ){
@@ -45,7 +42,7 @@ function LeaveGroup({currentChat, changeChat}) {
             }   
         }
 
-        dispatch({type:'UPDATE_GROUP', payload: {input}})
+        dispatch(UPDATE_GROUP({input}))
         setOpen(false)
         changeChat(undefined);
     }

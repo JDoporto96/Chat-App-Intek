@@ -3,29 +3,27 @@ import { createGroupRoute, newConversationRoute ,profilesAPIRoute,
     registerRoute,loginRoute,sendMessageRoute,
     updateGroupRoute,
     deleteGroupRoute,
-    deleteConversationsRoute} from '../../utils/APIRoutes.js';
-import { PubSub } from 'graphql-subscriptions';
+    deleteConversationsRoute,
+    conversationDataRoute} from '../../utils/APIRoutes.js';
+import { PubSub, withFilter } from 'graphql-subscriptions';
 import logger from '../../utils/logger.js';
 
 const pubsub = new PubSub();
+
+const MESSAGE_SENT=`MESSAGE_SENT`;
+const CONVERSATION_CREATED=`CONVERSATION_CREATED`;
+const GROUP_UPDATED=`GROUP_UPDATED`;
+const REQUEST_SENT =`REQUEST_SENT`
+const REQUEST_RESPONDED='REQUEST_RESPONDED';
+const FRIEND_DELETED =`FRIEND_DELETED`
+const CONV_DELETED=`CONV_DELETED`;
 
 const mutationResolvers={
     Mutation:{
         createUser: async(_,{input}) => {
             let _id;
             const {username,password,email} = input;
-            if(username.length>15){
-                return {success: false, error:"Username should be shorter than 15 characters "}
- 
-            }else if(username.length<3){
-                return {success: false, error:"Username should be longer than 3 characters"}
-            }
-            if(password.includes(" ")){
-                return {success: false, error:"Password can't contain whitespace(' ') characters"}
-            }
-            if(!password || password.length<6){
-                return {success: false, error:"Password must contain at least 6 characters"}
-            }
+           
             try{
                 const authServerResponse = await axios.post(registerRoute,{
                     username,
@@ -75,7 +73,6 @@ const mutationResolvers={
                 user = authServerResponse.data.user;
                 logger.info(`User logged in with id:${_id}`)
             }catch(err){
-               
                 return {success:false, error:err}
             }
 
@@ -139,12 +136,9 @@ const mutationResolvers={
                 }
                 return false
             }
+            const {name,members} = input;
             if(!currentUser){
                 return{success: false, error: "Please authenticate"}
-            }
-            const {name, members} = input;
-            if(!name || !members){
-                return{success: false, error: "Invalid group"}
             }
             
             if(members.some(m=>!isFriend(m))){
@@ -181,8 +175,7 @@ const mutationResolvers={
             }
             
             try{
-                const response = await axios.patch(updateGroupRoute,{
-                    conversationId,
+                const response = await axios.patch(`${updateGroupRoute}/${conversationId}`,{
                     newName, 
                     newMembers, 
                     newAdmins, 
@@ -337,9 +330,7 @@ const mutationResolvers={
                 return{success: false, error: "Please authenticate"}
             }
             try{
-                const response = await axios.post(`${deleteConversationsRoute}`,{
-                    _id: conversationId,
-                })
+                const response = await axios.delete(`${deleteConversationsRoute}/${conversationId}`)
                 if(!response.status){
                     return {success: false, error: response.data.msg}
                 }
@@ -354,39 +345,68 @@ const mutationResolvers={
     },
     Subscription:{
         newMessage:{
-            subscribe: (_,{conversationId}) => {
-              return pubsub.asyncIterator([`MESSAGE_SENT`]);
-            },
-        },
-        newConversation:{
-            subscribe: () => {
-              return pubsub.asyncIterator([`CONVERSATION_CREATED`]);
-            },
-        },
-        updateGroup:{
-            subscribe: () => {
-                return pubsub.asyncIterator([`GROUP_UPDATED`]);
-              },
-        },
-        requestSend:{
-            subscribe:()=>{
-                return pubsub.asyncIterator(['REQUEST_SENT'])
+            subscribe: withFilter(() => {return pubsub.asyncIterator([MESSAGE_SENT])}, 
+            async ({newMessage},_,{currentUser})=>{
+                const {conversationId} = newMessage;
+                const conv = await axios.get(`${conversationDataRoute}/${conversationId}`);
+                const {members} = conv.data.conversation
+
+                return members.includes(currentUser._id)
             }
+        )},
+        newConversation:{
+            subscribe: withFilter(() => {return pubsub.asyncIterator([CONVERSATION_CREATED])},
+            ({newConversation},_,{currentUser})=>{
+                return newConversation.members.includes((currentUser._id))
+            }
+        )},
+        updateGroup:{
+            subscribe: withFilter(() => {return pubsub.asyncIterator([GROUP_UPDATED])},
+            ({updateGroup},_,{currentUser})=>{
+                return updateGroup.members.includes((currentUser._id))
+            }
+        )},
+        requestSend:{
+            subscribe:withFilter(()=>{
+                return pubsub.asyncIterator([REQUEST_SENT])
+            },
+            ({requestSend},_,{currentUser})=>{
+                console.log(requestSend)
+        
+                const filterPass = requestSend.to ===currentUser.username || requestSend.from === currentUser._id
+                return filterPass
+            }
+            )
         },
         requestResponded:{
-            subscribe:()=>{
-                return pubsub.asyncIterator(['REQUEST_RESPONDED'])
+            subscribe:withFilter(()=>{
+                return pubsub.asyncIterator([REQUEST_RESPONDED])
+            },
+            ({requestResponded},_,{currentUser})=>{
+        
+                const filterPass = requestResponded.to ===currentUser._id || requestResponded.from === currentUser._id
+                return filterPass
             }
+            )
         },
         friendDeleted:{
-            subscribe: () => {
-              return pubsub.asyncIterator([`FRIEND_DELETED`]);
-            },
+            subscribe: withFilter(() => {
+                return pubsub.asyncIterator([FRIEND_DELETED]);
+              },
+              ({friendDeleted},_,{currentUser})=>{
+                console.log(friendDeleted)
+                return friendDeleted.exfriends.includes((currentUser._id))
+            }
+              )
         },
         conversationDeleted:{
-            subscribe: () => {
-              return pubsub.asyncIterator([`CONV_DELETED`]);
-            },
+            subscribe:withFilter(() => {
+                return pubsub.asyncIterator([CONV_DELETED])},
+                ({conversationDeleted},_,{currentUser})=>{
+                    console.log(conversationDeleted)
+                    return conversationDeleted.members.includes((currentUser._id))
+                }
+                ) 
         },
         
       } 

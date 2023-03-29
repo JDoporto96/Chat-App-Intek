@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useSubscription } from "@apollo/client";
 import CONV_SUBSCRIPTION from "../../graphql/subscription/newConversation";
 import RemoveContact from "./Buttons/RemoveContact";
+import { CREATE_CONVERSATION, GET_USER_CONVS } from "../../utils/actions";
 
 
 export default function Contacts({handleChatChange}) {
@@ -18,7 +19,7 @@ export default function Contacts({handleChatChange}) {
   useSubscription(CONV_SUBSCRIPTION, {
     onData:({data}) =>{
       if (data.data.newConversation.members.includes(currentUser.user._id)){
-        dispatch({type:'GET_USER_CONVS'})
+        dispatch(GET_USER_CONVS())
       }
     }
   })
@@ -29,7 +30,7 @@ export default function Contacts({handleChatChange}) {
   const changeCurrentChat = async(contact) => {
     const conv = userConvs.find(({members, name})=> members.includes(contact._id)&&members.length===2 && !name)
     if(!conv){
-      dispatch({type: 'CREATE_CONVERSATION', payload:{receiverId:contact._id}})
+      dispatch(CREATE_CONVERSATION({receiverId:contact._id}))
 
     }else{
       handleChatChange(conv)

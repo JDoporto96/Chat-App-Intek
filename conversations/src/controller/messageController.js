@@ -5,8 +5,13 @@ const logger = require('../utils/logger');
 module.exports.getMessages = async (req, res, next) => {
   
   try {
+    if(req.params.conversationId.length > 100){
+      logger.error("Conversation fetching failed. Error: Payload too large") 
+      return res.status(500).json({status: false, msg:"Payload too large"})
+    }
     const conversation = await Conversations.findOne({_id:req.params.conversationId})
     if(!conversation){
+      logger.error("Conversation fetching failed. Error: Conversation does not exist") 
       return res.json({status:false, msg:"Conversation does not exist"});
     }
     const messages = await Messages.find({
@@ -15,6 +20,7 @@ module.exports.getMessages = async (req, res, next) => {
     logger.info(`Fetching messages from conversation with id: ${ req.params.conversationId}`) 
     return res.json(messages)
   } catch (err) {
+    logger.error(`Server error: ${err}`) 
     return res.json({status:false, msg:err});
   }
 };
@@ -24,7 +30,7 @@ module.exports.addMessage = async (req, res, next) => {
   try {
     const conversation = await Conversations.findOne({_id:conversationId});
     if (!conversation.members.includes(sender)){
-      logger.info(`User:${sender} tried to send a
+      logger.error(`User:${sender} tried to send a
       messages to conversation with id: ${ conversationId} but is not part of the conversation`)
       return res.json({status:false, msg:"Sender not in conversation"})
     }
@@ -38,6 +44,7 @@ module.exports.addMessage = async (req, res, next) => {
     return res.json({status:true, savedMessage})
 
   } catch (err) {
-    res.status(500).json(err);
+    logger.error(`Server error: ${err}`) 
+    return res.status(500).json(err);
   }
 };

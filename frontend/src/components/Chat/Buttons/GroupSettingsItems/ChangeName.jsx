@@ -3,6 +3,7 @@ import { MenuItem, Typography,Modal, Container, Button, TextField } from '@mui/m
 import { useTranslation, Trans } from "react-i18next";
 import { useDispatch} from 'react-redux';
 import { toast } from 'react-toastify';
+import { UPDATE_GROUP } from '../../../../utils/actions';
 
 function ChangeGroupName({currentChat}) {
     const[open, setOpen]=useState(false);
@@ -35,7 +36,7 @@ function ChangeGroupName({currentChat}) {
                 conversationId:currentChat._id,
                 newName
               }
-              dispatch({type:'UPDATE_GROUP', payload: {input}})
+              dispatch(UPDATE_GROUP({input}))
               setNewName("");
               setOpen(false);
         }

@@ -18,8 +18,7 @@ import { useTranslation, Trans } from "react-i18next";
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { client } from '../graphql/apollo-client';
-
-
+import { LOGGED, LOGIN, RESET_MSG, USER_LOGIN } from '../utils/actions';
 
 export default function Login() {
  
@@ -77,14 +76,13 @@ export default function Login() {
           email,
           password
         }
-            dispatch({type:'LOGIN', payload: {input}})
+            dispatch(LOGIN({input}))
       }
   };
 
   useEffect(()=>{
     if(localStorage.getItem('chat-app-user-jwt')){
-     
-      dispatch({type: 'LOGGED', payload:{token:localStorage.getItem('chat-app-user-jwt')}})
+      dispatch(LOGGED({token:localStorage.getItem('chat-app-user-jwt')}))
     }
   })
 
@@ -98,17 +96,14 @@ export default function Login() {
       toast.success(infoMessage.info,toastOptions)
     }
 
-    dispatch({type:'RESET_MSG'})
+    dispatch(RESET_MSG())
       
   },[infoMessage, dispatch])
 
 
   useEffect(()=>{
     if(auth.token){
-     
-      dispatch({type: 'GET_CONTACTS'})
-      dispatch({type: 'GET_CURRENT_USER'})
-      dispatch({type:'GET_USER_CONVS'})
+      dispatch(USER_LOGIN())
     }
   },[auth.token, dispatch])
 

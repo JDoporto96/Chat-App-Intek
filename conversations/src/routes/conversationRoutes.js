@@ -2,9 +2,9 @@ const { newConversation, getConversations, deleteConversation, getSingleConversa
 
 const router = require("express").Router();
 
-router.post("/newconversation", newConversation);
-router.get("/:userId", getConversations);
-router.post("/deleteconv",deleteConversation);
-router.get("/conversationData/:conversationId", getSingleConversationData)
+router.post("/", newConversation);
+router.get("/myconvs/:userId", getConversations);
+router.delete("/:id",deleteConversation);
+router.get("/:id", getSingleConversationData)
 
 module.exports = router;

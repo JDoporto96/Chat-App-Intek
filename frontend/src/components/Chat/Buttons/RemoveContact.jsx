@@ -5,6 +5,7 @@ import { t } from 'i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { useSubscription } from '@apollo/client';
 import FRIEND_DELETED from '../../../graphql/subscription/friendDeleted';
+import { DELETE_CONV, GET_CONTACTS, REMOVE_CONTACT } from '../../../utils/actions';
 
 function RemoveContact({contactId}) {
     const dispatch = useDispatch();
@@ -22,10 +23,10 @@ function RemoveContact({contactId}) {
                 && conv.members.length === 2
                 && !conv.name))
 
-                dispatch({type:'GET_CONTACTS'})
+                dispatch(GET_CONTACTS())
                 if(conversation){
                     
-                    dispatch({type:'DELETE_CONV',payload: {conversationId:conversation._id}})
+                    dispatch(DELETE_CONV({conversationId:conversation._id}))
                 }
           }
         }
@@ -34,7 +35,7 @@ function RemoveContact({contactId}) {
 
     const handleRemoveFriend=()=>{
         if(window.confirm(t("Do you want to remove this user from your contacts?"))){
-            dispatch({type: 'REMOVE_CONTACT', payload:{contactId}})
+            dispatch(REMOVE_CONTACT({contactId}))
         }
     }
 

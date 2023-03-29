@@ -48,16 +48,7 @@ function Messages({contacts, currentChat}) {
 
  
 
-  //   useEffect(()=>{
-  //   //   setMessages([])
-  //   //  refetch({conversationId})
-  //   if(doRefetch){
-  //     console.log("Refetching")
-  //     setDoRefetch(false)
-  //   }
-    
-    
-  // },[currentChat])
+  
 
 
 
