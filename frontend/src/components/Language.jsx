@@ -29,8 +29,6 @@ function Language() {
           <List component="div" disablePadding>
 
             
-
-            
             {Object.keys(lngs).map((lng) => (
                 <ListItemButton sx={{ pl: 4 }} key={lng} style={{ fontWeight: i18n.resolvedLanguage === lng ? 'bold' : 'normal' }} type="submit" onClick={(e) => {i18n.changeLanguage(lng)}}>
                 {lngs[lng].nativeName}

@@ -17,7 +17,6 @@ export default function ChatInput({ handleSendMsg }) {
   };
 
   return (
-    <>
       <form onSubmit={(event) => sendChat(event)}>
         <Grid container sx={{pl:2, mt:1}}>
         <Grid xs={11} item>
@@ -40,8 +39,6 @@ export default function ChatInput({ handleSendMsg }) {
           </Grid>
         </Grid>
       </form>
-
-    </>
       
     
   );

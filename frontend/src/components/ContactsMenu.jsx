@@ -11,6 +11,7 @@ import REQUEST_RESPONSE_SUB from '../graphql/subscription/requestResponse'
 import { GET_CONTACTS, GET_REQUESTS } from '../utils/actions'
 
 function ContactsMenu({handleChatChange}) {
+
   const currentUser = useSelector((state) => {
     return state.currentUser.user
   });
@@ -43,8 +44,7 @@ function ContactsMenu({handleChatChange}) {
 
 
   return (
-    <Box
-                
+    <Box     
                 sx={{
                 display: 'flex',
                 flexDirection: 'column',

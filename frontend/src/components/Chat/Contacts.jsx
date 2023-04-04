@@ -39,7 +39,6 @@ export default function Contacts({handleChatChange}) {
 
 
   if(contacts.fetched){return (
-    <React.Fragment>
       <Stack spacing={.5}
       sx={{
         width:"100%",
@@ -72,7 +71,6 @@ export default function Contacts({handleChatChange}) {
         )
       })}
       </Stack>
-    </React.Fragment>
   
 
             

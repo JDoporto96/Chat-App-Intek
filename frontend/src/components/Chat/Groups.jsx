@@ -20,7 +20,7 @@ export default function Groups({changeChat}) {
 
   
   return (
-      <React.Fragment>
+  
         <Stack spacing={.5}
         sx={{
           width:"100%",
@@ -41,8 +41,7 @@ export default function Groups({changeChat}) {
             </ListItemButton>
           )
         })}
-        </Stack>
-      </React.Fragment>        
+        </Stack>    
     );
   
 }

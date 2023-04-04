@@ -34,7 +34,7 @@ function DashboardContent() {
   },[infoMessage])
   return (
     <>
-      <Box sx={{ display: 'flex' }}>
+      <Box>
         <CssBaseline />
        
                 <ResponsiveDrawer/>

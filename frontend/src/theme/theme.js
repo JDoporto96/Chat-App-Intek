@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { blue, blueGrey} from '@mui/material/colors';
+import { blue, blueGrey, lightGreen, red} from '@mui/material/colors';
 
 const theme = createTheme({
   palette: {
@@ -7,9 +7,33 @@ const theme = createTheme({
       main: blue[500],
     },
     secondary: {
-      main: blueGrey[500],
+      main: lightGreen[500],
     },
   },
+  components:{
+    MuiAvatar:{
+      styleOverrides: {
+        root:{
+          margin:"0.5rem",
+        }
+       }
+    },
+    MuiButton:{
+     styleOverrides: {
+      root:{
+        marginTop:"1rem",
+        marginBottom:"1rem"
+      }
+     }
+    },
+    MuiBox:{
+      styleOverrides: {
+        root:{
+          display:"flex"
+        }
+       }
+    }  
+  }
 });
 
 export default theme;

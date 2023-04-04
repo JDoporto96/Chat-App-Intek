@@ -20,19 +20,19 @@ export default function App() {
   <ApolloProvider client = {client}>
     <Provider store={configureAppStore()}>
       <ThemeProvider theme ={theme}>
-    <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<Login/>} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-       
-       
-        <Route path='/dashboard' element={<Dashboard/>} />
-        
-      </Routes>
-    </BrowserRouter>
-    </ThemeProvider>
-  </Provider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Login/>} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login />} />
+          
+          
+            <Route path='/dashboard' element={<Dashboard/>} />
+            
+          </Routes>
+        </BrowserRouter>
+      </ThemeProvider>
+    </Provider>
   </ApolloProvider>
   );
 }
